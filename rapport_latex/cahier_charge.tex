@@ -1,0 +1,281 @@
+%@ autor Damien Meur
+\documentclass{article}[12pt]
+
+%--------------Packages------------------------------
+\usepackage[latin1]{inputenc} %Pour encoder du texte en français
+\usepackage[francais]{babel} %Pour encoder du texte en français
+\usepackage{graphicx} %pour inclure des images
+\usepackage{version} % permet d'utiliser l'environnement comment
+\graphicspath{{./figures/}} %repertoire images
+\usepackage{listings} %si on veut afficher du code, le code doit se trouver dans un dossier "codes" 					  %lui même dans le même répertoire que ce fichier tex
+\usepackage{color} %nécessaire pour changer les couleurs du highlighting du code
+\usepackage{amsmath,amssymb}%pour des maths au cas où
+\usepackage{array,multirow,makecell}%Pour manipuler les tableaux
+\usepackage{url} %pour utiliser les liens hypertextes
+\usepackage{hyperref} %pour utiliser les liens hypertextes
+\usepackage{float}
+\newlength{\length}
+\setlength{\length}{3\baselineskip}
+
+%---------------Liste macros utiles------------------
+\begin{comment}
+
+%1.Inclure une image
+\begin{figure}[!h]
+\center
+\fbox{\includegraphics[width=5cm,height=5cm]{figure1.jpg}}
+\caption{Superbe image}
+\end{figure}
+
+%2. Inclure un tableau
+\begin{table}[!h]
+    \center
+    \begin{tabular}[b]{|l|c|c|c|}
+    \hline
+    & \multicolumn{3}{|c|}{Année} \\
+    \hline
+    Produit & 1999 & 2000 & 2001 \\
+    \hline \hline
+    Livre & 15 & 10 & 7 \\
+    CD & 10 & 17 & 22 \\
+    \hline
+    \end{tabular}
+    \caption{Vente pour les années 1999 à 2001}
+\end{table}
+
+%3. Inclure une (ou des) définitions
+\begin{description}
+  \item[Premier] Le premier élément
+  \item[Deuxième] Le deuxième élément
+  \item[Troisième] Le troisième élément
+\end{description}
+
+%4. Inclure une bibliographie
+\begin{thebibliography}{1}
+    \bibitem{latexpratique} Christian \textsc{Rolland}. \emph{\LaTeX{} par la pratique}. O'Reilly, 1999.
+\end{thebibliography}
+
+%5. Inclure une note de bas de page
+\footnote{On a ici inséré une espace normale}
+
+%remarque 1  on peut faire référence à une entrée de la bibliographie en bas de page grâce à:
+\cite{latexpratique}
+
+%remarque 2  on peut faire des référence grâce à :
+\label{distances} % dans le tableau ou l'environnement  à rérérencer
+\ref{distances} %pour référencer
+
+%6. Inclure  du code (ici Java) (avant \begin{document})
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstloadlanguages{Java}
+
+\lstset{frame=tb,
+  %inputpath={./codes/},
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+%la macro a utilisé
+\newcommand{\JAVAcode}[2]{
+\begin{itemize}
+\item[]\lstinputlisting[caption=#2,label=#1]{#1.java}
+\end{itemize}
+}
+%on l'emploie de cette manière dans le texte (premier parametre est le nom du fichier, le second est %le caption
+\JAVAcode{F5D1}{Exemple de code java}
+
+%7. passer plusieurs lignes
+\vspace{1\baselineskip}
+
+
+\end{comment}
+%-------------------------------------------------------------------
+
+\begin{document}
+
+
+\input{page_de_garde.tex} %page de garde
+
+\tableofcontents%table des matières
+\newpage
+
+
+%différentes sections
+\section{Contexte}
+
+La société \textit{SoftDevelop S.A.} développe trois lignes de produits-logiciels (\textit{Soft Clients}, \textit{Soft Fournisseurs}
+et \textit{Soft Compta}) vendus par des intermédiaires. Chaque intermédiaire a un contact commercial chez
+SoftDevelop. \\ \par
+C'est notamment via cet intermédiaire commercial que le client prend contact avec l'entreprise elle-même.
+La prise de contact peut avoir différentes raisons : demande d'amélioration des produits,
+correction de bugs ou encore demande d'information. C'est le commercial qui fait ensuite parvenir les
+demandes aux équipes de développement. \\ \par 
+De ce fait, la société \textit{SoftDevelop S.A.}souhaite sous-traiter la création d'un nouveau programme leur
+permettant d'automatiser la gestion des demandes d'améliorations et des bugs.
+Ce cahier des charges a pour but de présenter la solution proposée par notre entreprise.
+
+\section{Analyse de l'existant}
+
+\subsection{Acteurs}
+Lors de l'analyse du système actuel de \textit{SoftDevelop S.A.}, 3 acteurs se sont démarqués pour la gestion des bugs.
+\begin{itemize}
+	\item[\textbf{Le commercial:}] il fait le lien entre l'équipe de développement et le client. C'est via le commercial que le client fait savoir qu'un bug est apparu.
+	\item[\textbf{Le membre de l'équipe :}]il s'agit de la personne qui s'occupera de corriger le bug, de réaliser des tests.
+	\item[\textbf{Le responsable :}]il supervise plusieurs membres d'équipes et s'occupe de vérifier si le travail est correctement effectué et si le bug est corrigé.
+\end{itemize}
+Une autre dénomination revient fréquemment : \textbf{l'utilisateur} , cette dernière est utilisée désigner les 3 acteurs cités précédemment en même temps et sans faire de distinction au niveau des rôles.
+
+\newpage
+\subsection{Documents manipulés}
+Actuellement, la transmission des bugs se fait via e-mail et à l'aide d'une fiche signalétique et d'une fiche descriptive.
+
+\subsubsection{Fiches descriptive et signalétique}
+\label{sec:desc}
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}[b]{|c|c|}
+		\hline
+		\textbf{Exemple fiche descriptive} & \textbf{Exemple fiche signalétique } \\
+		\hline
+		\includegraphics[width=7cm,height=6cm]{fiche_descriptive.png} &\includegraphics[width=7cm,height=6cm]{fiche_signaletique.png} \\
+		\hline
+	\end{tabular}
+	\caption{Exemple de fiches descriptive et signalétique}
+\end{table}
+\label{sec:sign}
+\par
+Explication des différentes priorités :
+
+\begin{itemize}
+	\item \textbf{P1 :}la priorité la plus haute, réservée pour les demandes urgentes.
+	\item \textbf{P2 :} la priorité moyenne.
+	\item \textbf{P3 :} la priorité la plus basse.
+\end{itemize}
+\par
+Explication des différentes sévérités :
+
+\begin{itemize}
+	\item \textbf{Critique:} la sévérité la plus haute ; elle indique que le bug est bloquant et empêche le fonctionnement du logiciel et donc la production chez les clients.
+	\item \textbf{Majeure:} elle indique que le bug est grave mais qu'il existe une façon de travailler pour le contourner.
+	\item \textbf{Modérée:} elle indique que le bug n'empêche pas le logiciel de fonctionner ni le client de travailler.
+	\item \textbf{Mineure :} il s'agit d'un bug « cosmétique » qui sera résolu en dernier lieu.
+\end{itemize}
+\subsubsection{E-mail}
+Par ailleurs, tous les commentaires se font actuellement via e-mail. C'est d'ailleurs via ce même e-mail que l'on suivra l'évolution du bug et que l'on gardera une trace de ce de dernier.
+
+\subsection{Règles de gestion}
+
+\subsubsection{Détection du bug}
+Le bug est détecté / l'amélioration est demandée le plus souvent par les utilisateurs qui font parvenir cette information au commercial avec qui il est en contact. C'est le commercial qui s'occupe d'encoder le bug / l'amélioration dans le système et c'est donc ce dernier qui lance le processus de gestion.
+
+\subsubsection{Gestion des commentaires}
+Actuellement les commentaires sont gérés par e-mail. Tous les commentaires concernant un bug se rattachant au mail signalant le bug en question. De plus, l'évolution du projet se fait également via e-mail.
+\subsubsection{Modification des documents}
+À tout moment un membre d'équipe ou un responsable peut modifier
+\hyperref[sec:sign]{ \textit{la fiche signalétique du bug}} :
+\begin{itemize}
+	\item le logiciel sur lequel il a rencontré le bug
+	\item le nom de l'intermédiaire
+	\item la version du logiciel dans laquelle le bug est survenu
+	\item la version du logiciel dans laquelle le bug a été corrigé
+	\item la priorité
+	\item la sévérité
+	\item le résumé
+\end{itemize}
+Il faudra donc permettre la modification de ces informations par le responsable et ses membres d'équipes. \\ \par
+Par opposition, \hyperref[sec:desc]{ \textit{la fiche descriptive d'un bug}} ne pourra jamais être modifiée. Dans le cas où cette dernière serait erronée ou contiendrait une descrpition peu fiable ou devrait être tout simplement modifiée, cela se fera à l'aide de commentaires.
+\subsubsection{Subdivision en différents états}
+La gestion d'un bug se fait à l'aide de différents états, un bug ayant toujours un état à un moment donné :
+\begin{itemize}
+	\item Nouveau
+	\item Confirmé
+	\item Pris en charge
+	\item Corrigé
+	\item Vérifié
+	\item Clos
+	\item Rejeté
+	\item Non-reproductible
+	\item Doublon
+	\item Rouvert
+\end{itemize}
+Le passage d'un état à l'autre symbolise un changement dans la façon de traiter ce bug et son avancée dans le processus de résolution. Il faudra donc notifier les utilisateurs de l'évolution du projet via ces différents états.\footnote{Si un bug clos veut être rouvert, on ne changera pas l'état de ce dernier, mais on considèrera qu'il s'agisse d'un nouveau bug.}
+\subsubsection{Finalisation du traitement}
+Seul le responsable peut décider si un bug est corrigé ou non. C'est ce dernier qui prendra la décision finale et qui mettra fin au traitement en livrant la version corrigée au client. Par ailleurs un bug pourra très bien être rouvert par la suite.
+
+
+\section{Objet du marché}
+La société \textit{SoftDevelop S.A.} souhaite sous-traiter le développement d'un outil de gestion des bugs
+et des demandes d'améliorations, pour ses logiciels.
+
+\subsubsection{Objectifs}
+\begin{itemize}
+	\item Signaler un bug ou RFE
+	\item Faire évoluer le bug ou le RFE tout au long de son cycle de vie
+	\item Rechercher un bug ou un RFE sur base de son identifiant unique ou de toute information de sa fiche signalétique
+	\item Visualiser l'ensemble des bugs ou RFE correspondant aux critères de recherche, sous un format de tableau, chaque ligne correspondant à un bug
+	\item Livrer un mode d'emploi avec l'outil de gestion des bugs
+	
+\end{itemize}
+\subsubsection{Contraintes}
+\begin{itemize}
+	\item La maintenance de l'outil de gestion des bugs et des demandes d'améliorations sera assurée pendant trois ans
+	\item L'application ne sera développée qu'en utilisant des standards ouverts du marché tant au
+	niveau de la programmation que du langage de programmation
+\end{itemize}
+\newpage
+\section{Spécifications applicatives}
+\subsection{L'application  \textcolor{blue}{Bugtopus}\textsuperscript{TM}}
+\newpage
+\subsection{Fonctionnalités}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=15cm,height=17cm]{cu.png}}
+	\caption{Diagramme des cas d'utilisation}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=15cm,height=17cm]{flux.jpeg}}
+	\caption{Diagramme de flux de la gestion d'un bug}
+\end{figure}
+
+\subsection{Le commercial}
+\subsubsection{Visualiser l'ensemble des bugs/RFE}
+\subsubsection{Introduire une fiche signalétique, une fiche descriptive ou un RFE}
+\subsubsection{Rechercher un bug ou une RFE spécifique}
+\subsection{Le membre d'équipe de développement}
+\subsubsection{Prendre un bug ou une RFE en charge}
+\subsubsection{Rouvrir un bug ou une RFE}
+\subsubsection{Valider les tests unitaires pour un bug ou une RFE }
+\subsubsection{Modifier une fiche signalétique ou descriptive}
+\subsubsection{Passer un bug ou une RFE en état doublon}
+\subsubsection{Passer un bug ou une RFE en état non-reproductible}
+\subsection{Le responsable d'équipe de développement}
+\subsubsection{Confirmer la pertinence du bug ou d'une RFE}
+\subsubsection{Clôre un bug ou une RFE}
+\subsubsection{Indiquer une nouvelle version}
+\newpage
+\subsection{Persistance des données}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=15cm,height=17cm]{dsd.png}}
+	\caption{Diagramme de structures des données}
+\end{figure}
+\section{Spécifications de réalisations}
+
+\section{Glossaire}
+
+\end{document}

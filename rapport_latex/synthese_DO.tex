@@ -1,0 +1,2831 @@
+%@ autor Damien Meur
+\documentclass{article}
+
+%--------------Packages------------------------------
+\usepackage[latin1]{inputenc} %Pour encoder du texte en français
+\usepackage[francais]{babel} %Pour encoder du texte en français
+\usepackage{graphicx} %pour inclure des images
+\usepackage{version} % permet d'utiliser l'environnement comment
+\graphicspath{{./figures/}} %repertoire images
+\usepackage{listings} %si on veut afficher du code, le code doit se trouver dans un dossier "codes" 					  %lui même dans le même répertoire que ce fichier tex
+\usepackage{color} %nécessaire pour changer les couleurs du highlighting du code
+\usepackage{amsmath,amssymb}%pour des maths au cas où
+\usepackage{array,multirow,makecell}%Pour manipuler les tableaux
+\usepackage{url} %pour utiliser les liens hypertextes
+\usepackage{hyperref} %pour utiliser les liens hypertextes
+
+\newlength{\length}
+\setlength{\length}{3\baselineskip}
+
+%---------------Liste macros utiles------------------
+\begin{comment}
+
+%1.Inclure une image
+\begin{figure}[!h]
+\center
+\fbox{\includegraphics[width=5cm,height=5cm]{figure1.jpg}}
+\caption{Superbe image}
+\end{figure}
+
+%2. Inclure un tableau
+\begin{table}[!h]
+    \center
+    \begin{tabular}[b]{|l|c|c|c|}
+    \hline
+    & \multicolumn{3}{|c|}{Année} \\
+    \hline
+    Produit & 1999 & 2000 & 2001 \\
+    \hline \hline
+    Livre & 15 & 10 & 7 \\
+    CD & 10 & 17 & 22 \\
+    \hline
+    \end{tabular}
+    \caption{Vente pour les années 1999 à 2001}
+\end{table}
+
+%3. Inclure une (ou des) définitions
+\begin{description}
+  \item[Premier] Le premier élément
+  \item[Deuxième] Le deuxième élément
+  \item[Troisième] Le troisième élément
+\end{description}
+
+%4. Inclure une bibliographie
+\begin{thebibliography}{1}
+    \bibitem{latexpratique} Christian \textsc{Rolland}. \emph{\LaTeX{} par la pratique}. O'Reilly, 1999.
+\end{thebibliography}
+
+%5. Inclure une note de bas de page
+\footnote{On a ici inséré une espace normale}
+
+%remarque 1  on peut faire référence à une entrée de la bibliographie en bas de page grâce à:
+\cite{latexpratique}
+
+%remarque 2  on peut faire des référence grâce à :
+\label{distances} % dans le tableau ou l'environnement  à rérérencer
+\ref{distances} %pour référencer
+
+%6. Inclure  du code (ici Java) (avant \begin{document})
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstloadlanguages{Java}
+
+\lstset{frame=tb,
+  %inputpath={./codes/},
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+%la macro a utilisé
+\newcommand{\JAVAcode}[2]{
+\begin{itemize}
+\item[]\lstinputlisting[caption=#2,label=#1]{#1.java}
+\end{itemize}
+}
+%on l'emploie de cette manière dans le texte (premier parametre est le nom du fichier, le second est %le caption
+\JAVAcode{F5D1}{Exemple de code java}
+
+%7. passer plusieurs lignes
+\vspace{1\baselineskip}
+
+
+\end{comment}
+%-------------------------------------------------------------------
+
+\begin{document}
+\renewcommand{\labelitemi}{$\bullet$} %utiliser des points pour les listes non numerotées
+
+\input{page_de_garde.tex} %page de garde
+
+\tableofcontents%table des matières
+\newpage
+
+%\listoffigures si on veut rajouter une table des images - facultatif
+
+%différentes sections
+\section{Histoire de l'informatique}
+\subsection{Théorie des logarithmes}
+\label{1.1}
+\subsubsection{Définition}
+\begin{description}
+  \item[Logarithme :] Le logarithme de base b d'un
+nombre réel strictement positif est la
+puissance à laquelle il faut élever la base
+b pour obtenir ce nombre.
+\end{description}
+\subsubsection{Propriétés}
+\begin{itemize}
+	\item $\log _b(x.y) = \log _b(x) + \log _b(y)$
+	\item $\log _b(\frac{x}{y}) = \log _b(x) - \log _b(y)$
+	\item $\log _b(x^{p} ) = p.\log _b(x)$
+\end{itemize}
+
+\subsection{XVII\ieme \ siècle}
+\label{1.2}
+ Développements scientifiques importants, besoin de résoudre des calculs de plus en plus complexes.\newline
+\textbf{Pasca}l en 1642 invente la Pascaline.
+\begin{itemize}
+\item Machine permettant d'additionner ou soustraire des nombres de 6 chiffres décimaux
+\item Roues dentées
+\item Multiplications par additions successives \newline
+\end{itemize}
+
+\textbf{Leibniz} en 1673
+\begin{itemize}
+\item Modification de la machine de Pascal pour réaliser et automatiser les 4 opeérations
+\item Additions successives pour multiplier
+\item  Invention du système binaire sous sa forme moderne
+\end{itemize}
+
+\subsection{XIX\ieme \ siècle}
+\label{1.3}
+\begin{itemize}
+
+\item \textbf{George Boole}
+
+\begin{itemize}
+\item Formulation mathématique de propositions
+logiques
+\item Algèbre Booléenne \newline
+\end{itemize}
+
+\item \textbf{Hermann Hollerith}
+\begin{itemize}
+\item  Automatisation de l'encodage avec des cartes perforées
+\end{itemize}
+
+\end{itemize}
+
+\subsection{XX\ieme \ siècle}
+\label{1.4}
+Calculatrice mécanique de table, machines analogiques (Mécanique ET électricité pour représenter les fonctions logiques.\newline
+\begin{itemize}
+\item \textbf{Edison} :
+\begin{itemize}
+\item Invention de la lampe à incandescence
+\end{itemize}
+
+\item \textbf{ Shannon (1938)}
+\begin{itemize}
+\item Associe nombres binaires, algèbre booleéenne et circuits électriques
+\item Théorie de l'information :association de nombres binaires pour relations logiques \textbf{(bit)}
+\end{itemize}
+
+\item \textbf{Stibitiz}
+\begin{itemize}
+\item Premier additionneur logique à relais électromagnétiques: 0 = fermé, 1 = ouvert
+\end{itemize}
+
+\item \textbf{Alan Turing (1936}), création de la machine de Turing qui repose sur le modèle de la machine universelle (caractéristiques de l'ordinateur moderne) :
+\begin{itemize}
+\item un \og ruban \fg \ divisé en cases consécutives pouvant contenir un
+symbole parmi un alphabet fini.
+\item  une \og tête de lecture/écriture \fg \ qui peut lire et écrire les symboles sur le ruban, et se déplacer vers la gauche ou vers la droite du ruban 
+\item un \og registre d' état \fg \ qui mémorise l'état courant de la machine de Turing. Le nombre d'états possibles est toujours fini.
+\item un \og table d'actions \fg \ qui indique à la machine quel symbole écrire, comment déplacer la tête de lecture.
+\end{itemize}
+\end{itemize}
+
+
+\subsection{L'ENIAC}
+\label{1.5}
+\begin{description}
+
+\item[L'ENIAC] \textit{}(Electronic Numerical Integrator And Computer) est le premier calculateur universel électronique.Grâce à l'électronique, il introduisit la vitesse dans le monde des calculateurs. Il servait a calculer des trajectoires balistiques. Il était composé de plus de 17500 tubes à vide. Il fait partie de la première génération des orinateurs à tubes à vide. \footnote{\url{http://laulau.chez.com/page16.html}}
+\end{description}
+\subsection{Les générations de processeurs/ordinateurs}
+\label{1.6}
+\begin{enumerate}
+	\item \textbf{Les tubes à vide 1942-1958} :
+	\begin{itemize}
+	\item La grille permet de contrôler le flux d'électrons entre l'anode et la cathode
+	\item{Relais électromécaniques et tubes électroniques}
+	\item Coût très élevé des circuits logiques
+	\item Volume important, grande consommation d'électricité, fragilité (climatisation, protection)
+	\item Traitements privilégiés : calculs importants. (balistique militaire,...)
+	\item Programmation difficile faisant appel à des spécialistes de haut niveau.
+	\item Exemples : le colossus (1943 -premier calculateur binaire à tube), l'ENIAC(1946), voir section~\ref{1.5}, le Von Neumann (1945 - progamme stockée en mémoire),l'EDVAC (1949).\newline \newline
+	\end{itemize}
+	\item \textbf{Les transistors bipolaires 1949-1964} :
+	\begin{itemize}
+	\item repose sur l'invention du transistor par Shockley (1948) grâce aux propriétés des matériaux semi-conducteurs. Voir section ~\ref{4.1.11}.
+	\item  Machines bien plus fiables
+	\item Moins encombrantes
+	\item Plus simples d'emploi
+	\item  Moins coûteuses
+	\item Exemples : Le Harwell CADET (1955 -environ 400 transistors), IBM 1401
+	\end{itemize}
+	\item \textbf{Les circuits intégrés (TTL) 1964 -1970} :
+	\begin{itemize}
+	\item apparition avec l'IBM 360 en 1964
+	\item  Utilisation de la microprogrammation
+	\item Un format unique de représentation des données, l'octet
+	\item Utilisation de mémoire magnétique (torres de ferrites)
+	\end{itemize}
+	\item \textbf{Les circuits intégrés de haut niveau (miniaturisation des transistors)(1970-...)}
+	\begin{itemize}
+	\item Réduction de taille des transistors
+	\item Augmentation de la puissance de calcul
+	\item Augmentation de la vitesse de calcul
+	\item Loi de Morre : 2 fois plus de transistors tous les 18 mois.			\footnote{\url{http://hypermedia.univ-paris8.fr/Verroust/cours/CHAP7.HTMl}}
+	\end{itemize}
+\end{enumerate}
+\clearpage
+
+
+\section{Représentation des informations : représentation des nombres}
+\subsection{Les  différentes bases de représentation des nombres}
+\label{2.1}
+\begin{itemize}
+	\item \textbf{Base 10 :}10 chiffres (0 \dots \ 9) (décimal), nombres positifs ou négatifs, puissances entières de 10.
+	\item \textbf{Base 2 :} 2 chiffres (binaire), puissances entières de 2, représentation plus longue qu'en décimal mais facile à manipuler par un ordinateur.
+	\item \textbf{Base 8:} 8 chiffres (0 \dots \ 7) (octal), utilisation pour faciliter lecture du binaire (on fait des groupements de bits).
+	\item \textbf{Base 16:}16 chiffres (0 \dots \ F) (hexadécimal), utilisation pour faciliter lecture du binaire (on fait des groupements de bits)
+\end{itemize}
+
+\subsection{Les conversions d'une base à une autre}
+\label{2.2}
+\textbf{Pour les conversions :}
+\begin{itemize}
+	\item $ binaire \Longleftrightarrow decimal$
+	\item $ octal \Longleftrightarrow decimal$
+	\item $ hexadecimal \Longleftrightarrow decimal$
+\end{itemize}
+$\Longrightarrow \ Relire \ cours \ de \ langage \ assemblage$
+
+\subsubsection{Conversion d'un nombre réel en binaire}
+
+Pour convertir un nombre réel en binaire, on le décompose en deux parties (entière et fractionnaire). Pour la partie entière, on fait comme vu dans le cours de langage assemblage. Pour la partie fractionnaire, on procède comme suit :
+
+\begin{enumerate}
+\item Multiplier la partie fractionnaire par 2.
+\item Isoler partie réelle et fractionnaire.
+\item Recommencer jusqu'à ce que soit :
+	\begin{enumerate}
+	\item La partie fractionnaire = 0
+	\item Le nombre de bits maximal du nombre binaire est atteint.
+	\end{enumerate}
+\item La lecture des parties entières des multiplications de haut en bas donne
+le résultat de conversion binaire en puissances entières négatives de 2.
+\end{enumerate}
+
+\textbf{\underline{Exemple :}} Convertir 12,375 en binaire :
+
+\begin{center}
+\textbf{Partie entière : 12}
+\end{center}
+
+\begin{table}[!h]
+    \center
+    \begin{tabular}[b]{|cc|c|}
+    \hline
+   $ \frac{12}{2} =6 $& reste \textbf{0} & \multirow{4}*{$\uparrow$}\\
+    \cline{1-2}
+    $\frac{6}{2} =3$ & reste \textbf{0} &     \\
+    \cline{1-2}
+    $\frac{3}{2} =1$& reste \textbf{1}  &     \\
+    \cline{1-2}
+    $\frac{1}{2} =0$& reste \textbf{1} &      \\
+   \cline{1-3}
+   $12 _d = 1100 _b$ & &\\
+     \hline
+    \end{tabular}
+\end{table}
+\begin{center}
+\textbf{Partie décimale : 0,375}
+\end{center}
+\begin{table}[!h]
+    \center
+    \begin{tabular}[b]{|cl|c|}
+    \hline
+   $ 0,375.2=0,75 $&  =\textbf{0}+0,75& \multirow{4}*{$\downarrow$}\\
+    \cline{1-2}
+     $0,75.2=1,5 $&  =\textbf{1}+0,5 &   \\
+    \cline{1-2}
+    $ 0,5.2=1,0 $&=\textbf{1}+0 &\\
+   \cline{1-3}
+   $0,375 _d = 0,011 _b$ & &\\
+     \hline
+    \end{tabular}
+\end{table}
+\begin{center}
+\textbf{Nombre réel : $12,375 _d = 1100,011 _b$}
+\end{center}
+
+\subsection{Addition d'un nombre binaire}
+\label{2.3}
+
+On effectue la somme binaire, bit par bit, avec \textcolor{red}{report} éventuel. On travaille sur un nombre de bits fixés.
+
+\begin{table}[!h]
+    \center
+    \begin{tabular}[b]{cccccccccc}
+        & & & \textcolor{red}{1} & \textcolor{red}{1} & \ \textcolor{red}{1}& & &\\
+        & 0 & 0 & 0 & 1 & \ 0 & 1 & 0 & 0 & \  ($20 _d$) \\
+     + & 1 & 0 & 0 & 1 & \ 1 & 1 & 1 & 0 & \  ($158 _d$) \\
+     \hline
+     & 1 & 0 & 1 & 1 & \ 0 & 0 & 1 & 0 & \  ($178 _d$) \\
+    \end{tabular}
+\end{table}
+
+\textbf{Note :} Attention, si la somme donne lieu à un dépassement de capacité, celui-ci donnera un nombre négatif. Le résultat sera faux et le processeur ne détectera pas l'erreur.
+
+\subsection{Représentation des nombres entiers négatifs}
+\label{2.4}
+La première idée pour représenter les nombres négatifs était de réserver un bit pour le signe en début de nombre. Cependant, cela causait un problème lors des additions d'un entier positif avec un négatif car le résultat donnait le négatif de la somme des valeurs absolues des deux termes. Pour palier à ça, on utilise, \textbf{le complément à 2}\ qui consiste à :
+\begin{enumerate}
+\item Nombre binaire positif
+\item \textbf{Inversion des bits} de ce nombre (complément à 1)
+\item On ajoute 1 ( on ignore le dépassement de capacité éventuel)
+\end{enumerate}
+
+\vspace{1\baselineskip}
+
+
+Pour \textbf{lire un nombre négatif} on fait l'opération inverse :
+
+
+\begin{enumerate}
+\item \textbf{Inversion des bits} de ce nombre (complément à 1)
+\item On ajoute 1 ( on ignore le dépassement de capacité éventuel)
+\end{enumerate}
+
+\textbf{Note :} L'étendue des entiers signés sur n bits est [$-2^{n-1} ; 2^{n-1}-1$] et celle des entiers non-signés [$0; 2^{n}-1$].
+\clearpage
+\subsection{Soustraction d'un nombre binaire}
+\label{2.5}
+Pour soustraire deux nombre binaires, on utilise le complément à deux du nombre à soustraire qu'on additionne ensuite au premier terme.
+
+\subsection{Multiplication d'un nombre binaire}
+\label{2.6}
+La multiplication d'un nombre binaire est réalisée par une suite de sommes. On peut cependant passer par un simple décalage \textit{n} bits vers la gauche lorsqu'on multiplie par une puissance \textit{n} de 2.
+
+\subsection{Division d'un nombre binaire}
+\label{2.7}
+La division d'un nombre binaire est réalisée par une suite de soustractions.
+
+\begin{equation*}
+\renewcommand{\arraystretch}{1.2}
+\renewcommand{\arraycolsep}{4pt}
+  \begin{array}{rrrrrrr|rrrrr}
+ 1 & 0 & 0  & 1, & 0  & 0 & 1 &1 & 0 & 1 & & \\
+\cline{8-12}
+- & 1 & 0 & 1 &  & &  & 0 & 1, & 1 & 1 & 0\\
+\cline{1-4}
+  \textbf{0} & \textbf{1} & \textbf{0} & \textbf{0} & 0 & & & & & & &   \\
+    - & & 1& 0 & 1 &  & & & & & &  \\
+    \cline{2-5}
+     & \textbf{0} & \textbf{0} & \textbf{1} & \textbf{1} &0 & & & & & & \\
+   - & & & 1 & 0 & 1 & & & & & & \\
+              \cline{3-6}
+     & & & \textbf{0} & \textbf{0} & \textbf{1} & 1  & & & & & \\ 
+  \end{array}
+\end{equation*}
+
+On continue la division jusqu'à ce que le reste soit nul ou que le quotient ait atteint la limite maximum autorisée par le nombre de bits alloué.
+Si on divise par une puissance \textit{n} de 2, on peut passer par un simple décalage de \textit{n} bits vers la droite (on a alors  \textit{n} nombres derrières la virgule, si les  \textit{n\ier} nombres ne sont pas égales à 0).
+
+\subsection{Stockage des nombres réels : \textbf{virgule fixe}}
+\label{2.8}
+Le processeur ne sait pas gérer les virgules dans ce type de stockage. Le programmeur doit donc gérer le nombre de bits qu'il alloue aux valeurs entières et aux valeur fractionnaire. Il doit également prévoir un bit de signe dans le cas où il veut représenter un nombre signé. \newline
+\textbf{Exemple :}  1 bit pour la valeur entière et 15 bits pour la valeur fractionnaire :
+\begin{itemize}
+\item 0,000 000 0000 à 1,999 969 4824
+\end{itemize}
+
+\subsection[Stockage des nombres réels : \textbf{virgule flottante}]{Stockage des nombres réels : \textbf{virgule flottante (floating point)}}
+\label{2.9}
+
+Dans le cas du stockage des nombre réels à virgule flottante. On utilise un format normalisé, similaire à la notation scientifique. On stocke 3 grandeurs en mémoire :
+\begin{itemize}
+\item \textcolor{red}{Le signe}
+\item \textcolor{green}{La mantisse : les chiffres significatifs du nombre}
+\item \textcolor{blue}{L'exposant: la puissance de 10 par laquelle il faut multiplier la mantisse}
+ \end{itemize}
+ 
+ \textbf{Exemple :} \newline $ -2 777 489,812 =\textcolor{red}{-}\textcolor{green}{2 777 489,812}.10^{\textcolor{blue}{6}}$ \newline
+ Stockage =$\textcolor{red}{-} ; \textcolor{green}{2(,) 777 489812} ; \textcolor{blue}{6}$
+
+\subsubsection{Virgule flottante, simple précision (en binaire)}
+Pour le format simple précision des stockages de nombres à virgule flottante, on alloue \textbf{32 bits} d'espace mémoire.
+\begin{itemize}
+\item \textcolor{red}{\textbf{S}igne :} 1bit
+\item \textcolor{blue}{\textbf{E}xposant :} 8bits (sous forme d' un entier non signé) \newline \textcolor{blue}{\textbf{E}}= [ (p (la puissance de 2) +127]
+\item \textcolor{green}{\textbf{M}antisse :} 23 bits, toujours au format \textbf{1},xxxxxx : les chiffres significatifs \newline On ne mémorise pas ce premier \textbf{1}, on a donc 24 bits effectifs de précision.
+ \end{itemize}
+ \textbf{Exemple :}\newline $Nombre = -1001,101 _b = \textcolor{red}{-}\textcolor{green}{1,001 101}.\textbf{2}^{\textcolor{blue}{3}}$ \newline 
+ $ \textcolor{blue}{\textbf{E}}= [p (= 3)+127]=130 _d = 128 _d + 3 _d = 1000 0000 _b + 0000 1001 _b= 1000 1001 _b$ \newline 
+  $ \textcolor{green}{\textbf{M}}=001101 _b$ (on ajoute des "0" pour arriver à 23) $ \rightarrow  0000 0011 1100 0000 0000 000 _b$ \newline
+  $\textcolor{red}{\textbf{S}}=1 _b$ \newline
+ $ Nombre= \textcolor{red}{(-1)^s} . \textcolor{green}{\textbf{M}}. \textbf{2}^{\textcolor{blue}{E-127}}$
+ 
+ \subsubsection{Virgule flottante, double précision (en binaire)}
+ Pour le format double précision des stockages de nombres à virgule flottante, on alloue \textbf{64 bits} d'espace mémoire.
+\begin{itemize}
+\item \textcolor{red}{\textbf{S}igne :} 1bit
+\item \textcolor{blue}{\textbf{E}xposant :} 11bits (sous forme d' un entier non signé) \newline \textcolor{blue}{\textbf{E}}= [ (p (la puissance de 2) +1023]
+\item \textcolor{green}{\textbf{M}antisse :} 52 bits, toujours au format \textbf{1},xxxxxx : les chiffres significatifs \newline On ne mémorise pas ce premier \textbf{1}, on a donc 53 bits effectifs de précision.
+ \end{itemize}
+
+  
+  \subsection{Opérations en virgule flottante}
+  \label{2.10}
+  \begin{itemize}
+  \item Multiplication
+  \begin{enumerate}
+  \item Addition des exposants
+  \item Multiplication des mantisses
+  \item Normalisation du résultat si nécessaire
+  \end{enumerate}
+  \item Division
+   \begin{enumerate}
+  \item Soustraction des exposants
+  \item Division des mantisses
+  \item Normalisation du résultat si nécessaire
+  \end{enumerate}
+  \end{itemize}
+  \textbf{Exemple :} 
+  \begin{itemize}
+  \item  $(1,10) _b.2^{-3} * (1,11) _b.2^{7} = ? $ 
+  \item $-3+7 =4$ 
+  \item $(1,10) _b* (1,11) _b = (10,1010) _b \ car \ 6 _d (=110 _b) * 7 _d  (=111 _b)=42 _d = 101010 _b \rightarrow (1,10) _b* (1,11) _b =10,1010 _b)$
+  \item Avant normalisation :$(10,1010) _b*2^{4}$
+  \item Après normalisation :$(1,01010) _b*2^{5}$
+  \end{itemize}
+  
+ \subsection{L'endianisme}
+ \label{2.11}
+ Comment stocker un nombre de 32 bits dans des cases mémoires de 8 bits (1 octet) ? Il existe deux convention pour l'ordre de stockage des nombres.
+ \begin{itemize}
+ \item\textbf{Le big endian} : Octets de \og poids fort \fg en  premier (exemple : 0xA0B70708  sera stocké dans l'ordre suivant :A0 B7 07 08. (Motorla, Sparc,...)
+  \item\textbf{Le little endian} : Octets de \og poids faible \fg en premier (exemple : 0xA0B70708  sera stocké dans l'ordre suivant : 08 07 B7 A0. (Intel (comme en ASM avec le 8086), ARM,...).
+ \end{itemize}
+
+ \section{Représentation des informations : représentation des caractères}
+ \subsection{L'ASCII}
+ \label{3.1}
+ \begin{description}
+ \item[L'ASCII] ou \textit{American Standard Code for Information Interchange} est une norme de codage de caractères en informatique ancienne et connue pour son influence incontournable sur les codages de caractères qui lui ont succédé.\footnote{\url{https://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange}} 
+ \end{description}
+ 
+ \begin{itemize}
+ \item Codage des caractères (pas de valeurs numériques!)
+\item 7 bits (1960)
+\item Chiffres: valeur binaire + 30h 
+ \end{itemize}
+ 
+  \subsection{L'unicode}
+  \label{3.2}
+  \begin{description}
+  \item[L'unicode] est une norme pour l'identification unique pour chaque caractère existant.Il vise à permettre le codage de texte écrit en donnant à tout caractère de n'importe quel système d'écriture un nom et un identifiant numérique, et ce de manière unifiée, quelle que soit la plate-forme informatique ou le logiciel.\footnote{\url{https://fr.wikipedia.org/wiki/Unicode}} 
+  \end{description}
+\begin{itemize}
+\item Indépendant du logiciel, processeur ou langue
+\item Représentation sur 32 bits
+
+\end{itemize} 
+  
+\clearpage
+\section{L'algèbre de Boole}
+
+\subsection{Fonctions logiques et circuits combinatoires}
+\label{4.1}
+\subsubsection{Définitions}
+\label{4.1.1}
+\begin{description}
+  \item[Circuit combinatoire: ] circuit idéalisé au niveau temporel : les signaux de sortie
+d'un circuit logique ne dépendent que des signaux d'entrées à l'instant considéré.
+  \item[Fonction logique: ]une fonction logique est définie par le tableau de
+correspondance entre les états d'entrée et les états de sortie. Une fonction
+booléenne renvoie un résultat qui ne dépend que des valeurs des variables
+d'entrée.
+  \item[Etat d'entrée : ] combinaison des valeurs prises par les entrées.
+  \item[Etat de sortie : ] combinaison des valeurs prises par les sorties.
+\end{description}
+\textbf{Toute fonction logique peut être réalisée à l'aide d'un petit nombre de
+fonctions logiques de base appelées opérateurs logiques ou portes logiques
+(logic gate).}
+
+\subsubsection{Fonction NON (NOT)}
+\label{4.1.2}
+\begin{itemize}
+	\item Fonction logique \textbf{d'une seule variable}
+	\item Réalise une opération de \textbf{complémentation} ou \textbf{d'inversion}
+	\item Table de vérité :
+	\begin{table}[!h]
+    \center
+    \begin{tabular}[b]{|l|c|c|}
+    \hline
+    A & C\\
+    \hline
+    0 & 1\\
+    \hline 
+    1 & 0 \\
+    \hline
+    \end{tabular}
+\end{table}
+   \item Equation logique : $ C= \overline{A}$
+   \item Symboles :
+\begin{tabular}{cc}
+   \includegraphics[width=3cm,height=1cm]{not1.jpg} &
+   \includegraphics[width=3cm,height=1cm]{not2.jpg} \\
+\end{tabular}
+   
+\end{itemize}
+
+\subsubsection{Fonction OU (OR)}
+\label{4.1.3}
+\begin{itemize}
+	\item Fonction logique \textbf{de deux variables}
+	\item Ou logique : réalise l'un ou l'autre ou les deux.
+	\item Table de vérité :
+	\begin{table}[!h]
+    \center
+    \begin{tabular}[b]{|l|c|c|c|}
+    \hline
+    A & B & C\\
+    \hline
+    0 & 0 & 0\\
+     \hline
+    0 & 1 & 1\\
+      \hline
+    1& 0 & 1\\
+      \hline
+    1 & 1 & 1\\
+    \hline
+    \end{tabular}
+\end{table}
+   \item Equation logique : $ C= A+B$
+   \item Symboles :
+\begin{tabular}{cc}
+   \includegraphics[width=3cm,height=1cm]{or1.jpg} &
+   \includegraphics[width=3cm,height=1cm]{or2.jpg} \\
+\end{tabular}
+   
+\end{itemize}
+
+\subsubsection{Fonction ET (AND)}
+\label{4.1.4}
+\begin{itemize}
+	\item Fonction logique \textbf{de deux variables}
+	\item ET logique : les deux ensemble.
+	\item Table de vérité :
+	\begin{table}[!h]
+    \center
+    \begin{tabular}[b]{|l|c|c|c|}
+    \hline
+    A & B & C\\
+    \hline
+    0 & 0 & 0\\
+     \hline
+    0 & 1 & 0\\
+      \hline
+    1& 0 & 0\\
+      \hline
+    1 & 1 & 1\\
+    \hline
+    \end{tabular}
+\end{table}
+   \item Equation logique : $ C= A.B$
+   \item Symboles :
+\begin{tabular}{cc}
+   \includegraphics[width=3cm,height=1cm]{and1.jpg} &
+   \includegraphics[width=3cm,height=1cm]{and2.jpg} \\
+\end{tabular}
+   
+\end{itemize}
+
+\subsubsection{Propriétés algébrique du ET et du OU logique}
+\label{4.1.5}
+\begin{figure}[!h]
+\center
+\fbox{\includegraphics[width=9cm,height=5cm]{proprietesAlgLogique.jpg}}
+\caption{Propriétés algébriques du ET et du OU logique}
+
+\end{figure}
+
+
+
+\subsubsection{Fonction OU EXCLUSIF (XOR)}
+\label{4.1.6}
+\begin{itemize}
+	\item Fonction logique \textbf{de deux variables}
+	\item OU exclusif logique : L'un ou l'autre mais PAS les deux ensemble.
+	\item Table de vérité :
+	\begin{table}[!h]
+    \center
+    \begin{tabular}[b]{|l|c|c|c|}
+    \hline
+    A & B & C\\
+    \hline
+    0 & 0 & 0\\
+     \hline
+    0 & 1 & 1\\
+      \hline
+    1& 0 & 1\\
+      \hline
+    1 & 1 & 0\\
+    \hline
+    \end{tabular}
+\end{table}
+   \item Equation logique : $ C= A\oplus B$
+   \item Symboles :
+\begin{tabular}{cc}
+   \includegraphics[width=3cm,height=1cm]{xor1.jpg} &
+   \includegraphics[width=3cm,height=1cm]{xor2.jpg} \\
+\end{tabular}
+   
+\end{itemize}
+
+\begin{figure}[!h]
+\center
+\fbox{\includegraphics[width=5cm,height=3.4cm]{proprietesDuOuEx.jpg}}
+\caption{Propriétés du OU exclusif}
+\end{figure}
+
+
+\subsubsection{Fonction NON OU (NOR)}
+\label{4.1.7}
+\begin{itemize}
+	\item Fonction logique \textbf{de deux variables}
+	\item OU logique nié : ni l'un ni l'autre ni les deux.
+	\item Table de vérité :
+	\begin{table}[!h]
+    \center
+    \begin{tabular}[b]{|l|c|c|c|}
+    \hline
+    A & B & C\\
+    \hline
+    0 & 0 & 1\\
+     \hline
+    0 & 1 & 0\\
+      \hline
+    1& 0 & 0\\
+      \hline
+    1 & 1 & 0\\
+    \hline
+    \end{tabular}
+\end{table}
+   \item Equation logique : $ C= \overline{A+B}$
+   \item Symboles : \newline
+\begin{tabular}{c}
+   \includegraphics[width=7cm,height=1.3cm]{nonOu.jpg} \\
+\end{tabular}
+\end{itemize}
+
+
+\subsubsection{Fonction NON ET(NAND)}
+\label{4.1.8}
+\begin{itemize}
+	\item Fonction logique \textbf{de deux variables}
+	\item ET logique nié : pas les deux en même temps.
+	\item Table de vérité :
+	\begin{table}[!h]
+    \center
+    \begin{tabular}[b]{|l|c|c|c|}
+    \hline
+    A & B & C\\
+    \hline
+    0 & 0 & 1\\
+     \hline
+    0 & 1 & 1\\
+      \hline
+    1& 0 & 1\\
+      \hline
+    1 & 1 & 0\\
+    \hline
+    \end{tabular}
+\end{table}
+   \item Equation logique : $ C= \overline{A.B}$
+   \item Symboles : \newline
+\begin{tabular}{c}
+   \includegraphics[width=7cm,height=1.3cm]{nonEt.jpg} \\
+\end{tabular}
+   
+\end{itemize}
+
+\subsubsection{Fonction NON OU EXCLUSIF(EXNOR)}
+\label{4.1.9}
+\begin{itemize}
+	\item Fonction logique \textbf{de deux variables}
+	\item OU EXCLUSIF logique nié : aucun des deux ou les deux en
+même temps.
+	\item Table de vérité :
+	\begin{table}[!h]
+    \center
+    \begin{tabular}[b]{|l|c|c|c|}
+    \hline
+    A & B & C\\
+    \hline
+    0 & 0 & 1\\
+     \hline
+    0 & 1 & 0\\
+      \hline
+    1& 0 & 0\\
+      \hline
+    1 & 1 & 1\\
+    \hline
+    \end{tabular}
+\end{table}
+   \item Equation logique : $ C= \overline{A+B}$
+   \item Symboles : \newline
+\begin{tabular}{c}
+   \includegraphics[width=7cm,height=1.3cm]{nonOuEx.jpg} \\
+\end{tabular}
+\end{itemize}
+
+Représentation de la fonction EXNOR à partir des fonctions : AND, OR et NOT :
+\newline
+\begin{center}
+\begin{tabular}{c}
+   \includegraphics[width=7cm,height=2.5cm]{EXNOR.jpg} \\
+\end{tabular}
+\end{center}
+
+
+\subsubsection{Fonctions universelles: NAND et NOR}
+\label{4.1.10}
+ Les fonctions NAND et NOR sont appelées \textbf{fonctions complètes}: toute
+fonction booléenne peut être représentée par une combinaison de
+ces portes.
+\clearpage
+\subsubsection[Réalisation de portes logiques]{Réalisation de portes logiques avec des transistors bipolaires}
+\label{4.1.11}
+Pour réaliser des portes logiques, on utilise des \textbf{transistors} qui agissent comment des interrupteurs dont l'état est commandé par une tension.
+Le transistor est composé de 3 bornes :
+\begin{itemize}
+\item La Base (B) :borne de commande du transistor
+\item Le collecteur (C) :borne de l'interrupteur
+\item L'emetteur (E) :borne de l'interrupteur
+\end{itemize}
+\begin{center}
+\begin{tabular}{c}
+   \includegraphics[width=2.5cm,height=2.5cm]{schemaTrans.jpg} \\
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item Si la tension sur la base est supérieure à un certain seuil de tension, le transistor est dit \og passant \fg(interrupteur fermé)
+\item Si la tension sur la base est inférieure à ce même seuil de tension, le transistor est dit \og bloqué \fg (interrupteur ouvert)
+\end{itemize} 
+
+
+\subsubsection{Exemples de portes logiques à transistors bipolaires :} \vspace{1\baselineskip}
+\label{4.1.12}
+\begin{center}
+\begin{tabular}{|c|c|}
+   \hline
+   \textbf{Fonction NAND} &   \textbf{Fonction NOR} \\
+   \hline
+   \includegraphics[width = 5cm,height=4cm]{schemaTransNand.jpg} & \includegraphics[width = 5cm,height=4cm]{schemaTransNor.jpg}  \\
+   \hline
+\end{tabular}
+\end{center}
+\clearpage
+
+\subsection{Fonctions logiques de plusieurs variables}
+\label{4.2}
+\subsubsection{MINTERM}
+\label{4.2.1}
+\begin{enumerate}
+\item Construction de la table de vérité
+\item  Réalisation de la fonction logique
+\begin{itemize}
+\item Somme de fonctions ET des \textit{n} variables, pour les états d'entrée pour lesquels
+la fonction logique vaut 1 puis on effectue le produit de ces sommes pour obtenir le \ \textbf{MINTERM}
+\end{itemize}
+\end{enumerate} 
+\vspace{1\baselineskip}
+\underline{\textbf{Exemple :} la fonction \og majorité \fg \ à 3 bits}
+\begin{table}[!h]
+    \center
+    \begin{tabular}[b]{|c|c|c|c|c|}
+      \hline
+    A & B & C & R & Minterms \\
+    \hline
+    0 & 0 & 0 & \textbf{0} & \\
+   \hline
+    0 & 0 & 1 & \textbf{0} & \\
+     \hline
+    0 & 1 & 0 & \textbf{0} & \\
+      \hline
+    0 & 1 & 1 & \textcolor{red}{\textbf{1}} & \textcolor{red}{$ \overline{A}.B.C $} \rule[-7pt]{0pt}{20pt}\\
+      \hline
+    1 & 0 & 0 & \textbf{0} & \\
+      \hline
+    1 & 0 & 1 & \textcolor{red}{\textbf{1}} & \textcolor{red}{$ A. \overline{B}.C $} \rule[-7pt]{0pt}{20pt}\\
+      \hline
+    1 & 1 & 0 & \textcolor{red}{\textbf{1}} & \textcolor{red}{$ A.B.\overline{C} $} \rule[-7pt]{0pt}{20pt}\\
+      \hline
+    1 & 1 & 1 & \textcolor{red}{\textbf{1}} & \textcolor{red}{$ A.B.C $} \rule[-7pt]{0pt}{20pt}\\
+    \hline
+    \multicolumn{5}{|c|}{\textcolor{red}{Minterm} = $\overline{A}.B.C + A. \overline{B}.C +A.B.\overline{C} +A.B.C$} \rule[-7pt]{0pt}{18pt} \\
+    \hline
+    \end{tabular}
+    \caption{Majorité : table de vérités et Minterm}
+\end{table}
+
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{|c|}
+   \hline
+   \includegraphics[width=5cm,height=5cm]{schemaPLmajMINTERM.jpg} \\
+   \hline
+\end{tabular}
+\caption{Schéma des portes logiques du MINTERM de la fonction \og majorité \fg \ à 3bits}
+\end{center}
+\end{figure}
+
+
+\subsubsection{MAXTERM}
+\label{4.2.2}
+\begin{enumerate}
+\item Construction de la table de vérité
+\item  Réalisation de la fonction logique
+\begin{itemize}
+\item Produit de fonctions ET des \textit{n} variables, pour les états d'entrée pour lesquels
+la fonction logique vaut 0 puis on effectue la somme de ces produits pour obtenir le \ \textbf{MAXTERM}
+\end{itemize}
+\end{enumerate} 
+\vspace{1\baselineskip}
+
+\underline{\textbf{Exemple :} la fonction \og majorité \fg \ à 3 bits}
+\begin{table}[!h]
+    \center
+    \begin{tabular}[b]{|c|c|c|c|c|c|}
+    \hline
+    A & B & C & R & Minterms & Maxterms \\
+    \hline
+    0 & 0 & 0 &  \textcolor{green}{\textbf{0}} & & \textcolor{green}{$\overline{A+B+C}$}\\
+   \hline
+    0 & 0 & 1 & \textcolor{green}{\textbf{0}} & & \textcolor{green}{$\overline{A+B}+C$}\\
+     \hline
+    0 & 1 & 0 & \textcolor{green}{\textbf{0}} & & \textcolor{green}{$\overline{A}+B+\overline{C}$}\\
+      \hline
+    0 & 1 & 1 & \textcolor{red}{\textbf{1}} & \textcolor{red}{$ \overline{A}.B.C $} & \\
+      \hline
+    1 & 0 & 0 & \textcolor{green}{\textbf{0}} & &  \textcolor{green}{$\overline{A}+B+C$}\\
+      \hline
+    1 & 0 & 1 & \textcolor{red}{\textbf{1}} & \textcolor{red}{$ A. \overline{B}.C $} & \\
+      \hline
+    1 & 1 & 0 & \textcolor{red}{\textbf{1}} & \textcolor{red}{$ A.B.\overline{C} $} & \\
+      \hline
+    1 & 1 & 1 & \textcolor{red}{\textbf{1}} & \textcolor{red}{$ A.B.C $} & \\
+    \hline
+    \multicolumn{6}{|c|}{\textcolor{red}{Minterm} = $\overline{A}.B.C + A. \overline{B}.C +A.B.\overline{C} +A.B.C$}  \rule[-7pt]{0pt}{20pt}\\
+    \hline
+     \multicolumn{6}{|c|}{\textcolor{green}{Maxterm} = $ (\overline{A+B+C})* (\overline{A+B}+C)*(\overline{A}+B+\overline{C}) *(\overline{A}+B+C)$} \rule[-7pt]{0pt}{20pt}\\
+     \hline
+
+    \end{tabular}
+    \caption{Majorité : table de vérités, Minterm et Maxterm}
+\end{table}
+
+\subsubsection{Simplifications de fonctions logiques}
+\label{4.2.3}
+
+Toute fonction logique peut toujours être réalisée avec des portes ET, OU, NON
+\begin{itemize}
+\item Somme de produits
+\item Produits de sommes
+\end{itemize} \vspace{1\baselineskip}
+Seulement, traduire des fonctions logiques telles quelles consomme beaucoup de transistors. On essaye donc de simplifier les fonctions logiques grâce à l'algèbre de Boole. 
+
+
+
+\underline{\textbf{Exemple de simplification :}} \newline
+\begin{center}
+\textbf{$S = a* \overline{b}*c+ a*b*\overline{c} +a*b*c$} \newline
+\end{center}
+\begin{tabular}{lc}
+$S = a*(\overline{b}*c+ b*\overline{c} +b*c) $ & \textit{(par la propriété de distributivité (6))} \\
+$S = a*(\overline{b}*c +b*(\overline{c} + c)$ & \textit{(par la propriété de distributivité (6))} \\
+$S = a*((\overline{b}*c +b) $ & \textit{(par la propriété de complémentation (2))} \\
+$S = a*(c +b) $ & \textit{(par la propriété d'absorption (10))} \\
+$S = ac + ab$ & \\
+\end{tabular}
+
+\textbf{Note :} Ici la solution minimale de S est en réalité $S = a*(c +b) $ car on peut le représenter comme suit :\vspace{1\baselineskip}
+
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{|c|}
+   \includegraphics[width=5cm,height=2cm]{solutionMinimaleS.jpg} \\
+\end{tabular}
+\caption{Circuit combinatoire de S une fois simplifié}
+\end{center} 
+\end{figure}
+
+
+\subsection{Les tables de Karnaugh}
+\label{4.3}
+\begin{description}
+\item[Une table de Karnaugh] est une table qui sert à simplifier des équations logiques ou à trouver l'équation logique correspondant à une table de vérité.\footnote{\url{https://fr.wikipedia.org/wiki/Table_de_Karnaugh}}.Elles sont très utiles lorsque la longueur d'une équation logique permet difficilement de simplifier celle-ci rapidement par la voie des propriétés algébriques. 
+\end{description}
+\begin{itemize}
+\item Simplification par groupement de variables.
+\item Construction d'une table dans laquelle on représente la fonction logique pour chaque état d'entrée.
+\item L'état d'entrée de chaque case ne diffère que d?un bit des cases voisines
+\end{itemize}
+
+
+Pour utiliser la table de Karnaugh, on procède comme suit :
+\begin{itemize}
+\item On représente la table, chaque case correspond à un état d'entrée, par exemple dans la case du haut à gauche. On rentrera dans l'équation l'état de sortie de S lorsque toutes les variables sont égales à 0. On fait la même chose avec chaque case.
+\item Ensuite, la méthode diffère selon que S soit une somme de produits (ou juste un seul produit) ou un produit de somme (ou juste une seule somme)
+\item Si S est une somme de produits (ou juste un seul produit), on regroupe des rectangles ou des carrés de \textbf{1} par puissance de 2, pour chacune de ces formes on garde le produit des variables qui ne varient pas. On additionne ensuite tous les produits de variables de ces différentes formes et on obtient notre \textbf{S'}, c'est à dire notre \textbf{S simplifié}.
+\item Si S est un produit de somme (ou juste une seule somme), grâce à la loi de Morgan, on sait qu'on peut prendre les \textbf{0}, de la même manière que dans le cas d'une somme de produit. On obtient dès lors différents produits de sommes qui représentes notre \textbf{S'}, c'est à dire notre \textbf{ S simplifié}.\footnote{\url{http://robert.cireddu.free.fr/Ressources/AII/Cours\%20sur\%20les\%20tableaux\%20de\%20karnaugh/index.htm}} \newline
+\end{itemize} 
+
+\underline{\textbf{Exemple (une somme de produits) :}}\newline
+
+\begin{center}
+\textbf{$S = \overline{a}*b*\overline{c*d}  + a*b*c*d +a*\overline{b}*c*d + a*b*\overline{c*d}$} 
+\end{center}
+
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{|c|}
+   \includegraphics[width=5cm,height=3cm]{tableKarnaugh.jpg} \\
+\end{tabular}
+\caption{Table de Karnaugh de S, une somme de produits}
+\end{center} 
+\end{figure} 
+
+\begin{itemize}
+\item \textbf{1\ier \ regroupement :} a change d'état et est éliminé, il reste $b*\overline{c*d}$
+\item \textbf{2\up{ème} \ regroupement :} b change d'état et est éliminé, il reste $a*c*d$ \newline
+\end{itemize} 
+
+Dès lors $S' = b*\overline{c*d} +a*c*d$, S' est la version simplifiée de S.
+
+\subsection{Les circuits de bases}
+\label{4.4}
+\subsubsection{L'additionneur simple}
+\label{4.4.1}
+\begin{description}
+\item[L'additionneur simple] est un circuit qui a pour fonction de faire l'addition binaire (\textit{attention, on parle bien d'addition binaire pas d'addition du OU logique}) de 2 variables d'entrée A et B. 
+\end{description}
+Il existe deux bits de sorties pour ce circuit :
+\begin{itemize}
+\item \textbf{le bit de somme binaire (S) : } $ S = A \oplus B$
+\item \textbf{le bit de report (Carry) (C) : } $ C = A*B$
+\end{itemize}
+
+\begin{table}[!h]
+\center
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multirow{5}{*}{ \includegraphics[height=\length, width = 4cm]{addSimple.jpg}}&A &       
+ B & Somme (S) & Report (C)\\
+\cline{2-5}
+& 0 & 1 & \textbf{1} & \textbf{0} \\ 
+\cline{2-5}
+& 1 & 0 & \textbf{1} & \textbf{0} \\ 
+\cline{2-5}
+&1 & 1 & \textbf{0} & \textbf{1} \\ 
+\hline
+\end{tabular}
+\caption{Table de vérité de l'additionneur simple}
+\end{table}
+
+\clearpage
+
+
+\subsubsection{L'additionneur complet}
+\label{4.4.2}
+\begin{description}
+\item[Un additionneur complet] est un circuit qui nécessite une entrée supplémentaire à celui de l'additionneur simple : une retenue ($C _{in}$) L'intérêt de celle-ci est de permettre le chaînage des circuits.\footnote{\url{https://fr.wikipedia.org/wiki/Additionneur}} C'est à dire de tenir compte d'un report éventuel d'un étage précédent (d'un autre additionneur qu'on aurait branché à celui-ci).
+\end{description}
+
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Sortie vers le bit de report ($C _{in}$) & Sortie vers le bit de somme \\
+\hline
+   \includegraphics[width=6cm,height=2.5cm]{tabKarADDSorieReport.jpg} & \includegraphics[width=6cm,height=2.5cm]{tabKarADDSortieSomme.jpg}\\
+   \hline
+\end{tabular}
+\caption{Table de Karnaugh de l'additionneur complet}
+\end{center} 
+\end{figure} 
+
+\begin{table}[!h]
+\center
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+A & B & $C _{in} $&  Somme (S) & $C _{out}$ \\
+\hline
+0 & 0 & 0 & \textbf{0} & \textbf{0} \\ 
+\hline
+0 & 0 & 1 & \textbf{1} & \textbf{0} \\ 
+\hline
+0 & 1 & 0 & \textbf{1} & \textbf{0} \\ 
+\hline
+0 & 1 & 1 & \textbf{0} & \textbf{1} \\ 
+\hline
+1 & 0 & 0 & \textbf{1} & \textbf{0} \\ 
+\hline
+1 & 0 & 1 & \textbf{0} & \textbf{1} \\ 
+\hline
+1 & 1 & 0 & \textbf{0} & \textbf{1} \\ 
+\hline
+1 & 1 & 1& \textbf{1} & \textbf{1} \\ 
+\hline
+\end{tabular}
+\caption{Table de vérité de l'additionneur complet}
+\end{table}
+
+\subsubsection{Le comparateur binaire 2X4 bits}
+\label{4.4.3}
+\begin{description}
+\item[Un comparateur binaire] (ici de 2X4 bits) est un circuit ayant 2 mots d'entrée A et B de 4 bits chacun, et une sortie indiquant si A=B en termes de nombres binaires.\footnote{\url{http://tic01.tic.ec-lyon.fr/~muller/trotek/cours/logique/comparateur.html.fr}}
+\end{description}
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{|c|}
+   \includegraphics[width=7cm,height=3cm]{comparateur.jpg} \\
+\end{tabular}
+\caption{Schéma du circuit logique du comparateur 2X4 bits}
+\end{center} 
+\end{figure} 
+
+
+
+\subsubsection{Le multiplexeur}
+\label{4.4.4}
+
+\begin{description}
+\item[Un multiplexeur] est un circuit qui a pour rôle de faire circuler sur une seule voie les informations provenant de plusieurs sources. \footnote{\url{http://www.mongosukulu.com/index.php/en/contenu/genie-electrique4/electronique-numerique/527-multiplexeur-demultiplexeur}}
+\end{description}
+
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{|c|}
+   \includegraphics[width=7cm,height=3cm]{circuitMultiplexeur.jpg} \\
+\end{tabular}
+\caption{Schéma du circuit logique du multiplexeur}
+\end{center} 
+\end{figure} 
+
+\begin{table}[!h]
+\center
+\begin{tabular}{|c|c|c|}
+\hline
+A & B & Q \\
+\hline
+0 & 0 & A \\ 
+\hline
+0 & 0 & B \\ 
+\hline
+0 & 1 &  C \\ 
+\hline
+0 & 1 & D \\ 
+\hline
+
+\end{tabular}
+\caption{Table de vérité du multiplexeur}
+\end{table}
+
+\subsubsection{Le démultiplexeur}
+\label{4.4.5}
+
+\begin{description}
+\item[Un démultiplexeur] est un circuit qui a pour rôle le de redistribuer sur plusieurs voies les information provenant d'une seule source: C'est l'opération inverse du multiplexage.  \footnote{\url{http://www.mongosukulu.com/index.php/en/contenu/genie-electrique4/electronique-numerique/527-multiplexeur-demultiplexeur}}
+\end{description}
+
+Il permet d'envoyer le bit J vers la sortie correspondant au décodage des signaux binaires a et b.
+
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{|c|}
+   \includegraphics[width=7cm,height=3cm]{demultiplexeur.jpg} \\
+\end{tabular}
+\caption{Schéma du circuit logique du démultiplexeur}
+\end{center} 
+\end{figure} 
+
+\subsection{L'ALU}
+
+\label{4.5}
+\subsubsection{L'ALU - 1 bit}
+\label{4.5.1}
+\begin{itemize}
+\item Les opérations arithmétiques : addition de 2 bits
+\item Les opérations logiques : A et B, A ou B, Non B
+\item Séléction via les bits $F _0 $ et $F _1$
+\end{itemize}
+
+
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{|c|}
+   \includegraphics[width=7cm,height=6cm]{ALU.jpg} \\
+\end{tabular}
+\caption{Schéma du circuit logique de l'ALU 1 bit}
+\end{center} 
+\end{figure} 
+
+\subsubsection{Etat de l'ALU}
+\label{4.5.2}
+\begin{description}
+\item[L'état de l'ALU] est une combinaison binaire qui permet d'indiquer à l'ALU quelle est l'opération à effectuer: instruction.
+\end{description}
+\clearpage
+
+\section{Logique séquentielle}
+\label{5}
+\subsection{L'horloge}
+\label{5.1}
+Le CPU est doté d'une horloge car si en logique combinatoire théorique, la sortie ne dépend que des états d'entrées et pas du temps, en pratique les changements d'état dépendent des \textbf{délais de propagation} (temps nécessaire à une porte logique pour changer d'état). Ceci peu entrainer des risques d'erreurs (\textbf{glitch}) avec des états transitoires dus aux délais des portes logiques.
+
+\begin{description}
+\item[L'horloge] est en réalité un signal permettant de valider l'état de sortie d'une fonction logique. L'horloge se trouve dans \og un état invalide \fg pendant un temps au moins égal à la somme des délais de propagation de chacune des portes utilisées.
+\end{description}
+
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{|c|}
+   \includegraphics[width=7cm,height=2cm]{horlogeValide.jpg} \\
+\end{tabular}
+\caption{Tant que le signal clock est à 0, la sortie data est forcée à zéro et déclarée invalide.}
+\end{center} 
+\end{figure} 
+
+\subsubsection[Les délais de propagation]{Les délais de propagation :exemple de l'additionneur}
+\label{5.1.1}
+Suivant le nombre de portes logiques pour réaliser une fonction, le temps de délai total est plus ou moins long.\newline
+\textbf{Exemple}: variation du bit $A _i$: seulement 2 délais (\textcolor{green}{XOR, XOR}) sur la fonction $S _i $ et 3 délais (\textcolor{red}{XOR, AND, OR}) sur la fonction $C _{i+1}$.
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{|c|}
+   \includegraphics[width=7cm,height=4cm]{delaisAdditionneur.jpg} \\
+\end{tabular}
+\caption{Schéma du délais de propagation sur le circuit de l'additionneur}
+\end{center} 
+\end{figure} 
+
+\subsection{Le circuit séquentiel}
+\label{5.2}
+\begin{description}
+\item[Le circuit séquentiel] est un circuit logique possédant des entrées et des sorties et présentant
+un comportement où les sorties ne dépendent pas seulement des entrées, mais également des séquences
+des entrées passées. .\footnote{\url{http://www.groupes.polymtl.ca/circuits-logiques/help/Chapitre06.pdf}}
+\end{description}
+\begin{itemize}
+\item Un circuit séquentiel possède un nombre d'états possibles donné ($2^{n}$ états possibles pour \textit{n} bits).
+\item L'état des sorties du circuit séquentiel au coup d'horloge suivant (instant \textit{t+1}) dépend de l'état de sortie actuel (instant \textit{t}) et de l'état  actuel des entrées combinatoires
+\item L'état suivant dépend de l'état actuel et des entrées combinatoires.
+\item \textbf{Rétroaction :} l'état actuel de sortie est utilisé comme état d'entrée permettant de calculer l'état suivant:
+	\begin{itemize}
+	\item Sortie S
+	\item Entrée combinatoire actuelle $E(t)$
+	\item Etat $Q(t)$ : état actuel
+	\item Temps: \textit{t} et \textit{t+1}
+	\end{itemize}
+\item \textbf{Sortie en \textit{t+1}}: $S(t+1)=f(Q(t), E(t))$
+\item \textbf{Etat en \textit{t+1}}: $Q(t+1)=g(Q(t), E(t))$
+\end{itemize}
+\subsubsection{Les automates finis}
+\label{5.2.1}
+\begin{description}
+\item[Les automates de Moore] sont des automates pour lesquels les sorties dépendent uniquement de l'état présent. $S(t+1)= f(Q(t+1))$
+\item[Les automates de Mealy] sont des automates pour lesquels  les sorties sont fonctions
+de l'état présent ainsi que des entrées. $S(t+1) = f(E(t),Q(t))$
+\end{description}
+0ù $Q(t+1)=g(E(t),Q(t))$.
+\begin{figure}[!h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Automate de Moore & Automate de Mealy \\
+\hline
+   \includegraphics[width=6cm,height=3cm]{autoMoore.jpg} & \includegraphics[width=6cm,height=3cm]{autoMealy.jpg}\\[5ex]
+   \hline
+\end{tabular}
+\caption{Automates de Moore et de Mealy}
+
+\end{figure} 
+ \clearpage
+ 
+ \subsection{Les bascules}
+ \label{5.3}
+\begin{description}
+\item[Les bascules] (\textit{bistables, flip-flop, latch} en anglais) sont des automates à 2 états stables. Ils peuvent servir de mémoire à 1 bit.
+\end{description}
+\subsubsection{Le bascule \textit{Reset-Set}}
+\label{5.3.1}
+\begin{description}
+\item[La bascule Reset-Set] ou \textit{mémoire RS} permet le stockage d'information (1 bit). L'opération de stockage s'appelle \og \textbf{Set} \fg. Tandis que l'effacement s'appelle \og \textbf{Reset} \fg.  A la mise sous tension la bascule est déjà positionnée c'est pour cela que l'état [0, 0] est fonction de l'état précédent. Si on peut décrire le comportement de la bascule pour les états [0,1] et [1, 0], on est par contre incapable de décrire son fonctionnement pour l'état [1,1], on peut dire qu'il est instable.\footnote{\url{http://philippe.berger2.free.fr/automatique/tp/1_TP01_lbe/notions_de_bascule.htm}}
+\end{description}
+
+\begin{figure}[!h]
+\centering
+\begin{tabular}{|c||c|c||c|c|}
+
+\hline
+  \multirow{5}{*}{\includegraphics[width=5cm,height=2.1cm]{bistableRS.jpg}}  & \textcolor{red}{Reset} &\textcolor{green}{Set}& $ Q $ & $ \overline{\rm Q}$ \\
+   \cline{2-5}
+    &0 & 0 & \multicolumn{2}{c|}{\textcolor{blue}{Etat précédent}}\\
+     \cline{2-5}
+    &0 & 1 & 1 & 0 \\
+   \cline{2-5}
+    &1 & 0 & 0 & 1\\
+    \cline{2-5}
+    & 1 & 1 & \multicolumn{2}{c|}{\textcolor{red}{Etat interdit}} \\
+   \hline
+\end{tabular}
+\caption{La bascule Reset-Set}
+
+\end{figure} 
+\subsubsection{Le bascule \textit{Reset-Set-Time}}
+\label{5.3.2}
+ La mémoire RS peut être synchronisée par une horloge. Cette bascule se comporte comme une bascule RS quand T = 1. Lorsque T = 0 la bascule reste bloquée. 
+
+\begin{figure}[!h]
+\centering
+\begin{tabular}{|c||c|c|c||c|c|}
+\hline
+  \multirow{6}{*}{\includegraphics[width=5cm,height=2.1cm]{basculeRST.jpg}}  & \textcolor{yellow}{Time}&\textcolor{red}{Reset} &\textcolor{green}{Set}& $ Q $ & $ \overline{\rm Q}$ \\
+   \cline{2-6}
+    &0 &0 & 0 & \multicolumn{2}{c|}{\textcolor{blue}{Etat précédent}}\\
+     \cline{2-6}
+       &1 &0 & 0 & \multicolumn{2}{c|}{\textcolor{blue}{Etat précédent}}\\
+     \cline{2-6}
+    & 1&0 & 1 & 1 & 0 \\
+   \cline{2-6}
+    & 1& 1 & 0 & 0 & 1\\
+    \cline{2-6}
+    & 1 &1 & 1 & \multicolumn{2}{c|}{\textcolor{red}{Etat interdit}} \\
+   \hline
+\end{tabular}
+\caption{La bascule Reset-Set-Time}
+
+\end{figure} 
+\clearpage
+\subsubsection{La bascule D (\textit{Delay})}
+\label{5.3.3}
+\begin{description}
+\item[La bascule D] recopie sur sa sortie Q le signal appliqué à son entrée, avec un retard d'une période d?horloge.
+\end{description}
+Si $clk(E) =1\rightarrow Q(t+1)=D$ \newline
+Si i $clk(E) =0 \rightarrow Q(t+1)=Q$ La sortie ne change pas.
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{|c|}
+   \includegraphics[width=2cm,height=2cm]{delay.jpg} \\
+\end{tabular}
+\caption{Schéma simplifiée de la bascule Delay}
+\end{center} 
+\end{figure} 
+
+\subsubsection{La bascule \textit{JK}}
+\label{5.3.4}
+
+La bascule JK a le même mode de fonctionnement que la la bascule RS. Cependant l'état [1,1] n'est plus interdit. Il renvoie le complément de l'état précédent ($\overline{Q(t)}$).
+
+\subsection{Les registres}
+\label{5.4}
+\begin{description}
+\item[Le registre] est une mémoire très rapide, utilisée dans un circuit intégré (processeur ou autre). C'est ce qu'on pourrait appeler une \textit{case mémoire}. Il est formé de \textit{n} bascules pour former une mémoire de \textit{n} bits.
+\end{description}
+\begin{itemize}
+\item On peut associer les bascules pour mémoriser un octet ( 8 bits) ou plus (16 bits, 32 bits voir 64 bits) et ainsi former des registres avec une mémoire correspondante.
+\item Le signal horloge est dans ce cas utilisé comme signal de lecture ou d'écriture pour le registre.
+\end{itemize}
+
+\textbf{Exemple : } Les registres x86 du processeur intel 8086 utilisés dans le cours de langage assemblage (AX, BX, CX, ...).
+\newline \\
+Les registres sont utilisés notamment pour stocker les données d'entrée, d'instructions, d'état et de stockage des valeurs de sortie.
+\clearpage
+
+\section{Le CPU (\textbf{Central Processing Unit})}
+\label{6}
+\subsection{Les éléments de base}
+\label{6.1}
+\begin{itemize}
+\item \textbf{L' ALU}: unité de calcul proprement dite.
+\item \textbf{Les registres}:se sont les \textit{cases mémoires}. Elles servent pour le stockage:
+\begin{itemize}
+\item des données en entrée de l'ALU
+\item des données en sortie de l'ALU
+\item  de l'nstruction à exécuter
+\end{itemize}
+\end{itemize}
+Cependant les registres de bases ne suffisent pas, le CPU a besoin de \textit{cases mémoires} supplémentaires. Il devra dès lors communiquer avec des périphériques de stockage.
+
+\begin{figure}[!h]
+\begin{center}
+
+
+\begin{tabular}{|c|}
+
+\includegraphics[scale=0.4]{composantDeBase.jpg}\\
+
+\end{tabular}
+\end{center}
+\caption{Structure interne de la mémoire}
+\end{figure}
+
+\begin{figure}[!h]
+\begin{center}
+
+
+\begin{tabular}{|c|}
+
+\includegraphics[scale=0.3]{structureInterneProc.jpg}\\
+
+\end{tabular}
+\end{center}
+\caption{Structure interne du processeur}
+\end{figure}
+
+\subsection{Les liaisons de données}
+\label{6.2}
+\begin{description}
+\item[Le bus] permet de faire la liaison entre 2 ou plusieurs composants.
+\item[Le bus de donnée] est l'ensemble des connections qui permettent d'échanger des données entre l'ALU et un registre.
+\item[Le bus de contrôle] est l'ensemble des connections des signaux de contrôle: sélection d'un registre, horloge, signal d'écriture, de lecture.
+\item[Le bus d'adresse] permet l'adressage mémoire entre tous les composants. Chaque registre possède sa propre adresse binaire.
+\end{description}
+
+\subsection{Le décodage d'adresses}
+\label{6.3}
+Les adresses sont des nombres binaires codés sur \textit{n} bits (16 bits sur l'intel 8086).  Pour sélectionner le registre auquel on s'adresse, il faudra décoder cette adresse au moyen d'un \textbf{décodeur binaire} (voir section~\ref{7.3}). Les autres registres étant mis en\og haute impédance \fg pour éviter toutes collisions de données.
+
+\subsection{La mémoire externe}
+\label{6.4}
+Comme dit plus haut, les registres du processeur ne suffisent pas pour stocker l'information dont aurait besoin un ordinateur. On va dès lors devoir exporter des instructions à exécuter et des données dans une \textbf{mémoire extérieure}. Ceci offre une capacité de stockage plus importante mais diminue la vitesse de stockage de l'information. L'\og export\fg de données se réalise grâce aux :
+\begin{itemize}
+\item \textbf{Bus d'adresse}: sélection d'une case mémoire dans la mémoire externe. Le décodage d'adresse est fait dans le circuit mémoire même.
+\item \textbf{Bus de données}: données lues ou écrites dans la mémoire.
+\item \textbf{Bus de contrôle}: signaux de lecture, écriture
+\end{itemize}
+
+\subsection{Les différents types d'architecture de processeur}
+\label{6.5}
+
+\subsubsection{L'architecture de Harvard}
+\label{6.5.1}
+\begin{itemize}
+\item \textbf{Mémoire} pour les instructions
+\item \textbf{Mémoire} pour les données
+\item \textbf{Avantage}: les instructions peuvent être codées sur un nombre de bits adapté
+\item \textbf{Inconvénient}: 2 mémoires = 2 bus différents (adresses, contrôle, data)
+\end{itemize}
+
+\subsubsection{L'architecture de von Neumann}
+\label{6.5.2}
+\begin{itemize}
+\item \textbf{Une seule mémoire} pour les instructions et les données
+\item \textbf{Avantage}: une seule mémoire
+\item \textbf{Inconvénient}: risque de \og conflit \fg pour l'accès au bus
+\end{itemize}
+
+
+\begin{figure}[!h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Architecture de Harvard& Architecture de von Neumann\\
+\hline
+\hline
+   \includegraphics[width=7cm,height=4.5cm]{harvard.jpg} & \includegraphics[width=7cm,height=4.5cm]{vonNeumann.jpg}\\
+   \hline
+\end{tabular}
+\caption{Les architectures de processeur}
+
+\end{figure} 
+
+\subsection{Registre de mémoire externe}
+\label{6.6}
+
+Il existe deux types de registre de mémoire externe
+
+Le \textbf{Memory Adress Register}:
+\begin{itemize}
+\item Mémorise sur le bus d'adesses l'adresse mémoire à laquelle on veut accéder
+\end{itemize}
+
+Le \textbf{registre tampon(buffer) :}
+\begin{itemize}
+\item mémorise sur le bus de donnés la donnée à écrire en mémoire (le temps que la mémoire ait le temps de réaliser l'écriture).
+\item mémorise depuis le bus de données la valeur envoyée par la mémoire lors d'une écritre (en attendant qu'elle soit traitée par le CPU)
+\end{itemize}
+
+\subsection{Le périphérique}
+\label{6.7}
+\begin{description}
+\item{Le périphérique} est le composant permettant une communication avec le \og monde extérieur \fg{}.
+\end{description}
+
+\textbf{Exemples} : l'interface utilisateur, l'interface réseau, les capteurs, mémoire de masse, son, vidép,... \newline
+
+La\textbf{ communication avec le périphérique} est semblable à la gestion de mémoire (utilisation d'un bus d'adresse et de décodeurs pour sélectionner le périphérique ,utilisation d'un bus de données pour les échanges de données avec le CPU et des signaux de contrôles).\newline
+
+\textbf{L'architecture générale d'un contrôleur de pérphérique} est composé de deux registres :\newline
+\textbf{Le registre de données :}
+\begin{itemize}
+\item \textit{Registre d'entrée}, en écriture seule : le CPU envoie des données au périphérique.
+\item \textit{Registre de sortie}, en lecture seule : le CPU vient lire une donnée dans le périphérique.
+\end{itemize}
+\textbf{Les registres de contrôles :} \newline
+\begin{itemize}
+\item En écriture seule : \textit{registre de commande} : le CPU configure le périphérique pour qu'il exécute une opération.
+\item En lecture seule : \textit{registre d'état} : le CPU interroge le périphérique sur son état actuel.
+\end{itemize}
+
+\subsection{Mémoire et périphériques}
+\label{6.8}
+Pour utiliser à la fois la mémoire et les périphériques, il existe deux types de configurations pour les dissocier :
+\begin{itemize}
+\item \textbf{Même espace d'adresse pour la mémoire et les péripheriques :}
+\begin{itemize}
+\item Addresses non utilisables pour le matériel (Exemple : PC: addresses réservées pour le matériel)
+\end{itemize}
+\item \textbf{Espace d'adresses séparés pour mémoire et périphériques :}
+\begin{itemize}
+\item Instructions spécifiques suivant qu'on écrit dans la mémoire ou dans un périphérique
+\item Besoin d'un bit supplémentaire pour séparer les espaces d'adresses (Exemple : lE Z80 : bus d'adresse 16 bits avec 65535 adresses mémoires données sur 8 bits et un 17\ieme \ bit qui indique une adresse périphérique, 8 bits d'adresse)
+\end{itemize}
+\end{itemize}
+
+\subsection{Les registres}
+\label{6.9}
+\begin{itemize}
+\item \textbf{PC (Program Counter) :}
+\begin{itemize}
+\item Contient l'adresse de la prochaine instrcuction à aller chercher en mémoire.
+\item Incrémenté à chaque instruction.
+\item Changement de valeur : appel d'une routine, saut conditionnel, interuption,...
+\end{itemize}
+\item \textbf{L'IR : Instruction register :}
+\begin{itemize}
+\item Stocke l'instruction en vue de son exécution par le CPU.
+\end{itemize}
+\item \textbf{MAR : Memory Address Register:}
+\begin{itemize}
+\item Contient l'adresse mémoire à laquelle on veut accéder. Relié au bus d'adresses'
+\end{itemize}
+\item \textbf{MBR : Memory Buffer Register :}
+\begin{itemize}
+\item Contient la donnée en provenance ou destination de la mémoire. Relié au bus de données.
+\end{itemize}
+\item \textbf{L'accumulateur A :}
+\begin{itemize}
+\item Registre principal de travail de l'ALU
+\end{itemize}
+\item \textbf{I/O AR : Input/Output Address Register :}
+\begin{itemize}
+\item Contient l'adresse du périphérique auquel on veut accéder. Relié au vus d'adresses des I/O.
+\end{itemize}
+\item\textbf{ I/O : Input/Output  Buffer Register :}
+\begin{itemize}
+\item Contient la donnée en provenance ou destination du périphérique. Relié au bus de données.
+\end{itemize}
+\item \textbf{Registre à usage général :}
+\begin{itemize}
+\item Dans le CPU, utilisables direcetment par l'unité de calcul.
+\end{itemize}
+\item \textbf{Registres à utilisation particulière:}
+\begin{itemize}
+\item Dans le CPU : pointeur de pile, registre d'état (FLAGS)
+\end{itemize}
+\item \textbf{Registres à utilisation particulière:}
+\begin{itemize}
+\item Adresses, données, registres de contrôles (configuration et état des périphériques)
+\end{itemize}
+\end{itemize}
+\subsection{Le cycle machine CPU}
+\label{6.10}
+
+\begin{figure}[!h]
+\begin{center}
+
+
+\begin{tabular}{|c|}
+
+\includegraphics[width =7cm, height=4cm]{cycleMachineCPU.jpg}\\
+
+\end{tabular}
+\end{center}
+\caption{Cycle machine du CPU}
+\end{figure}
+
+\subsection{Le système informatique}
+\label{6.11}
+
+\begin{figure}[!h]
+\begin{center}
+
+
+\begin{tabular}{|c|}
+
+\includegraphics[width =7cm, height=4cm]{systemeInfo.jpg}\\
+
+\end{tabular}
+\end{center}
+\caption{Schéma général d'un système informatique}
+\end{figure}
+
+\clearpage
+
+\section{Le processeur}
+\label{7}
+\subsection{L'unité de contrôle}
+\label{7.1}
+L'unitéde contrôle a plusieurs fonctions :
+\begin{itemize}
+\item Gérer le déroulement des processes en cours d'exécution
+\item Aller chercher l'instruction suivante (\textbf{Fetch})
+\item Eventuellement les opéramdes nécessaires
+\item Décodage de l'instruction (\textbf{decode}) 
+\item Exécution de l'instruction (\textbf{execute})
+\item Générer tous les signaux de contrôles nécessaires à chaque étape (R/W; select, adresses,...)
+\end{itemize}
+
+\subsection{Le registre d'instruction}
+\label{7.2}
+Le \textbf{registre d'instruction} contient l'instruction à exécuter.
+L'instruction peut-être en plusieurs parties :
+\begin{itemize}
+\item Code Opération(\textbf{opcode}) : opération à effectuer par le CPU
+\item Code opérande : paramètres de l'opération : données, adresse mémoire, registre
+\end{itemize}
+
+\subsection{Le décodeur}
+\label{7.3}
+\textbf{Le décodeur} transforme les bits de l'instruction en bits et signaux de contrôle
+\begin{itemize}
+\item Opération à effectuer $ \rightarrow $ ALU
+\item Opérations nécessaires pour aller chercher les opérandes éventuelles
+\begin{itemize}
+\item Adresses mémoires (registres, mémoires, périphériques)
+\item Signaux de sélection (registres, mémoires, périphériques)
+\item Signaux de lecture/écriture
+\end{itemize}
+\end{itemize}
+
+\subsection{Le séquenceur}
+\label{7.4}
+\textbf{Le séquenceur} génere une séquence de \textbf{microcommandes}  sur base de l'instruction en cours et \textbf{l'état (logique) actuel} du proceseur.
+\begin{description}
+\item[La microcommande] est une commande élémentaire à l'intérieur du processeur permettant d;exécuter l'instruction de l'utilisateur.
+\end{description}
+Le rôle du séquenceur est de :
+\begin{itemize}
+\item Piloter les différentes parties du processeur impliquées par l'instruction en cours
+\item Synchroniser le processeur avec la mémoire
+\item Générer les signaux nécessaires vers l'extérieur du processeur
+\end{itemize}
+
+\subsection{Le registre d'état}
+\label{7.5}
+\textbf{Le registre d'état} est le registre contant des informations sur\textbf{ l'état actuel du processeur} (modifié par le \textbf{séquenceur} pendant l'exécution de l'instruction et modifié par l'ALU en tant que résultat de l'instrction en cours. C'est le registre contenant les bits de drapeaux (\textbf{flags} ou \textbf{PSW} (C, Z, OF, S,...)).
+
+\subsection{PC : Program Counter}
+\label{7.6}
+Le \textbf{PC : Program Counter} ou \textit{compteur ordinal, compteur d'instruction} est un registre spécial où le séquenceur écrit l'adresse de l'instruction suivante à aller chercher en mémoire(Addresse de'instruction actuelle + taille de l'instruction actuelle +1).L'adresse de nouvelle instruction peut être un saut à une autre partie du processus, un saut à un autre processus,.... Il est initialisé avec l'adresse de la première instruction à exécuter. Dans les processeurs x86, il s'appelle \textbf{IP (Instruction Pointer)}.
+
+\subsection{Taille des instructions x86}
+\label{7.7}
+\textbf{Note :} possibilité de trouver la même information en français dans le cours de Langage Assemblage.
+
+\begin{figure}[!h]
+\begin{center}
+
+
+\begin{tabular}{|c|}
+
+\includegraphics[scale=0.6]{tailleInstruction.jpg}\\
+
+\end{tabular}
+\end{center}
+\caption{La taille de l'instruction sur un processeur x86}
+\end{figure}
+
+\clearpage
+\subsection{Les CISC}
+\label{7.8}
+\begin{description}
+\item[Les CISC] (\textit{Complex Instruction Set Computing}, en français \textit{microprocesseur à jeu d'instruction étendu}), désigne un microprocesseur possédant un jeu d'instructions comprenant de très nombreuses instructions mixées à des modes d'adressages complexes.\footnote{\url{https://fr.wikipedia.org/wiki/Complex_instruction_set_computer}}
+\end{description}
+ Ces instructions peuvent être des :
+\begin{itemize}
+\item \textbf{Instruction simples:}
+\begin{itemize}
+\item 1 ou 2 octets
+\item Quelques coups d'horloge
+\item Fonctions logiques ou arithmétiques simples
+\item Exemple : NOP
+\end{itemize}
+\item \textbf{Instructions complexes :}
+\begin{itemize}
+\item Plusieurs octets d'instructions et opérandes
+\item Beaucoup de coups d'horloge pour exécuter l'instruction
+\item Fonctions logiquesa ou arithmétiques complexes
+\item Exemple :FSQRT (racine carrée)
+\end{itemize}
+\end{itemize}
+Exemples d'architecture CISC : processeur x86 (8086,286,486), VAX, AMD AM386,...
+
+Les caractéristique du CISC sont :
+\begin{itemize}
+\item \og facilité \fg{} de programmation d'opérations complexes
+\item Temps d'exéctution très vraiable suivant l'instruction
+\begin{itemize}
+\item Nombre d'opérandes
+\item nombre de micro-instructions du séquenceur
+\end{itemize}
+\item Compilateur plus simple
+\end{itemize}
+
+\subsection{Les RISC}
+\label{7.9}
+\begin{description}
+\item[Les RISCS] (\textit{Reduced Instruction Set Computing} en français \textit{microprocesseur à jeu d'instructions réduit}) est un type d'architecture matérielle de microprocesseurs qui se caractérise par un jeu d'instructions réduit, facile à décoder et comportant uniquement des instructions simples. \footnote{\url{https://fr.wikipedia.org/wiki/Reduced_instruction_set_computer}}
+\end{description}
+ Les caractéristiques du RISC sont :
+\begin{itemize}
+\item Uniquement des instructions simples
+\item Nombre d'instructions limité
+\item Réalisées en 1 ou 2 coups d'horloge, même temps pour chaque instruction
+\item Instructions codées sur le même nombre d'octets (un seul accès mémoire par instruction)
+\item Coeur du processeur plus simple (fréquence d'horloge plus élevée, consommation moindre)
+\item Les instructions complexes sont réalisées par combinaison d'opérations simples
+\begin{itemize}
+\item Lisibilité du code plus complexe
+\item Taille du code plus importante
+\item Compilateur plus complexe (optimisation du code)
+\item Opérations complexes plus lente (Exemple : pas de multiplication câblée $\rightarrow$ boucles avec somme.
+\end{itemize}
+\item Pas d'opérations en direct sur la mémoire
+\begin{itemize}
+\item Architecture load-store : toutes les valeurs pour une opérations doivent être chargée en mémoire (registre) avant d'être utilisée.
+\item Nombre de registres généraux plus élevés
+\end{itemize}
+\end{itemize}
+Exemples d'architecture RISC : powerpc 601,603,G3,G4,G5 (IBM/Motorola/Appple), ARM (Raspberry PI, Samsung,...), SPARC,....
+
+\subsection{Architecture combinée}
+\label{7.10}
+\begin{itemize}
+\item Combinaison d'instructions CISC sur un coeur RISC
+\item Traduction automatique dans le processeur des instructions CISC en séquence d'instructions RISC
+\item Les instructions de type RISC sont exécutées directement par le processeur
+\item Le processeur possède certaines unitées de calcul complexe fréquemment utilisées (Exemples : multiplication, opérations vectorielles, FPU,...) en hardware en plus par rapport à un \og vrai \fg{} RISC.
+\item Plus de contrainte load-store
+\end{itemize}
+
+\subsection{Le pipeline}
+\label{7.11}
+\begin{description}
+\item[Un pipeline] (ou \textit{chaîne de traitement}) est l'élément d'un processeur dans lequel l'exécution des instructions est découpée en plusieurs étapes.\footnote{\url{https://fr.wikipedia.org/wiki/Pipeline_(architecture_des_processeurs)}}
+\end{description}
+L'exécution d'une instruction est divisée en étape (Fetch $\rightarrow$ decode $\rightarrow$ execute), le principe du pipeline est de séparer les étapes : pendant qu'on exécute une instruction, on peut déjà décoder la suivante et aller chercher la trosième. Le nombre d'étapes dépend du processeur (PIC :2 étaps, RISC :6 étapes, ...).
+
+\subsubsection{Le pipeline RISC classique}
+\label{7.11.1}
+Les 5 étapes du pipeline RISC classique sont :
+\begin{enumerate}
+\item Instruction fetch
+\item Instruction decode and register fetch
+\item Execute
+\item Memory access
+\item Register write back
+\end{enumerate}
+
+Attention, risque de conflits de ressources !
+\begin{figure}[!h]
+\begin{center}
+
+
+\begin{tabular}{|c|}
+
+\includegraphics[scale=0.5]{pipelineRISC.jpg}\\
+
+\end{tabular}
+\end{center}
+\caption{Exemple de découpe de pipeline de RISC}
+\end{figure}
+
+\subsection{Le processeur superscalaire}
+\label{7.12}
+\begin{description}
+\item[Un processeur superscalaire] estun processeur capable d'exécuter plusieurs instructions simultanément (un même cycle d'horloge) parmi une suite d'instructions. Pour cela, il comporte plusieurs unités de calcul, et est capable de détecter l'absence de dépendances entre instructions. \footnote{\url{https://fr.wikipedia.org/wiki/Processeur_superscalaire)}}
+\end{description}
+Les caractéristiques du processeur superscalaire sont :
+\begin{itemize}
+\item Plusieurs files de pipelines en parallèle
+\item Plusieurs instructions d'un même processus exéutées en parallèle par le CPU
+\item Opérations sur plusieurs sections du CPU en parallèle :FPU, multiplicateur,...
+\item Inventé par l'entreprise  Cray (en 1965)
+\end{itemize}
+
+\subsection{Le Symmetric Multiprocessing (SMP)}
+\label{7.13}
+\begin{description}
+\item[Un multiprocesseur symétrique], ou symmetric shared memory multiprocessor (SMP), est une architecture parallèle qui consiste à multiplier les processeurs identiques au sein d'un ordinateur, de manière à augmenter la puissance de calcul, tout en conservant une unique mémoire. \footnote{\url{https://fr.wikipedia.org/wiki/Symmetric_multiprocessing)}}
+\end{description}
+Il y a dès lors plusieurs processeurs sur une même carte-mère qui se partage les ressources (horloge, mémoire, périphériques,...). Exemple : intel Xeon.
+
+\clearpage
+\subsection{Le thread}
+\label{7.14}
+\begin{description}
+\item[Un thread] (ou \textit{fil ou tâche}), est similaire à un \textbf{processus} (programme encours d'exécution) car tous deux représentent l'exécution d'un ensemble d'instructions du langage machine d'un processeur.Du point de vue de l'utilisateur, ces exécutions semblent se dérouler en parallèle. Toutefois, là où chaque processus possède ses propres \textbf{ressources }(Code, fichier, données, périphériques), les threads d'un même processus se partagent sa mémoire virtuelle. Par contre, tous les threads possèdent leur propre \textbf{pile, registres et Program Counter} \footnote{\url{https://fr.wikipedia.org/wiki/Thread_(informatique)}}
+\end{description}
+
+\begin{figure}[!h]
+\begin{center}
+
+
+\begin{tabular}{|c|}
+\hline
+\includegraphics[width=8cm, height=6cm]{thread.jpg}\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Illustration des ressources externe et des ressources interne d'un processeur single-threaded et d'un processeur multithreaded}
+\end{figure}
+
+\subsubsection{Le multithreading}
+\label{7.14.1}
+\begin{description}
+\item[Un processeur multithread] est un processeur qui est capable d'exécuter efficacement plusieurs threads simultanément.\footnote{\url{https://fr.wikipedia.org/wiki/Multithreading}}
+Attention le\textbf{ processeur multicore} quant à lui possède différents coeur avec pour chacun ses propres ressources, il peut donc gérer facilement plusieurs processus mais si chacun de ses coeurs ne sont pas eux-même multithread, il gèrera mal le multithreading.
+\end{description}
+\begin{figure}[!h]
+\begin{center}
+
+
+\begin{tabular}{|c|}
+\hline
+\includegraphics[width=8cm, height=6cm]{multithreading.jpg}\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Illustration de la gestion de un ou plusieurs processus sur un ou plusieurs threads}
+\end{figure}
+
+\subsubsection{Le simultaneous multithreading}
+\label{7.14.2}
+\begin{description}
+\item[Le SMT] est le partage d'un coeur de processeur superscalaire (les pipelines, les unités de calcul et les caches) entre plusieurs threads. Les processeurs non SMT passent alternativement d'un thread à l'autre pour l'exécution des instructions, alors que des processeurs SMT peuvent allouer des unités de calcul à des threads différents simultanément. Le but est d'améliorer l'utilisation des ressources.\footnote{\url{https://fr.wikipedia.org/wiki/Simultaneous_multithreading}}
+\end{description}
+\begin{itemize}
+\item Les instructions\textbf{ de plus d'un thread} peuvent être exécutés à n'importe quel étage d'un pipeline d'un processeur superscalaire.
+\item Fetch des instructions de plusieurs threads en un cycle 
+\item Nombre de registres plus élevé
+\item 2-8 threads par coeur de processeur
+\item Appelé Hyper-threading chez Intel 
+\end{itemize}
+
+\subsection{Le socket}
+\label{7.15}
+\begin{description}
+\item[Le socket] est le support pour le processeur sur la carte-mère. Il dépend du type de boîtier dans lequel est placé le processeur et est doté d'un système de blocage mécanique.
+\end{description}
+
+\clearpage
+
+\section{Le BUS}
+\label{8}
+\subsection{Définitions et caractéristiques}
+\label{8.1}
+\begin{description}
+\item[Le bus] est un ensemble de liaisons (électriques) entre plusieurs composants d'un système informatique.
+\end{description}
+Il permet de faire circuler des :
+\begin{itemize}
+\item Données
+\item Adresses
+\item Signaux de contrôle
+\begin{itemize}
+\item Etat
+\item Commande
+\end{itemize}
+\end{itemize}
+
+\textbf{Remarque :} On utilise le mot \og liaison \fg{} ou \og port \fg{} plutôt que le mot \og bus \fg{} quand il s'agit d'une connexion point à point entre 2 composants.  
+
+Les caractéristiques qui décrvent un bus sont :
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{1. Largeur} & Nombre de bits transmis simultanément sur le bus \\
+\hline
+\textbf{2. Débit binaire} & Nombre de bit/seconde (parfois exprimé en byte ou octet)\\
+\hline
+\textbf{3. Protocole} & Définit comment les signaux sont gérés sur le bus \\
+\hline
+\textbf{4. Synchrone/asynchrone} & Synchrone: avec signal d'horloge; Asynchrone: pas de signal d'horloge \\
+\hline
+\textbf{5. Latence} & Temps d'attente que met une donnée à être transférée sur le bus  \\
+\hline
+\textbf{6. Technologie} & Codage des bits; Niveaux de tension; support physique (Cuivre, fibre) \\
+\hline
+\textbf{7. Topologie} & Daisy chain, parallèle, étoile \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Caractéristiques d'un BUS}
+\end{table}
+\subsection{La carte-mère}
+\label{8.2}
+\begin{description}
+\item[La carte-mère] (ou \textit{motherboard}) est un circuit imprimé qui comporte tous les circuits électroniques nécesaires au fonctionnement du processeur. 
+\end{description}
+\begin{itemize}
+\item Socket processeur
+\item Mémoire
+\item Alimentations
+\item Périphériques
+\item Connecteurs
+\item Bus
+\end{itemize}
+
+
+\subsection{Largeur de bus}
+\label{8.3}
+\begin{description}
+\item[La largeur de bus] est le nombre de bits qu'un BUS peut transférer simultanément.
+\end{description}
+
+\subsubsection{Largeur de bus :\textbf{série}}
+\label{8.3.1}
+\begin{itemize}
+\item \textbf{ largeur de bus :} 1 bit
+\item Les bits de données sont transmis \textbf{les uns derrière les autres}
+\item Besoin de signaux de contrôle supplémentaire.
+\end{itemize}
+\subsubsection{Largeur de bus :\textbf{parallèle}}
+\label{8.3.2}
+\begin{itemize}
+\item \textbf{ largeur de bus :} \textit{n} bits
+\item Les \textit{n} bits de données sont transmis \textbf{en même temps} sur les \textit{n} connexions
+\item Largeur typique : 8/16/32/64 bits
+\item Besoin de signaux de contrôle supplémentaire.
+\end{itemize}
+
+\subsection{Le débit binaire}
+\label{8.4}
+\begin{description}
+\item[Le débit binaire] est une mesure de la quantité de données numériques transmises par unité de temps. Il est le plus souvent exprimé en bits par secondes. \footnote{\url{https://fr.wikipedia.org/wiki/debit_binaire}}
+\end{description}
+
+On peut calculer débit par seconde de la manière suivante : \newline
+\begin{center}
+
+$Debit \ binaire = \frac{bit}{seconde} * largeur du bus $ \newline
+$Baud = \frac{symboles}{seconde} $
+
+\end{center}
+
+
+\subsection{Le protocole}
+\label{8.5}
+\begin{description}
+\item[Le protocole] est la manière dont les transferts sont gérés sur le bus.
+\end{description}
+\begin{itemize}
+\item \textbf{MSB} (\textit{Most Significant Byte - octer de poids le plus fort}) ou \textbf{LSB} (L\textit{owest Significant Byte - octet de poids le plus faible}) (Voir la section~\ref{2.11} à la page~\pageref{2.11} pour plus d'information) en premier ?
+\item Méthode de synchronisation entre signaux de contrôles, données et adresses.
+\end{itemize}
+
+
+\subsection{BUS synchrone et BUS asynchrone}
+\label{8.6}
+
+\subsubsection{BUS syncrhrone}
+\label{8.6.1}
+\begin{itemize}
+\item Signal d'horloge
+\item Temps de réponse fixe
+\item Problème de synchronisation d'horloge (du à la longueur du fil).
+\end{itemize}
+
+\subsubsection{BUS asyncrhrone}
+\label{8.6.2}
+\begin{itemize}
+\item Pas de signal d'horloge
+\item Signaux supplémentaire de synchronisation
+\begin{itemize}
+\item Request
+\item Acknowledge
+\end{itemize}
+\end{itemize}
+
+\subsection{La latence}
+\label{8.7}
+\begin{description}
+\item[La latence] est le temps d'attente que met une donnée à être transférée sur le bus.
+\end{description}
+Elle dépend :
+\begin{itemize}
+\item du Protocole du bus
+\item de la Fréquence d'horloge
+\end{itemize}
+
+\subsection{La technologie}
+\label{8.8}
+Il existe plusieurs technologies différentes pour les bus, le support physique (généralement le cuivre), la représentation des bits (soit traditionnel 1= niveau haut et 0 = niveau bas ou la technologie \textbf{NRZ} :1= pas de changement de niveau et o= changement de niveau). Les niveaux de tensions peuvent varier d'une technologie à une autre pour représenter l'état du bit ( PCI : 0v/5v, hypertransport :0v/1,2v,...)
+
+\subsection{La topologie}
+\label{8.9}
+
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{|c|}
+\hline
+\includegraphics[width=7cm, height=4cm]{topo.jpg}\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Illustrations de plusieurs forme de topologie de bus}
+\end{figure}
+
+
+\subsection{BUS processeur}
+\label{8.10}
+
+\begin{itemize}
+\item \textbf{Le BUS ISA (1981)}
+\begin{itemize}
+\item Directement lié aux lignes d'adresses et data du CPA
+\item 8 puis 16 bits de données
+\item Utililisé pour communiquer avec les périphériques \og internes \fg{} (clavier,...) ou externes via les connecteurs d'extension
+\item Sélectrion de l'adresse d'interruption sur chaque carte
+\item lent : 16 bits alors que CPU de 32 bits
+\item Débit binaire de 8 MB/s
+\end{itemize}
+\item \textbf{BUS EISA}
+\begin{itemize}
+\item 32 bits de données
+\end{itemize}
+\item VESA Local Bus (486)
+\begin{itemize}
+\item Bande passante ISA trop limitée pour les applications graphiques
+\item Extension de ISA
+\item Application pour video
+\item Contrôleurs de stockage
+\end{itemize}
+\item NuBus (Apple)
+\begin{itemize}
+\item 32 bits
+\item Plug and Play
+\item 40 MB/s
+\end{itemize}
+\end{itemize}
+
+
+\subsection{Front Side BUS}
+\label{8.11}
+\begin{description}
+\item[Le front side bus (FSB)], (aussi appelé\textit{ bus système ou bus interne}- internal bus en anglais), est traditionnellement le bus informatique qui relie le processeur  qui gère les échanges avec les périphériques proches du processeur (CPU), notamment avec la mémoire vive. \footnote{\url{https://fr.wikipedia.org/wiki/Front_side_bus}}
+\end{description}
+\begin{itemize}
+\item A l'origine, nom utilisé par intel (Pentium Pro)
+\item Bus de communication du CPU vers le monde extérieur
+\begin{itemize}
+\item Périphériques
+\item Mémoire Ram
+\end{itemize}
+\item largeur de bus : nombre de bits du bus
+\item Généralement un multiple de la fréquence CPU (CPU :32000 MHz / FSB : 8000 Mhz)
+\item Vitesse de transfert
+\begin{itemize}
+\item \textbf{Bande passante (Bandwidth) ou débit binaire :}
+\begin{itemize}
+\item Fréquence horloge * largeur du bus * nombre de coups horloge
+\item Exempe : PII (100 MHz, 64 bits) $\rightarrow$ 100 Mhz*64*1 =6400 Mbits/s= 800Moctets/s
+\item Core 2 Duo (333 Mhz, 64 bits, X4) $\rightarrow$ *85248 Mbits/s =10656 Mo/s
+\end{itemize}
+\end{itemize} 
+\item Spécifique à chaque CPU
+\end{itemize}
+
+
+\subsection{Connexions vers le monde extérieur}
+\label{8.12}
+Les bus permettent aussi d'interfacer le processeur vers le \og monde extérieur \fg{} grâce à des cartes d'extension pour des périphériques particuliers.
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{|c|}
+\hline
+\includegraphics[width=6cm, height=5cm]{BUS.jpg}\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Illustration de la connexion entre le processeur et le mode extérieur via les BUS}
+\end{figure}
+
+
+\subsubsection{BUS PCI}
+\label{8.12.1}
+\begin{description}
+\item[Le bus PCI (Peripheral Component Interconnect)] est un un bus intermédiaire situé entre le bus processeur (NorthBridge) et le bus d'entrées-sorties (SouthBridge). \footnote{\url{http://www.commentcamarche.net/contents/758-bus-pci}}
+\end{description}
+\begin{itemize}
+\item Interconnexion processeur/périphériques
+\begin{itemize}
+\item Intégrés à la carte-mère
+\item Externes via connecteur d'extension
+\end{itemize}
+\item Bus parallèle, largeur 32/64 bits
+\end{itemize}
+
+\begin{itemize}
+\item Indépendant du processeur
+\item Buffer de données entre CPU et Périphériques
+\item Partage du bus entre les différents périphériques
+\item Plug and Play
+\end{itemize}
+
+\subsubsection{BUS PCI-express}
+\label{8.12.2}
+\begin{description}
+\item[Le bus PCI Express (Peripheral Component Interconnect Express] est un bus d'interconnexion permettant l'ajout de cartes d'extension dans l'ordinateur. Le bus PCI Express a été mis au point en juillet 2002. Contrairement au bus PCI, qui fonctionne en interface \textbf{parallèle}, le bus PCI Express fonctionne e\textbf{n interface série}, ce qui lui permet d'obtenir une bande passante beaucoup plus élevée que ce dernier. \footnote{\url{http://www.commentcamarche.net/contents/757-bus-pci-express-pci-e}}
+\end{description}
+\begin{itemize}
+\item Bus série
+\item Liaison point à point bidirectionnelle (\textbf{full duplex} - la synchronisation de l'émetteur et du récepteur et le contrôle de flux sont assurés de façon logicielle (contrôle de flux programmé) \footnote{\url{https://fr.wikipedia.org/wiki/Duplex_(canal_de_communication)}}).
+\item 2Gb/s (250 MB/s) dans chaque sens
+\item Connexion interne ou via connecteur
+\item Encapsulation des données en paquets
+\end{itemize}
+
+
+\clearpage
+
+\section{Communication avec les périphériques}
+\label{9}
+\subsection{Architecture générale d'un contrôleur de périphériques}
+\label{9.1}
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{|c|}
+\hline
+\includegraphics[width=8cm, height=5cm]{ArchitectureGener.jpg}\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Architecture général de la communication via les BUS entre les périphériques}
+\end{figure}
+
+\subsection{Les différents types de périphériques}
+\label{9.2}
+\begin{description}
+\item[Un périphérique informatique] est un dispositif connecté à un système informatique  qui ajoute à ce dernier des fonctionnalités.\footnote{\url{https://fr.wikipedia.org/wiki/Peripherique_informatique}}
+\end{description}
+Il existe différents types de périphériques :
+\begin{itemize}
+\item Les périphériques de stockage :HDD, USB,...
+\item Les périphériques de transmission : interface réseau,...
+\item Les périphériques interface homme-machine (\textbf{IHM}) : clavier, souris,...
+\item Les périphériques spécialisées : imprimantes, scanner, ...
+\end{itemize}
+
+\subsection{La communication par interrogation : \textbf{Polling}}
+\label{9.3}
+\begin{description}
+\item[Le polling] est une méthode de communication avec un périphérique qui vise à questionner de façon continue le périphérique pour vérifier que des données peuvent être lues ou écrites
+\end{description}
+Pour ce faire :
+\begin{itemize}
+\item Le microprocesseur détermine l'état du périphérique
+\begin{itemize}
+\item Prêt pour une commande
+\item Occupé
+\item Erreur
+\end{itemize}
+\item Le microprocesseur reste en cycle d'attente active (\textit{busy waiting}) pour attendre les opérations d'entrée/sortie du périphérique
+\end{itemize}
+
+Bien que le polling soit une façon simple d'accéder à un périphérique , le débit des données dans un périphérique est parfois beaucoup plus lent que la vitesse de fonctionnement d'un processeur , et le polling peut donc être très inefficace . On lui préfère en général la méthode par interruptions.\footnote{\url{http://www.technologuepro.com/microprocesseur/chap5_microprocesseur.htm}} \newline
+\textbf{Exemple :} L'imprimante
+\subsection{La communication par\textbf{ interruption}}
+\label{9.4}
+\begin{description}
+\item[Le communication par interruption] est une méthode de communication avec un périphérique où le périphérique interrompt le microprocesseur (il fait une interruption) lorsque des données peuvent être lues ou écrites. Une fois que le processeur a effectué l'instruction demandée, il reprend son travail initial.
+\item[Une interruption] est un évènement qui provoque l'arrêt du programme en  cours  et  provoque  le  branchement  du  microprocesseur  à  un  sous- programme particulier dit de \og traitement de l'interruption \fg{}.\footnote{\url{http://www.technologuepro.com/microprocesseur/chap5_microprocesseur.htm}}
+\end{description}
+
+Les interruptions sont :
+\begin{itemize}
+\item \textbf{masquables} : le microprocesseur peut ignorer, retarder où hiérachiser certaines interruptions.
+\item attribuées à un certain numéro d'interruption durant le démarrage par le gestionnaire d'inetrruption.
+\end{itemize}
+
+\subsubsection{La réponse à une interruption}
+\label{9.4.1}
+\begin{enumerate}
+\item Fin de l'exécution de l'insctruction en cours d'exécution
+\item Sauvegarde de l'état actuel du CPU
+\begin{itemize}
+\item Sauver l'état des registres sur la pile (avec un \textbf{push}) et du Program Counter.
+\end{itemize}
+\item Saut à la routine du gestionnaire de l'interruption
+\item Détermination de la cause de l'interruption
+\item Exécution de la routine appropriée
+\item Retour à l'état d'exécution présent avant l'interruption
+\begin{itemize}
+\item Restauration de l'état des registres et du PC du processus interrompu
+\end{itemize}
+\end{enumerate}
+
+\subsubsection{Le circuit contrôleur d'interruption (8259)}
+\label{9.4.2}
+\begin{description}
+\item[Le circuit contrôleur d'interruption] est un composant programmable  qui rassemble les signaux d'interruptions de divers éléments périphériques. \footnote{\url{http://www.courstechinfo.be/Techno/Interrupt.html}}
+\end{description}
+
+\subsection{La communication par Direct Memory Access \textbf{(DMA})}
+\label{9.5}
+
+\begin{description}
+\item[La communication par DMA] est une méthode de communication entre un périphérique et la mémoire sans passer par les registres du CPU. Elle nécessite un circuit spécialisé (un \textbf{contrôleur d'accès direct mémoire}) placé entre la mémoire, le CPU et les périphériques.
+\end{description}
+
+\textbf{Exemples d'utilisation :} Grands transferts de données (HDD, CD, DVD,...).
+
+\subsubsection{Le transfert DMA}
+\label{9.5.1}
+
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{|c|}
+\hline
+\includegraphics[width=8cm, height=4cm]{DMA.jpg}\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Illustration d'un transfert DMA entre un contrôleur de disques et la mémoire}
+\end{figure}
+
+
+\subsubsection{Les instructions DMA}
+\label{9.5.2}
+\begin{itemize}
+\item Instruction de DMA pour transfert d'un bloc de données :
+\begin{itemize}
+\item Pointeur source
+\item Pointeur destination
+\item Nombre d'octers à transférer
+\end{itemize}
+\item Le contrôleur de DMA place directement les adresses surle bus sans intervention du CPU
+\item Vol de cycles mémoires au CPU
+\begin{itemize}
+\item CPU travaille sur la mémoire cachée
+\item Ralentissement possible du CPU
+\item DMA prioritaire sur CPU
+\end{itemize}
+\item Interruption en fin de transfert
+\end{itemize}
+
+\subsection{Les exceptions}
+\label{9.6}
+\begin{description}
+\item[Une exception] est un appel système causant une \textbf{ interruption software} due à des erreurs (erreurs de division par zéro, accès non permis à une zone mémoire,... qui fait appel à une routine particulière du système d'exploitation (un genre de try{...} catch{...})
+\end{description}
+
+Attention les exceptions (\og interruption software \fg{}) ne doivent pas être confondues avec les interruptions  (\og interruption hardware \fg{}) !
+
+\subsection{Le chipset}
+\label{9.7}
+\begin{description}
+\item[Un chipset] est un jeu de composants électroniques inclus dans un circuit intégré préprogrammé permettant de gérer les flux de données numériques entre le ou les processeur(s), la mémoire et les périphériques. \footnote{\url{https://fr.wikipedia.org/wiki/Chipset}}
+\end{description}
+
+\subsubsection{Le Northbridge}
+\label{9.7.1}
+\begin{description}
+\item[Le southbridge] est l'ensemble des contrôleurs de périphériques regroupés dans un seul circuit.
+\end{description}
+
+\subsubsection{Le Southbridge}
+\label{9.7.2}
+\begin{description}
+\item[Le southbridge] est l'ensemble des circuits de gestion mémoire regroupés dans un seul circuit.
+\end{description}
+
+\clearpage
+\section{Les mémoires}
+\label{10}
+\subsection{Les types de mémoires}
+\label{10.1}
+\begin{description}
+\item[La mémoire externe] est une mémoire qui n'est pas directement accessible par le processeur.
+\end{description}
+On compte plusieurs type de mémoire : 
+\begin{itemize}
+\item Mémoire accessibles directement par le CPU
+\item Mémoire \textbf{morte}
+\begin{itemize}
+\item Non modifiable par le CPU directement
+\item Non volatile (contenu reste mémorisé si l'alimentation électrique disparaît)
+\end{itemize}
+\item Mémoire \textbf{vive}
+\begin{itemize}
+\item Modifiable par le CPU
+\item Généralement volatile
+\end{itemize}
+\end{itemize}
+
+\subsection{Les niveaux de mémoire}
+\label{10.2}
+\begin{figure}[!h]
+\begin{center}
+\begin{tabular}{|c|}
+\hline
+\includegraphics[width=10cm, height=5cm]{niveauMem.jpg}\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Illustration des niveaux de mémoires}
+\end{figure}
+\subsection{Mémoire morte}
+\label{10.3}
+\begin{description}
+\item[Une mémoire morte] est une mémoire non volatile, c'est-à-dire une mémoire qui ne s'efface pas lorsque l'appareil qui la contient n'est plus alimenté en électricité. 
+\end{description}
+
+\subsubsection{Mémoire morte : ROM}
+\label{10.3.1}
+\begin{itemize}
+\item Mémorie morte : Read Only Memory, non volatile
+
+\item Elle est accessible en lecture seule ; non modifiable directement par le CPU :
+\begin{itemize}
+\item \textbf{ROM :} Read Only Memory
+\item \textbf{PROM :} Programmable ROM ou \textbf{OTPROM} = One Time PROM : programmable une seule fois par l'utilisateur.
+\end{itemize}
+\item Programmation en grillant des fusibles dans le circuit :
+\begin{itemize}
+\item Par défaut : tous les bits sont à 1
+\item Griller un fusible fait passer l'état à 0
+\item Durée de vie théoriquement infinie
+\end{itemize}
+\end{itemize}
+\subsubsection{Mémoire morte : EPROM}
+\label{10.3.2}
+\begin{itemize}
+\item EPROM : Erasable Programmable ROM (1971)
+\begin{itemize}
+\item Mémoire effaçable (via l'exposition aux rayons UV)
+\item Capacité maximale : 32 Mibit =4Mio
+\end{itemize}
+\item Chaque bit est constitué d'un transistor à grille isolée
+\begin{itemize}
+\item Charges électriques présentes $\rightarrow$ transistor conducteur $\rightarrow$ état 1
+\item Pas de charge électrique $\rightarrow$ transistor ne conduit pas $\rightarrow$ état 0
+\end{itemize}
+\item Des charges électriques sont \og piégées \fg{} sur la grille isolée
+\begin{itemize}
+\item Tension plus élevée de programmation (12 volts)
+\item Mémorisation 0 ou 1
+\item Durée de vie 20... 30 ans (diminue à chaque reprogrammation..100 reprogrammations).
+\end{itemize}
+\end{itemize} 
+\subsubsection{Mémoire morte : EEPROM} 
+\label{10.3.3}
+\begin{itemize}
+\item EEPROM = Electrically Erasable Programmable ROM (1978)
+\begin{itemize}
+\item Programmable ou effaçable électriquement
+\item Avec des tensions plus élevées (12..25v) qu'en utilisation normale (5v)
+\item Nombre de reprogrammations limité (100 000)
+\item Durée de vie 20... 30 ans (diminue à chaque reprogrammation..100 reprogrammations).
+\end{itemize}
+\end{itemize}
+\subsubsection{Mémoire morte : Flash EEPROM}
+\label{10.3.4}
+\begin{itemize}
+\item Principe quasi identique à l'EEPROM
+\begin{itemize}
+\item Transistor à grille isolée
+\item Programmation/effacement avec des tensions plus élevées
+\end{itemize}
+\item Effacement/programmation \textbf{par blocs} et pas par octet (NAND flash)
+\item 100 000 à 1 million de reprogrammations
+\end{itemize}
+\paragraph{Types de mémoires Flash}
+\subparagraph{Flash NOR}
+\begin{itemize}
+\item Cellules en parallèle, accès aléatoire possible, capacité max : 4 Gb
+\item Vitesse de lecture élevée (>250 Mbits/s)
+\item Lente à l'écriture (0,5 Mbits/s)
+\item Effacement : 900 ms
+\item Application : BIOS, programmation de microcontrôleurs
+\end{itemize}
+
+\subparagraph{Flash NAND}
+\begin{itemize}
+\item Cellules en série, accès par bloc, capacité max ...TB
+\item Vitesse de lecture >100 Mbits/s
+\item Rapide en écriture
+\item Effacement  :2 ms
+\item Applications : stockage de masse (clé USB, SSD) 
+\end{itemize}
+
+\subsection{Mémoire vive}
+\label{10.4}
+\begin{itemize}
+
+
+\item Mémoire de travail du CPU
+\item Code, données, variables
+\item Généralement mémoire volatile
+\item RAM  : Random Access Memory : Mémoire à accès aléatoire
+\begin{itemize}
+\item Par opposition à mémoire à \textbf{accès séquentie} (bande) ou \textbf{par bloc} (disque dur)
+\end{itemize}
+\item Chaque octet/mot de la mémoire peut être accédé directement par le CPU
+\end{itemize}
+\subsubsection{Ram statique}
+\label{10.4.1}
+\paragraph{SRAM :RAM Statique}
+\begin{itemize}
+\item Bascule RS à transistors
+\item Cout en transistors très élevés (4-6 transistors par bit)
+\item Très rapide
+\item Stockage de la valeur pendant quelques heures (MOSFET)
+\item Utilisation pour cache ou registres
+\item Quelques nanosecondes de temps d'accès
+\end{itemize}
+\subsubsection{Ram dynamique}
+\label{10.4.2}
+\paragraph{DRAM : RAM dynamique}
+\begin{itemize}
+\item Chaque bit est constitué d'un transistor et d'un condensateur
+\begin{itemize}
+\item Condensateur chargé = 1
+\item Condensateur déchargé = 0
+\end{itemize}
+\item Le transistor donne accès au condensateur quand il est activé
+\item On \og lit \fg{} la valeur stockée sur le condensateur
+\end{itemize}
+\subsubsection{DRAM}
+\label{10.4.3}
+\begin{itemize}
+\item Problème : décharge naturelle du condensateur
+\item Besoin de venir réécrire la valeur régulièrement sur le condensateur
+\begin{itemize}
+\item Rafraîchissement de la mémoire
+\item Intervalle de temps : quelques ms
+\item lecture et réécriture de la donnée
+\end{itemize}
+\item Un seul transistor par bit
+\begin{itemize}
+\item Grande densité possible
+\item Faible coût
+\item Consommation moidre
+\end{itemize}
+\item Tem d'accès plus lent que SRAM
+\begin{itemize}
+\item Temps durant lequel la mémoire est inaccessible plus long pendant le rafraichissement
+\end{itemize}
+\end{itemize}
+\subsection{Organisation de la mémoire}
+\label{10.5}
+Si on organisait la mémoire selon une structure linéaire :
+\begin{itemize}
+\item \textbf{Faible capacité :} Ok avec un décodeur d'adresse
+\item \textbf{Grosse capacité :} pas OK avec un simple décodeur d'adresse car structure trop complexe à réaliser
+\end{itemize}
+Du coup, on organise la mémoire en tableau de bits (\og pages \fg{})
+\begin{itemize}
+\item Matrice de lignes et colonnes
+\item Chaque intersection corresond à 1 bit (SRAM ou DRAM)
+\end{itemize}
+\paragraph{Lignes et colonnes}
+Dans le cas d'une organisation de la mémoire en lignes et colonnes, on utilise 2 décodeurs n/2 bits vers $2^{frac{2}{n}}$ bits (\textbf{plus simple et rapide que la mémoire linéaire}). Par exemple : adresse sur 14 bits : $\rightarrow$ 16384 adresse $\rightarrow$ tableau de 128*128 bits avec 2 décodeurs 7 bits vers 128 bits (au lieu d'un seul décodeur 14 bits vers 16384 lignes dans le cas de la mémoire linéaire). L'adresse mémoire est donc découpée en :
+\begin{itemize}
+\item Numéro de ligne
+\item Numéro de colonne
+\end{itemize}
+\paragraph{Modules mémoires}
+On regroupe la mémoire en modules. On utilise N composants mémoire \og 1 bit \fg{} pour obtenir une mémoire de mots de taille N
+\paragraph{Barettes de mémoires}
+La taille des mots est plus importante. On regroupe la mémoire en bancs ( de 8 bits - 1 octet). \begin{itemize}
+\item Banc 0 : octets 0;4;8;...
+\item Banc 1 : ocet 1;5;9;...
+\end{itemize}
+\begin{figure}[!h]
+\begin{center}
+
+\includegraphics[width=10cm, height=3cm]{bancmem.jpg}
+
+\end{center}
+\caption{Illustration de barettes mémoire}
+\end{figure}
+
+\subsection{Horloge}
+\label{10.6}
+La mémoire a un \og temps de réaction \fg{} avant de fournir à un CPU le contenu d'une case mémoire .
+\begin{itemize}
+\item Décodage d'adresse
+\item Temps de réaction des portes logiques
+\item Délai de stabilisation des signaux sur les BUS
+\end{itemize}
+\subsubsection{Types de DRAM asynchrones}
+\label{10.6.1}
+Dans le cas des RAM asynchrones : PAS d'horloge
+\begin{itemize}
+\item Le CPU attend \og le temps qu'il faut \fg{} pour avoir la donnée
+\end{itemize}
+Les différentes DRAM asynschrones :
+\begin{itemize}
+\item RAM
+\begin{itemize}
+\item Mémoire directement intégrée à la carte mère
+\end{itemize}
+\item FPRAM (>1987)
+\begin{itemize}
+\item Fast Page RAM (386 ;486)
+\item Plusieurs accès à des données successives : pas besoin de changer l'adresse de  colonne $\rightarrow$ plus rapide
+\end{itemize}
+\item EDO RAM (>1990)
+\begin{itemize}
+\item Extend Data Out RAM
+\item Démarrage d'un nouveau cycle de lecture pendant que la donnée précédente est lue.
+\end{itemize}
+\end{itemize}
+\subsubsection{Types de RAM synchrones}
+\label{10.6.2}
+Dans le cas de RAM synchrones : nombre de cours d'horloge fixe entre la demande et la récéption de la donnée
+\begin{itemize}
+\item SDRAM : Synchronous Dynamic RAM (>1997)
+\item Fréquence d'horloge : 66 MHz ; 100 MHz ; 133 MHz ; 3,3V
+\item Temp d'attente : 2-3 cycles après la demande
+\item 4/8/16 bits combineés pour des mots jusque 64 bits
+\item 1 demande et 1 transfert par cycle : besoin d'un contrôleur pour gérer l'accès au bus de données.
+\end{itemize}
+Les différentes SDRAM et comment calculer leur vitesse de transferts :
+
+\textbf{DDR SDRAM ->2000}
+\begin{itemize}
+\item lecture ou écriture de 2 mots par cycle pour 1 seule commade
+\item Horloge :100MHz/266MHz
+\end{itemize}
+\begin{itemize}
+\item Clock $\rightarrow$ 100 MHz 
+\item DDR  $\rightarrow$ 200 M transferts /s (
+\item 200*8 bits = 1600 Mo/s
+\item $\rightarrow$ \textbf{PC1600}
+\end{itemize}
+
+\textbf{DDR2 SDRAM - 2003}
+\begin{itemize}
+\item Fonctionnement équivalent à vitesse d'horloge de la RM doublée par rapport à celle du BUS
+\item Horloge :200MHz/533MHz
+\end{itemize}
+Exemple : DDR2-200
+\begin{itemize}
+\item BUS Clock $\rightarrow$ 100 MHz 
+\item RAM Clock $\rightarrow$ = BUSClock *2 = 200 MHz
+\item DDR  $\rightarrow$ 400 M transfert/s (\textbf{Rappel :} lecture ou écriture de 2 mots par cycle)
+\item 400*8 bits = 3200 Mo/s
+\item $\rightarrow$ \textbf{PC3200}
+\end{itemize}
+
+\textbf{DDR3 SDRAM -2007}
+\begin{itemize}
+\item 2 horloges décalées  $\rightarrow$ équivalent vitesse d'horloge RAM quadruplée
+\item Horloge :200MHz/533MHz
+\end{itemize}
+Exemple : DDR3-800
+\begin{itemize}
+\item BUS Clock $\rightarrow$ 100 MHz 
+\item RAM Clock $\rightarrow$ = BUSClock *4 = 400 MHz
+\item DDR  $\rightarrow$ 800 M transfert/s (\textbf{Rappel :} lecture ou écriture de 2 mots par cycle)
+\item 800*8 bits = 6400 Mo/s
+\item $\rightarrow$ \textbf{PC6400}
+\end{itemize}
+
+
+\clearpage
+\section{Questions/Réponses examen}
+
+\subsection{Histoire de l'informatique}
+
+\subsubsection*{Expliquez ce qu'est Eniac}
+Voir la section~\ref{1.5} à la page~\pageref{1.5}.
+
+\subsubsection*{Replacez ces machines (holleritz ; colossus ; stibitz ; pascaline dans l'ordre chronologique, de?crivez-les en quelques mots}
+Voir la section~\ref{1.2} à la page~\pageref{1.2},   la section~\ref{1.3} à la page~\pageref{1.3}, la section~\ref{1.4} à la page~\pageref{1.4}  et  la section~\ref{1.4} à la page~\pageref{1.4}.
+
+\subsubsection*{Donnez les caractéristiques des différentes générations d'ordinateurs}
+
+Voir la section~\ref{1.6} à la page~\pageref{1.6}.
+
+\subsubsection*{Quelle a été la contribution de H. Hollerith/Edison,... ? l'évolution de l'informatique}
+Voir la section~\ref{1.3} à la page~\pageref{1.3} et la section~\ref{1.4} à la page~\pageref{1.4}.
+
+\subsubsection*{La 1/2/3/4\ieme \ génération d'ordinateurs a été marquée par un composant électronique. De?crivez-le. Expliquez ses avantages par rapport à la génération précédente}
+Voir la section~\ref{1.6} à la page~\pageref{1.6}.
+
+\subsubsection*{Replacez ces personnes (Boole, Pascal, Holleritz , ...) dans l'ordre chronologique, décrivez-leur contribution à l'évolution de l'informatique en quelques mots}
+Voir la section~\ref{1.2} à la page~\pageref{1.2},   la section~\ref{1.3} à la page~\pageref{1.3} et  la section~\ref{1.4} à la page~\pageref{1.4}.
+
+\subsubsection*{Décrire la machine universelle selon Turing ; comparez avec les PC actuels}
+Voir la section~\ref{1.4} à la page~\pageref{1.4}.
+
+\subsubsection*{Expliquez la loi de Moore}
+Voir la section~\ref{1.6} à la page~\pageref{1.6}.
+
+\subsubsection*{Décrivez la pascaline}
+Voir la section~\ref{1.2} à la page~\pageref{1.2}.
+
+\subsection{Représentation des informations : représentation des nombres}
+
+\subsubsection*{Expliquer le principe de multiplication d'entiers binaires ; effectuer un calcul donné}
+Voir la section~\ref{2.6} à la page~\pageref{2.6}.
+
+\subsubsection*{Comment convertir un nombre décimal entier négatif en sa représentation binaire en complément à 2 ; méthode + exemple}
+Voir la section~\ref{2.4} à la page~\pageref{2.4}.
+
+\subsubsection*{Transformer le nombre binaire/écimal/octal/hexadecimal en binaire/décimal/octal/hexadeßcimal}
+Voir la section~\ref{2.2} à la page~\pageref{2.2}.
+
+\subsubsection*{Expliquez le codage d'un nombre en virgule flottante}
+Voir la section~\ref{2.9} à la page~\pageref{2.9}.
+
+\subsubsection*{Codez le nombre décimal/binaire xxx en format virgule flottante}
+Voir la section~\ref{2.9} à la page~\pageref{2.9}.
+
+\subsubsection*{Décodez le nombre en virgule flottante vers décimal}
+Voir la section~\ref{2.9} à la page~\pageref{2.9}.
+
+\subsubsection*{Expliquez le problème de la représentation des nombres binaires négatifs. Quelles solutions existe-t-il ? Décrivez-les rapidement}
+Voir la section~\ref{2.4} à la page~\pageref{2.4}.
+
+\subsubsection*{Effectuez la soustraction de 2 nombres binaires entiers ; expliquez les étapes}
+Voir la section~\ref{2.5} à la page~\pageref{2.5}.
+
+\subsubsection*{Effectuer une division binaire}
+Voir la section~\ref{2.7} à la page~\pageref{2.7}.
+
+\subsubsection*{Principe de la représentation des nombres en décimal/binaire/hexadecimal}
+Voir la section~\ref{2.1} à la page~\pageref{2.1}.
+
+\subsubsection*{expliquer le problème du dépassement de capacité}
+Voir la section~\ref{2.3} à la page~\pageref{2.3}.
+
+\subsubsection*{Qu'est-ce que l'endianisme ?}
+Voir la section~\ref{2.11} à la page~\pageref{2.11}.
+
+\subsubsection*{Expliquez le principe du codage en virgule flottante simple pre?cision (32bits)}
+
+Voir la section~\ref{2.9} à la page~\pageref{2.9}.
+
+\subsection{Représentation des informations : représentation des caractères}
+\subsubsection*{Qu'est-ce que le code ascii ?}
+Voir la section~\ref{3.1} à la page~\pageref{3.1}.
+
+\subsubsection*{Expliquez le principe du codage unicode ; pourquoi a-t-il été développé ?}
+Voir la section~\ref{3.2} à la page~\pageref{3.2}.
+
+\subsection{L'algèbre de Boole}
+
+\subsubsection*{Donner les tables de vérité des fonctions logiques de base}
+Voir la section~\ref{4.1} à la page~\pageref{4.1}.
+
+\subsubsection*{Représenter (donner le schéma) de la fonction logique y = ...}
+Voir la section~\ref{4.1} à la page~\pageref{4.1}.
+
+\subsubsection*{Etablir l'équation d'une fonction logique à partir de sa table de vérité, sous forme de somme de minterms}
+Voir la section~\ref{4.2.1} à la page~\pageref{4.2.1}.
+
+\subsubsection*{Etablir l'équation d'une fonction logique à partir de sa table de vérité, sous forme de produit de maxterm}
+Voir la section~\ref{4.2.2} à la page~\pageref{4.2.2}.
+
+\subsubsection*{Représenter (donner le schéma) de la fonction logique y à partir de sa table de vérité, en l'exprimant sous forme d'une somme de minterms}
+Voir la section~\ref{4.2.1} à la page~\pageref{4.2.1}.
+
+\subsubsection*{Qu'est-ce qu'une fonction logique ; à l'aide de quoi sont-elles réalisées ? Donnez un exemple }
+Voir la section~\ref{4.2.3} à la page~\pageref{4.2.3}.
+
+\subsubsection*{Réalisez une porte XNOR à partir des portes logiques de base AND;OR;NOT}
+Voir la section~\ref{4.1.9} à la page~\pageref{4.1.9}.
+
+\subsubsection*{Décrivez et comparez les fonctions OU et OU exclusif}
+Voir la section~\ref{4.1.3} à la page~\pageref{4.1.3} et la section~\ref{4.1.6} à la page~\pageref{4.1.6}.
+
+\subsubsection*{Qu'est-ce qu'un circuit combinatoire (par opposition à un circuit séquentiel)}
+Voir la section~\ref{4.1.1} à la page~\pageref{4.1.1}.
+
+\subsubsection*{Etablir la table de vérité de la fonction logique y à partir de son équation/schéma/karnaugh}
+Voir la section~\ref{4.3} à la page~\pageref{4.3}.
+
+\subsubsection*{Etablir l'équation d'une fonction logique à partir de sa table de Karnaugh/schéma}
+Voir la section~\ref{4.3} à la page~\pageref{4.3}.
+
+\subsubsection*{Simplifier la fonction logique y par la méthode algébrique et par Karnaugh}
+Voir la section~\ref{4.3} à la page~\pageref{4.3}.
+
+\subsubsection*{Qu'est-ce qu'une table de Karnaugh d'une fonction logique. A quoi sert-elle ? Donnez un exemple}
+Voir la section~\ref{4.3} à la page~\pageref{4.3}.
+
+\subsubsection*{Expliquez ce qu'est une fonction logique universelle ou complète. Illustrez par un exemple}
+Voir la section~\ref{4.1.10} à la page~\pageref{4.1.10}.
+
+\subsubsection*{Représentez un additionneur binaire avec des portes logiques. Donnez sa table de vérité}
+Voir la section~\ref{4.4.1} à la page~\pageref{4.4.1}.
+
+\subsubsection*{Décrivez le multiplexeur/comparateur/démultiplexeur}
+Voir la section~\ref{4.4.3} à la page~\pageref{4.4.3}, la section~\ref{4.4.4} à la page~\pageref{4.4.4} et la section~\ref{4.4.5} à la page~\pageref{4.4.5}.
+
+
+\subsubsection*{Sur base du schéma de l'ALU et d'un état d'entrée donné, déterminez la fonction réalisée par l'ALU}
+Voir la section~\ref{4.5.1} à la page~\pageref{4.5.1}.
+
+\subsubsection*{Expliquez le schéma suivant ; à quoi sert-il ? Multiplexeur ; démultiplexeur}
+Voir la section~\ref{4.4.4} à la page~\pageref{4.4.4} et la section~\ref{4.4.5} à la page~\pageref{4.4.5}.
+
+\subsubsection*{Expliquez le fonctionnement d'une ALU sur base du schéma}
+Voir la section~\ref{4.5.1} à la page~\pageref{4.5.1}.
+
+\subsection{Logique séquentiel}
+
+\subsubsection*{Décrire l'automate de Mealy et de Moore}
+Voir la section~\ref{5.2.1} à la page~\pageref{5.2.1}.
+
+\subsubsection*{Expliquez ce qu'est un glitch ; montrez-le sur un exemple ; solution ?}
+Voir la section~\ref{5.1} à la page~\pageref{5.1}.
+
+\subsubsection*{Qu'est-ce qu'un circuit séquentiel ? A quoi sert l'horloge ?}
+Voir la section~\ref{5.2} à la page~\pageref{5.2} et la section~\ref{5.1} à la page~\pageref{5.1}.
+
+\subsubsection*{Qu'est-ce qu'un bistable ?}
+Voir la section~\ref{5.3} à la page~\pageref{5.3}.
+
+\subsection{Le CPU}
+
+\subsubsection*{Représenter le schéma de base d'un CPU. Expliquez rapidement le rôle des différents registres}
+Voir la section~\ref{6.1} à la page~\pageref{6.1} et la section~\ref{6.9} à la page~\pageref{6.9}.
+
+\subsubsection*{Décrivez l'architecture CPU de Von Neumann et ses caractéristiques essentielles}
+Voir la section~\ref{6.5.2} à la page~\pageref{6.5.2}.
+
+\subsubsection*{Décrivez l'architecture CPU de Harvard et ses caractéristiques essentielles}
+Voir la section~\ref{6.5.1} à la page~\pageref{6.5.1}.
+
+\subsubsection*{Comparez les architectures CPU de Von Neuman et Harvard}
+Voir la section~\ref{6.5.2} à la page~\pageref{6.5.2}.
+
+\subsubsection*{Citez et expliquez le rôle des registres de base d'un CPU}
+Voir la section~\ref{6.9} à la page~\pageref{6.9}.
+
+\subsubsection*{Donnez et expliquez les différentes étapes d'un cycle machine CPU}
+Voir la section~\ref{6.10} à la page~\pageref{6.10}.
+
+\subsubsection*{Expliquez les différentes étapes d'exécution d'une instruction}
+Voir la section~\ref{6.10} à la page~\pageref{6.10}.
+
+\subsubsection*{Décrivez les étapes du décodage d'une adresse mémoire}
+Voir la section~\ref{6.3} à la page~\pageref{6.3}.
+
+\subsection{Le processeur}
+
+\subsubsection*{Expliquez le rôle du décodeur dans le CPU}
+Voir la section~\ref{7.3} à la page~\pageref{7.3}.
+
+\subsubsection*{Expliquez le rôle du séquenceur dans le CPU/ dans un ordinateur}
+Voir la section~\ref{7.4} à la page~\pageref{7.4}.
+
+\subsubsection*{Expliquez ce qu'est un processeur superscalaire}
+Voir la section~\ref{7.12} à la page~\pageref{7.12}.
+
+\subsubsection*{Expliques ce qu'est un pipeline (en informatique)}
+Voir la section~\ref{7.11} à la page~\pageref{7.11}.
+
+\subsubsection*{Qu'est-ce qu'un registre ; à quoi sert-il ? Donnez un exemple}
+Voir la section~\ref{7.2} à la page~\pageref{7.2}, la section~\ref{7.5} à la page~\pageref{7.5} et lasection~\ref{6.9} à la page~\pageref{6.9}.
+
+\subsubsection*{Décrire et comparer les processeurs RISC et CISC ; qu'est-ce qu'une architecture combinée ?}
+Voir la section~\ref{7.8} à la page~\pageref{7.8}, la section~\ref{7.9} à la page~\pageref{7.9} et lasection~\ref{7.10} à la page~\pageref{7.10}.
+
+\subsubsection*{Expliquez le multithreading, quels sont ses avantages ?}
+Voir la section~\ref{7.14.1} à la page~\pageref{7.14.1}.
+
+\subsubsection*{Expliquez les étapes d'un pipeline RISC classique (5 étapes) ; avantages et inconvénients ?}
+Voir la section~\ref{7.11.1} à la page~\pageref{7.11.1}.
+
+\subsubsection*{Qu'est-ce qu'un socket}
+Voir la section~\ref{7.15} à la page~\pageref{7.15}.
+
+\subsubsection*{Décrire et comparer la notion de multithread et de multicore}
+Voir la section~\ref{7.14.1} à la page~\pageref{7.14.1}.
+
+\subsubsection*{Expliquez le multiprocessing symétrique (SMP)}
+Voir la section~\ref{7.14.2} à la page~\pageref{7.14.2}.
+
+\subsubsection*{Quels sont les rôles de l'unité de contrôle dans un CPU ?}
+Voir la section~\ref{7.1} à la page~\pageref{7.1}.
+
+\subsubsection*{Qu'est-ce qu'un compteur ordinal ?}
+Voir la section~\ref{7.6} à la page~\pageref{7.6}.
+
+\subsubsection*{Quel genre d'information trouve-t-on dans le registre d'état d'un processeur ?}
+Voir la section~\ref{7.5} à la page~\pageref{7.5}.
+
+\subsection{Le BUS}
+
+
+\subsubsection*{Qu'est-ce qu'un bus ; décrivez les caractéristiques d'un bus ?}
+Voir la section~\ref{8.1} à la page~\pageref{8.1}.
+
+\subsubsection*{Décrivez les différents types de bus dans un ordinateur}
+Voir la section~\ref{8.10} à la page~\pageref{8.10},   la section~\ref{8.11} à la page~\pageref{8.11} et  la section~\ref{8.12} à la page~\pageref{8.12}.
+
+\subsubsection*{Qu'est-ce que la vitesse de transfert d'un processeur, comment la calcule-t-on ?}
+Voir la section~\ref{8.4} à la page~\pageref{8.4}.
+
+\subsubsection*{Décrivez et comparez le bus parallèle et le bus série}
+Voir la section~\ref{8.3} à la page~\pageref{8.3}.
+
+\subsubsection*{Décrivez le front side bus}
+Voir la section~\ref{8.11} à la page~\pageref{8.11}.
+
+\subsubsection*{Qu'est-ce que la largeur d'un bus ?}
+Voir la section~\ref{8.3} à la page~\pageref{8.3}.
+
+\subsubsection*{Quelles sont les caractéristiques principales du bus ISA/PCI/PCIexpress ?}
+Voir la section~\ref{8.10} à la page~\pageref{8.10},   la section~\ref{8.12.1} à la page~\pageref{8.12.1} et  la section~\ref{8.12.2} à la page~\pageref{8.12.2}.
+
+\subsection{Communication avec les périphériques}
+
+\subsubsection*{Citez 4 types de périphériques}
+Voir la section~\ref{9.2} à la page~\pageref{9.2}.
+
+\subsubsection*{Décrivez la communication CPU/périphérique par polling/interruption/Accès direct en me?moire}
+Voir la section~\ref{9.3} à la page~\pageref{9.3},   la section~\ref{9.4} à la page~\pageref{9.4} et  la section~\ref{9.5} à la page~\pageref{9.5}.
+
+\subsubsection*{Quel est le rôle d'un circuit contrôleur d'interruption}
+Voir la section~\ref{9.4.2} à la page~\pageref{9.4.2}.
+
+\subsubsection*{Qu'est-ce qu'une exception ? Expliquez la différence avec un interruption}
+Voir la section~\ref{9.6} à la page~\pageref{9.6}.
+
+
+\subsubsection*{Quelles sont les étapes effectuées pour répondre à une interruption ?}
+Voir la section~\ref{9.4.1} à la page~\pageref{9.4.1}.
+
+\subsubsection*{Qu'est-ce qu'une interruption ?}
+Voir la section~\ref{9.4} à la page~\pageref{9.4}.
+
+
+\subsubsection*{Décrivez le rôle du Northbridge/Southbridge}
+Voir la section~\ref{9.7.1} à la page~\pageref{9.7.1} et la section~\ref{9.7.2} à la page~\pageref{9.7.2}.
+
+
+\subsubsection*{Qu'est-ce qu'un chipset ?}
+Voir la section~\ref{9.7} à la page~\pageref{9.7}.
+
+\subsubsection*{Expliquez l'architecture générale d'un contrôleur de périphérique}
+Voir la section~\ref{9.1} à la page~\pageref{9.1}.
+
+\subsection{Les mémoires}
+\subsubsection*{Expliquez ce qu'est la mémoire externe ?}
+Voir la section~\ref{10.1} à la page~\pageref{10.1}.
+\subsubsection*{Expliquez la notion de mémoire morte, mémoire vive}
+Voir la section~\ref{10.3} à la page~\pageref{10.3} et la section~\ref{10.4} à la page~\pageref{10.4}.
+
+\subsubsection*{Décrivez rapidement les différents niveau de mémoire}
+Voir la section~\ref{10.2} à la page~\pageref{10.2}.
+
+\subsubsection*{Que siginifient les abréviations ROM ; RAM ; EPROM}
+Voir la section~\ref{10.3} à la page~\pageref{10.3} et la section~\ref{10.4} à la page~\pageref{10.4}.
+
+\subsubsection*{Comment mémorise-t-on un bit dans une EPROM ? Comment l'efface-t-on ?}
+Voir la section~\ref{10.3} à la page~\pageref{10.3}.
+\subsubsection*{Comparez RAM statique et RAM dynamique}
+Voir la section~\ref{10.4.1} à la page~\pageref{10.4.1} et la section~\ref{10.4.2} à la page~\pageref{10.4.2}.
+
+\subsubsection*{Comment est organisé un module de mémoire RAM}
+Voir la section~\ref{10.5} à la page~\pageref{10.5}.
+\subsubsection*{Qu'est-ce qu'une mémoire RAM synchrones/asynchrones ?}
+Voir la section~\ref{10.6} à la page~\pageref{10.6}.
+
+\subsubsection*{Quelle technique a-t-on utilisé pour augmenter les débits des mémoires RAM}
+Voir la section~\ref{10.6} à la page~\pageref{10.6}.
+
+
+
+
+\end{document}

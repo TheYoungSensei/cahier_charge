@@ -1,0 +1,37 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Contexte}{2}{section.1}
+\contentsline {section}{\numberline {2}Analyse de l'existant}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Acteurs}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Documents manipul\'es}{3}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Fiches descriptive et signal\'etique}{3}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}E-mail}{3}{subsubsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}R\`egles de gestion}{4}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}D\'etection du bug}{4}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Gestion des commentaires}{4}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Modification des documents}{4}{subsubsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.4}Subdivision en diff\'erents \'etats}{4}{subsubsection.2.3.4}
+\contentsline {subsubsection}{\numberline {2.3.5}Finalisation du traitement}{5}{subsubsection.2.3.5}
+\contentsline {section}{\numberline {3}Objet du march\'e}{5}{section.3}
+\contentsline {subsubsection}{\numberline {3.0.1}Objectifs}{5}{subsubsection.3.0.1}
+\contentsline {subsubsection}{\numberline {3.0.2}Contraintes}{5}{subsubsection.3.0.2}
+\contentsline {section}{\numberline {4}Sp\'ecifications applicatives}{6}{section.4}
+\contentsline {subsection}{\numberline {4.1}L'application \leavevmode {\color {blue}Bugtopus}\textsuperscript {TM}}{6}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Fonctionnalit\'es}{8}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Le commercial}{10}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Visualiser l'ensemble des bugs/RFE}{10}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Introduire une fiche signal\'etique, une fiche descriptive ou un RFE}{10}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}Rechercher un bug ou une RFE sp\'ecifique}{10}{subsubsection.4.3.3}
+\contentsline {subsection}{\numberline {4.4}Le membre d'\'equipe de d\'eveloppement}{10}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Prendre un bug ou une RFE en charge}{10}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Rouvrir un bug ou une RFE}{10}{subsubsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.3}Valider les tests unitaires pour un bug ou une RFE }{10}{subsubsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.4}Modifier une fiche signal\'etique ou descriptive}{10}{subsubsection.4.4.4}
+\contentsline {subsubsection}{\numberline {4.4.5}Passer un bug ou une RFE en \'etat doublon}{10}{subsubsection.4.4.5}
+\contentsline {subsubsection}{\numberline {4.4.6}Passer un bug ou une RFE en \'etat non-reproductible}{10}{subsubsection.4.4.6}
+\contentsline {subsection}{\numberline {4.5}Le responsable d'\'equipe de d\'eveloppement}{10}{subsection.4.5}
+\contentsline {subsubsection}{\numberline {4.5.1}Confirmer la pertinence du bug ou d'une RFE}{10}{subsubsection.4.5.1}
+\contentsline {subsubsection}{\numberline {4.5.2}Cl\^ore un bug ou une RFE}{10}{subsubsection.4.5.2}
+\contentsline {subsubsection}{\numberline {4.5.3}Indiquer une nouvelle version}{10}{subsubsection.4.5.3}
+\contentsline {subsection}{\numberline {4.6}Persistance des donn\'ees}{12}{subsection.4.6}
+\contentsline {section}{\numberline {5}Sp\'ecifications de r\'ealisations}{13}{section.5}
+\contentsline {section}{\numberline {6}Glossaire}{13}{section.6}

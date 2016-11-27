@@ -1,0 +1,9 @@
+attention use case inscription / role
+utilisateur transformer en commerial (pas besoin de spécialisation)
+rechercher bug ==> include visualiser bug
+attention titre : générique ou nom application
+confirmer bug /rejeter bug ==> extends préciser sévérité bug
+code couleur ajouter commentaire ==> légende OK
+attention acteurs <> ressources
+attention vérifier pertinence ==> confirmer un + rejeter un bug  ou extends
+créer et installer nouvelle version ==> indiquer nouvelle version
