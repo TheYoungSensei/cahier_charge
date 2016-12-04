@@ -1,0 +1,159 @@
+\BOOKMARK [1][-]{section.1}{Histoire de l'informatique}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Th\351orie des logarithmes}{section.1}% 2
+\BOOKMARK [3][-]{subsubsection.1.1.1}{D\351finition}{subsection.1.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.1.2}{Propri\351t\351s}{subsection.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.2}{XVIIe si\350cle}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.3}{XIXe si\350cle}{section.1}% 6
+\BOOKMARK [2][-]{subsection.1.4}{XXe si\350cle}{section.1}% 7
+\BOOKMARK [2][-]{subsection.1.5}{L'ENIAC}{section.1}% 8
+\BOOKMARK [2][-]{subsection.1.6}{Les g\351n\351rations de processeurs/ordinateurs}{section.1}% 9
+\BOOKMARK [1][-]{section.2}{Repr\351sentation des informations : repr\351sentation des nombres}{}% 10
+\BOOKMARK [2][-]{subsection.2.1}{Les diff\351rentes bases de repr\351sentation des nombres}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.2}{Les conversions d'une base \340 une autre}{section.2}% 12
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Conversion d'un nombre r\351el en binaire}{subsection.2.2}% 13
+\BOOKMARK [2][-]{subsection.2.3}{Addition d'un nombre binaire}{section.2}% 14
+\BOOKMARK [2][-]{subsection.2.4}{Repr\351sentation des nombres entiers n\351gatifs}{section.2}% 15
+\BOOKMARK [2][-]{subsection.2.5}{Soustraction d'un nombre binaire}{section.2}% 16
+\BOOKMARK [2][-]{subsection.2.6}{Multiplication d'un nombre binaire}{section.2}% 17
+\BOOKMARK [2][-]{subsection.2.7}{Division d'un nombre binaire}{section.2}% 18
+\BOOKMARK [2][-]{subsection.2.8}{Stockage des nombres r\351els : virgule fixe}{section.2}% 19
+\BOOKMARK [2][-]{subsection.2.9}{Stockage des nombres r\351els : virgule flottante}{section.2}% 20
+\BOOKMARK [3][-]{subsubsection.2.9.1}{Virgule flottante, simple pr\351cision \(en binaire\)}{subsection.2.9}% 21
+\BOOKMARK [3][-]{subsubsection.2.9.2}{Virgule flottante, double pr\351cision \(en binaire\)}{subsection.2.9}% 22
+\BOOKMARK [2][-]{subsection.2.10}{Op\351rations en virgule flottante}{section.2}% 23
+\BOOKMARK [2][-]{subsection.2.11}{L'endianisme}{section.2}% 24
+\BOOKMARK [1][-]{section.3}{Repr\351sentation des informations : repr\351sentation des caract\350res}{}% 25
+\BOOKMARK [2][-]{subsection.3.1}{L'ASCII}{section.3}% 26
+\BOOKMARK [2][-]{subsection.3.2}{L'unicode}{section.3}% 27
+\BOOKMARK [1][-]{section.4}{L'alg\350bre de Boole}{}% 28
+\BOOKMARK [2][-]{subsection.4.1}{Fonctions logiques et circuits combinatoires}{section.4}% 29
+\BOOKMARK [3][-]{subsubsection.4.1.1}{D\351finitions}{subsection.4.1}% 30
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Fonction NON \(NOT\)}{subsection.4.1}% 31
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Fonction OU \(OR\)}{subsection.4.1}% 32
+\BOOKMARK [3][-]{subsubsection.4.1.4}{Fonction ET \(AND\)}{subsection.4.1}% 33
+\BOOKMARK [3][-]{subsubsection.4.1.5}{Propri\351t\351s alg\351brique du ET et du OU logique}{subsection.4.1}% 34
+\BOOKMARK [3][-]{subsubsection.4.1.6}{Fonction OU EXCLUSIF \(XOR\)}{subsection.4.1}% 35
+\BOOKMARK [3][-]{subsubsection.4.1.7}{Fonction NON OU \(NOR\)}{subsection.4.1}% 36
+\BOOKMARK [3][-]{subsubsection.4.1.8}{Fonction NON ET\(NAND\)}{subsection.4.1}% 37
+\BOOKMARK [3][-]{subsubsection.4.1.9}{Fonction NON OU EXCLUSIF\(EXNOR\)}{subsection.4.1}% 38
+\BOOKMARK [3][-]{subsubsection.4.1.10}{Fonctions universelles: NAND et NOR}{subsection.4.1}% 39
+\BOOKMARK [3][-]{subsubsection.4.1.11}{R\351alisation de portes logiques}{subsection.4.1}% 40
+\BOOKMARK [3][-]{subsubsection.4.1.12}{Exemples de portes logiques \340 transistors bipolaires :}{subsection.4.1}% 41
+\BOOKMARK [2][-]{subsection.4.2}{Fonctions logiques de plusieurs variables}{section.4}% 42
+\BOOKMARK [3][-]{subsubsection.4.2.1}{MINTERM}{subsection.4.2}% 43
+\BOOKMARK [3][-]{subsubsection.4.2.2}{MAXTERM}{subsection.4.2}% 44
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Simplifications de fonctions logiques}{subsection.4.2}% 45
+\BOOKMARK [2][-]{subsection.4.3}{Les tables de Karnaugh}{section.4}% 46
+\BOOKMARK [2][-]{subsection.4.4}{Les circuits de bases}{section.4}% 47
+\BOOKMARK [3][-]{subsubsection.4.4.1}{L'additionneur simple}{subsection.4.4}% 48
+\BOOKMARK [3][-]{subsubsection.4.4.2}{L'additionneur complet}{subsection.4.4}% 49
+\BOOKMARK [3][-]{subsubsection.4.4.3}{Le comparateur binaire 2X4 bits}{subsection.4.4}% 50
+\BOOKMARK [3][-]{subsubsection.4.4.4}{Le multiplexeur}{subsection.4.4}% 51
+\BOOKMARK [3][-]{subsubsection.4.4.5}{Le d\351multiplexeur}{subsection.4.4}% 52
+\BOOKMARK [2][-]{subsection.4.5}{L'ALU}{section.4}% 53
+\BOOKMARK [3][-]{subsubsection.4.5.1}{L'ALU - 1 bit}{subsection.4.5}% 54
+\BOOKMARK [3][-]{subsubsection.4.5.2}{Etat de l'ALU}{subsection.4.5}% 55
+\BOOKMARK [1][-]{section.5}{Logique s\351quentielle}{}% 56
+\BOOKMARK [2][-]{subsection.5.1}{L'horloge}{section.5}% 57
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Les d\351lais de propagation}{subsection.5.1}% 58
+\BOOKMARK [2][-]{subsection.5.2}{Le circuit s\351quentiel}{section.5}% 59
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Les automates finis}{subsection.5.2}% 60
+\BOOKMARK [2][-]{subsection.5.3}{Les bascules}{section.5}% 61
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Le bascule Reset-Set}{subsection.5.3}% 62
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Le bascule Reset-Set-Time}{subsection.5.3}% 63
+\BOOKMARK [3][-]{subsubsection.5.3.3}{La bascule D \(Delay\)}{subsection.5.3}% 64
+\BOOKMARK [3][-]{subsubsection.5.3.4}{La bascule JK}{subsection.5.3}% 65
+\BOOKMARK [2][-]{subsection.5.4}{Les registres}{section.5}% 66
+\BOOKMARK [1][-]{section.6}{Le CPU \(Central Processing Unit\)}{}% 67
+\BOOKMARK [2][-]{subsection.6.1}{Les \351l\351ments de base}{section.6}% 68
+\BOOKMARK [2][-]{subsection.6.2}{Les liaisons de donn\351es}{section.6}% 69
+\BOOKMARK [2][-]{subsection.6.3}{Le d\351codage d'adresses}{section.6}% 70
+\BOOKMARK [2][-]{subsection.6.4}{La m\351moire externe}{section.6}% 71
+\BOOKMARK [2][-]{subsection.6.5}{Les diff\351rents types d'architecture de processeur}{section.6}% 72
+\BOOKMARK [3][-]{subsubsection.6.5.1}{L'architecture de Harvard}{subsection.6.5}% 73
+\BOOKMARK [3][-]{subsubsection.6.5.2}{L'architecture de von Neumann}{subsection.6.5}% 74
+\BOOKMARK [2][-]{subsection.6.6}{Registre de m\351moire externe}{section.6}% 75
+\BOOKMARK [2][-]{subsection.6.7}{Le p\351riph\351rique}{section.6}% 76
+\BOOKMARK [2][-]{subsection.6.8}{M\351moire et p\351riph\351riques}{section.6}% 77
+\BOOKMARK [2][-]{subsection.6.9}{Les registres}{section.6}% 78
+\BOOKMARK [2][-]{subsection.6.10}{Le cycle machine CPU}{section.6}% 79
+\BOOKMARK [2][-]{subsection.6.11}{Le syst\350me informatique}{section.6}% 80
+\BOOKMARK [1][-]{section.7}{Le processeur}{}% 81
+\BOOKMARK [2][-]{subsection.7.1}{L'unit\351 de contr\364le}{section.7}% 82
+\BOOKMARK [2][-]{subsection.7.2}{Le registre d'instruction}{section.7}% 83
+\BOOKMARK [2][-]{subsection.7.3}{Le d\351codeur}{section.7}% 84
+\BOOKMARK [2][-]{subsection.7.4}{Le s\351quenceur}{section.7}% 85
+\BOOKMARK [2][-]{subsection.7.5}{Le registre d'\351tat}{section.7}% 86
+\BOOKMARK [2][-]{subsection.7.6}{PC : Program Counter}{section.7}% 87
+\BOOKMARK [2][-]{subsection.7.7}{Taille des instructions x86}{section.7}% 88
+\BOOKMARK [2][-]{subsection.7.8}{Les CISC}{section.7}% 89
+\BOOKMARK [2][-]{subsection.7.9}{Les RISC}{section.7}% 90
+\BOOKMARK [2][-]{subsection.7.10}{Architecture combin\351e}{section.7}% 91
+\BOOKMARK [2][-]{subsection.7.11}{Le pipeline}{section.7}% 92
+\BOOKMARK [3][-]{subsubsection.7.11.1}{Le pipeline RISC classique}{subsection.7.11}% 93
+\BOOKMARK [2][-]{subsection.7.12}{Le processeur superscalaire}{section.7}% 94
+\BOOKMARK [2][-]{subsection.7.13}{Le Symmetric Multiprocessing \(SMP\)}{section.7}% 95
+\BOOKMARK [2][-]{subsection.7.14}{Le thread}{section.7}% 96
+\BOOKMARK [3][-]{subsubsection.7.14.1}{Le multithreading}{subsection.7.14}% 97
+\BOOKMARK [3][-]{subsubsection.7.14.2}{Le simultaneous multithreading}{subsection.7.14}% 98
+\BOOKMARK [2][-]{subsection.7.15}{Le socket}{section.7}% 99
+\BOOKMARK [1][-]{section.8}{Le BUS}{}% 100
+\BOOKMARK [2][-]{subsection.8.1}{D\351finitions et caract\351ristiques}{section.8}% 101
+\BOOKMARK [2][-]{subsection.8.2}{La carte-m\350re}{section.8}% 102
+\BOOKMARK [2][-]{subsection.8.3}{Largeur de bus}{section.8}% 103
+\BOOKMARK [3][-]{subsubsection.8.3.1}{Largeur de bus :s\351rie}{subsection.8.3}% 104
+\BOOKMARK [3][-]{subsubsection.8.3.2}{Largeur de bus :parall\350le}{subsection.8.3}% 105
+\BOOKMARK [2][-]{subsection.8.4}{Le d\351bit binaire}{section.8}% 106
+\BOOKMARK [2][-]{subsection.8.5}{Le protocole}{section.8}% 107
+\BOOKMARK [2][-]{subsection.8.6}{BUS synchrone et BUS asynchrone}{section.8}% 108
+\BOOKMARK [3][-]{subsubsection.8.6.1}{BUS syncrhrone}{subsection.8.6}% 109
+\BOOKMARK [3][-]{subsubsection.8.6.2}{BUS asyncrhrone}{subsection.8.6}% 110
+\BOOKMARK [2][-]{subsection.8.7}{La latence}{section.8}% 111
+\BOOKMARK [2][-]{subsection.8.8}{La technologie}{section.8}% 112
+\BOOKMARK [2][-]{subsection.8.9}{La topologie}{section.8}% 113
+\BOOKMARK [2][-]{subsection.8.10}{BUS processeur}{section.8}% 114
+\BOOKMARK [2][-]{subsection.8.11}{Front Side BUS}{section.8}% 115
+\BOOKMARK [2][-]{subsection.8.12}{Connexions vers le monde ext\351rieur}{section.8}% 116
+\BOOKMARK [3][-]{subsubsection.8.12.1}{BUS PCI}{subsection.8.12}% 117
+\BOOKMARK [3][-]{subsubsection.8.12.2}{BUS PCI-express}{subsection.8.12}% 118
+\BOOKMARK [1][-]{section.9}{Communication avec les p\351riph\351riques}{}% 119
+\BOOKMARK [2][-]{subsection.9.1}{Architecture g\351n\351rale d'un contr\364leur de p\351riph\351riques}{section.9}% 120
+\BOOKMARK [2][-]{subsection.9.2}{Les diff\351rents types de p\351riph\351riques}{section.9}% 121
+\BOOKMARK [2][-]{subsection.9.3}{La communication par interrogation : Polling}{section.9}% 122
+\BOOKMARK [2][-]{subsection.9.4}{La communication par interruption}{section.9}% 123
+\BOOKMARK [3][-]{subsubsection.9.4.1}{La r\351ponse \340 une interruption}{subsection.9.4}% 124
+\BOOKMARK [3][-]{subsubsection.9.4.2}{Le circuit contr\364leur d'interruption \(8259\)}{subsection.9.4}% 125
+\BOOKMARK [2][-]{subsection.9.5}{La communication par Direct Memory Access \(DMA\)}{section.9}% 126
+\BOOKMARK [3][-]{subsubsection.9.5.1}{Le transfert DMA}{subsection.9.5}% 127
+\BOOKMARK [3][-]{subsubsection.9.5.2}{Les instructions DMA}{subsection.9.5}% 128
+\BOOKMARK [2][-]{subsection.9.6}{Les exceptions}{section.9}% 129
+\BOOKMARK [2][-]{subsection.9.7}{Le chipset}{section.9}% 130
+\BOOKMARK [3][-]{subsubsection.9.7.1}{Le Northbridge}{subsection.9.7}% 131
+\BOOKMARK [3][-]{subsubsection.9.7.2}{Le Southbridge}{subsection.9.7}% 132
+\BOOKMARK [1][-]{section.10}{Les m\351moires}{}% 133
+\BOOKMARK [2][-]{subsection.10.1}{Les types de m\351moires}{section.10}% 134
+\BOOKMARK [2][-]{subsection.10.2}{Les niveaux de m\351moire}{section.10}% 135
+\BOOKMARK [2][-]{subsection.10.3}{M\351moire morte}{section.10}% 136
+\BOOKMARK [3][-]{subsubsection.10.3.1}{M\351moire morte : ROM}{subsection.10.3}% 137
+\BOOKMARK [3][-]{subsubsection.10.3.2}{M\351moire morte : EPROM}{subsection.10.3}% 138
+\BOOKMARK [3][-]{subsubsection.10.3.3}{M\351moire morte : EEPROM}{subsection.10.3}% 139
+\BOOKMARK [3][-]{subsubsection.10.3.4}{M\351moire morte : Flash EEPROM}{subsection.10.3}% 140
+\BOOKMARK [2][-]{subsection.10.4}{M\351moire vive}{section.10}% 141
+\BOOKMARK [3][-]{subsubsection.10.4.1}{Ram statique}{subsection.10.4}% 142
+\BOOKMARK [3][-]{subsubsection.10.4.2}{Ram dynamique}{subsection.10.4}% 143
+\BOOKMARK [3][-]{subsubsection.10.4.3}{DRAM}{subsection.10.4}% 144
+\BOOKMARK [2][-]{subsection.10.5}{Organisation de la m\351moire}{section.10}% 145
+\BOOKMARK [2][-]{subsection.10.6}{Horloge}{section.10}% 146
+\BOOKMARK [3][-]{subsubsection.10.6.1}{Types de DRAM asynchrones}{subsection.10.6}% 147
+\BOOKMARK [3][-]{subsubsection.10.6.2}{Types de RAM synchrones}{subsection.10.6}% 148
+\BOOKMARK [1][-]{section.11}{Questions/R\351ponses examen}{}% 149
+\BOOKMARK [2][-]{subsection.11.1}{Histoire de l'informatique}{section.11}% 150
+\BOOKMARK [2][-]{subsection.11.2}{Repr\351sentation des informations : repr\351sentation des nombres}{section.11}% 151
+\BOOKMARK [2][-]{subsection.11.3}{Repr\351sentation des informations : repr\351sentation des caract\350res}{section.11}% 152
+\BOOKMARK [2][-]{subsection.11.4}{L'alg\350bre de Boole}{section.11}% 153
+\BOOKMARK [2][-]{subsection.11.5}{Logique s\351quentiel}{section.11}% 154
+\BOOKMARK [2][-]{subsection.11.6}{Le CPU}{section.11}% 155
+\BOOKMARK [2][-]{subsection.11.7}{Le processeur}{section.11}% 156
+\BOOKMARK [2][-]{subsection.11.8}{Le BUS}{section.11}% 157
+\BOOKMARK [2][-]{subsection.11.9}{Communication avec les p\351riph\351riques}{section.11}% 158
+\BOOKMARK [2][-]{subsection.11.10}{Les m\351moires}{section.11}% 159
