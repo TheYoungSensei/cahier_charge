@@ -14,23 +14,12 @@
 \BOOKMARK [2][-]{subsubsection.3.0.1}{Objectifs}{section.3}% 14
 \BOOKMARK [3][-]{subsubsection.3.0.2}{Contraintes}{subsubsection.3.0.1}% 15
 \BOOKMARK [1][-]{section.4}{Sp\351cifications applicatives}{}% 16
-\BOOKMARK [2][-]{subsection.4.1}{L'application BugtopusTM}{section.4}% 17
-\BOOKMARK [2][-]{subsection.4.2}{Fonctionnalit\351s}{section.4}% 18
-\BOOKMARK [2][-]{subsection.4.3}{Le commercial}{section.4}% 19
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Visualiser l'ensemble des bugs/RFE}{subsection.4.3}% 20
-\BOOKMARK [3][-]{subsubsection.4.3.2}{Introduire une fiche signal\351tique, une fiche descriptive ou un RFE}{subsection.4.3}% 21
-\BOOKMARK [3][-]{subsubsection.4.3.3}{Rechercher un bug ou une RFE sp\351cifique}{subsection.4.3}% 22
-\BOOKMARK [2][-]{subsection.4.4}{Le membre d'\351quipe de d\351veloppement}{section.4}% 23
-\BOOKMARK [3][-]{subsubsection.4.4.1}{Prendre un bug ou une RFE en charge}{subsection.4.4}% 24
-\BOOKMARK [3][-]{subsubsection.4.4.2}{Rouvrir un bug ou une RFE}{subsection.4.4}% 25
-\BOOKMARK [3][-]{subsubsection.4.4.3}{Valider les tests unitaires pour un bug ou une RFE }{subsection.4.4}% 26
-\BOOKMARK [3][-]{subsubsection.4.4.4}{Modifier une fiche signal\351tique ou descriptive}{subsection.4.4}% 27
-\BOOKMARK [3][-]{subsubsection.4.4.5}{Passer un bug ou une RFE en \351tat doublon}{subsection.4.4}% 28
-\BOOKMARK [3][-]{subsubsection.4.4.6}{Passer un bug ou une RFE en \351tat non-reproductible}{subsection.4.4}% 29
-\BOOKMARK [2][-]{subsection.4.5}{Le responsable d'\351quipe de d\351veloppement}{section.4}% 30
-\BOOKMARK [3][-]{subsubsection.4.5.1}{Confirmer la pertinence du bug ou d'une RFE}{subsection.4.5}% 31
-\BOOKMARK [3][-]{subsubsection.4.5.2}{Cl\364re un bug ou une RFE}{subsection.4.5}% 32
-\BOOKMARK [3][-]{subsubsection.4.5.3}{Indiquer une nouvelle version}{subsection.4.5}% 33
-\BOOKMARK [2][-]{subsection.4.6}{Persistance des donn\351es}{section.4}% 34
-\BOOKMARK [1][-]{section.5}{Sp\351cifications de r\351alisations}{}% 35
-\BOOKMARK [1][-]{section.6}{Glossaire}{}% 36
+\BOOKMARK [2][-]{subsection.4.1}{L'application SoftRepairTM}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.2}{Description des fonctionnalit\351s}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.3}{Description du travail des utilisateurs}{section.4}% 19
+\BOOKMARK [3][-]{subsubsection.4.3.1}{L'interm\351diaire}{subsection.4.3}% 20
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Le commercial}{subsection.4.3}% 21
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Le membre d'\351quipe de d\351veloppement}{subsection.4.3}% 22
+\BOOKMARK [3][-]{subsubsection.4.3.4}{Le responsable d'\351quipe de d\351veloppement}{subsection.4.3}% 23
+\BOOKMARK [2][-]{subsection.4.4}{Description des donn\351es}{section.4}% 24
+\BOOKMARK [1][-]{section.5}{Glossaire}{}% 25

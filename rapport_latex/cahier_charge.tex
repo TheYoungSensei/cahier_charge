@@ -199,7 +199,7 @@ Actuellement les commentaires sont gérés par e-mail. Tous les commentaires conce
 Il faudra donc permettre la modification de ces informations par le responsable et ses membres d'équipes. \\ \par
 Par opposition, \hyperref[sec:desc]{ \textit{la fiche descriptive d'un bug}} ne pourra jamais être modifiée. Dans le cas où cette dernière serait erronée ou contiendrait une descrpition peu fiable ou devrait être tout simplement modifiée, cela se fera à l'aide de commentaires.
 \subsubsection{Subdivision en différents états}
-La gestion d'un bug se fait à l'aide de différents états, un bug ayant toujours un état à un moment donné :
+La gestion d'un bug\footnote{Nous utiliserons le mot \og bug \fg pour se référer à un bug ou à un demande d'amélioration RFE dans le reste de ce cahier des chages.} se fait à l'aide de différents états, un bug ayant toujours un état à un moment donné :
 \begin{itemize}
 	\item Nouveau
 	\item Confirmé
@@ -212,7 +212,7 @@ La gestion d'un bug se fait à l'aide de différents états, un bug ayant toujours 
 	\item Doublon
 	\item Rouvert
 \end{itemize}
-Le passage d'un état à l'autre symbolise un changement dans la façon de traiter ce bug et son avancée dans le processus de résolution. Il faudra donc notifier les utilisateurs de l'évolution du projet via ces différents états.\footnote{Si un bug clos veut être rouvert, on ne changera pas l'état de ce dernier, mais on considèrera qu'il s'agisse d'un nouveau bug.}
+Le passage d'un état à l'autre symbolise un changement dans la façon de traiter ce bug et son avancée dans le processus de résolution. Il faudra donc notifier les utilisateurs de l'évolution du projet via ces différents états.\footnote{Si un bug clos veut être rouvert, on ne changera pas l'état de ce dernier, mais on considèrera qu'il s'agit d'un nouveau bug.}
 \subsubsection{Finalisation du traitement}
 Seul le responsable peut décider si un bug est corrigé ou non. C'est ce dernier qui prendra la décision finale et qui mettra fin au traitement en livrant la version corrigée au client. Par ailleurs un bug pourra très bien être rouvert par la suite.
 
@@ -238,44 +238,72 @@ et des demandes d'améliorations, pour ses logiciels.
 \end{itemize}
 \newpage
 \section{Spécifications applicatives}
-\subsection{L'application  \textcolor{blue}{Bugtopus}\textsuperscript{TM}}
-\newpage
-\subsection{Fonctionnalités}
+\subsection{L'application  \textcolor{blue}{SoftRepair}\textsuperscript{TM}}
+ \textcolor{red}{TO DO = INTRODUCTION}
+\subsection{Description des fonctionnalités}
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=15cm,height=17cm]{cu.png}}
+	\fbox{\includegraphics[width=13cm,height=14cm]{cu.png}}
 	\caption{Diagramme des cas d'utilisation}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=15cm,height=17cm]{flux.jpeg}}
+	\fbox{\includegraphics[width=13cm,height=17cm]{flux.jpeg}}
 	\caption{Diagramme de flux de la gestion d'un bug}
 \end{figure}
+\subsection{Description du travail des utilisateurs}
+\subsubsection{L'intermédiaire}
+L'intermédiaire n'est pas un utilisateur actif de l'application, sa fonction est de faire le relais entre les clients et les bugs qu'ils rencontrent et le commercial qui les signale à l'équipe de développement. Pour cela, l'application prévoit une utilsiation de suivi de bug pour que l'intermédiaire puisse informer un client de l'avancement de la résolution d'un bug en particulier. L'intermédiaire  \textbf{ n'est pas authentifié} au sein de l'application. N'importe quel utilisateur ayant accès à un bug concernant un intermédiaire peut en seul geste lui envoyer un e-mail généré automatiquement résumant l'état du bug actuel.
 
-\subsection{Le commercial}
-\subsubsection{Visualiser l'ensemble des bugs/RFE}
-\subsubsection{Introduire une fiche signalétique, une fiche descriptive ou un RFE}
-\subsubsection{Rechercher un bug ou une RFE spécifique}
-\subsection{Le membre d'équipe de développement}
-\subsubsection{Prendre un bug ou une RFE en charge}
-\subsubsection{Rouvrir un bug ou une RFE}
-\subsubsection{Valider les tests unitaires pour un bug ou une RFE }
-\subsubsection{Modifier une fiche signalétique ou descriptive}
-\subsubsection{Passer un bug ou une RFE en état doublon}
-\subsubsection{Passer un bug ou une RFE en état non-reproductible}
-\subsection{Le responsable d'équipe de développement}
-\subsubsection{Confirmer la pertinence du bug ou d'une RFE}
-\subsubsection{Clôre un bug ou une RFE}
-\subsubsection{Indiquer une nouvelle version}
-\newpage
-\subsection{Persistance des données}
+\textcolor{red}{NOTE : AJOUTER UNE IMAGE DU BOUTON FAIRE PART A L INTERMEDIAIRE + UN EXEMPLE DE MAIL GENERE AUTOMATIQUEMENT}
+
+\subsubsection{Le commercial}
+Le commercial est un utilisateur \textbf{authentifié} de l'application (grâce à son identifiant unique et son mot de passe). Il est le point de relais entre l'intermédiaire et l'équipe de développement, c'est lui qui signale tous nouveaux bugs. 
+
+\paragraph{Signalement de bug}Pour cela il suit suffit depuis l'écran principal d'appuyer sur le bouton \og Ajouter un bug /RFE \fg, l'application lui invitera ensuite à remplir un formulaire correspondant à la fiche descriptive du bug.
+
+\textcolor{red}{Note : placer ici la vue avec la fiche descriptive et signalétique d'un bug (en mettant en évidence le boutton ajouter bug) et en grisant la possibilité de changer la sévérité d'un bug}
+\paragraph{Visualisation et recherche de bugs}
+ Pour l'aider dans sa tâche, l'application lui permettra de visualiser l'ensemble des bugs et d'effectuer des recherches (par état, par logiciel , le concernant ou pas... \textcolor{red}{A VERIFIER/ PRECISER COHERENCE GRAPHIQUE IHM}). 
+ 
+ \textcolor{red}{Note : placer ici la vue principal en insistant sur la partie visualistion/recherche}
+ 
+ \paragraph{Espace personnel}
+ Le commercial à également accès à son propre espace personnel depuis lequel il peut modifier ses identifiants de connexion à l'application. Depuis cet écran, il peut avoir accès à un certain nombre de statistiques le concernant. (\textcolor{red}{A VERIFIER/ PRECISER COHERENCE GRAPHIQUE IHM})
+
+
+\subsubsection{Le membre d'équipe de développement}
+Le membre d'équipe tient un rôle centrale dans l'application, c'est lui qui gèrera la majorité des transitions d'état des bugs afin de pouvoir garder un détail sur l'évolution de ceux-ci. Il dispose également des mêmes fonctionnalités que le commercial. La fonction de recherches de bugs possède une option supplémentaire par rapport au commercial qui lui permet de voir rapidement quels bugs lui ont été assignés par son responsable. \textcolor{red}{A VERIFIER/ PRECISER COHERENCE GRAPHIQUE IHM})
+\paragraph{Insertion de commentaires}
+Pour l'aider dans le développement du bug et pour tenir informer le reste de l'équipe, le membre d'équipe peut laisser un commentaire grâce à une vue prévue à cet effet. Cette action est obligatoire lorsqu'il change l'état d'un bug (un champ est directement prévu dans le menu de transition d'état pour les commentaires obligatoire ainsi que dans la fenêtre commentaires pour les facultatifs).Il est à noter que chaque commmentaire lié à un bug conserve l'état du bug durant lequel il a été écrit. La vue ci-dessous donne un exemple de l'historique des commentaires d'un bug. Un code couleur correspondant à l'état des bugs indique durant quel étape le commentaire a été écrit. 
+ \textcolor{red}{Note : placer ici la vue concernant les commentaires}
+\paragraph{Transition d'état}
+Le menu principal du bug comprend différents boutons pour marquer la transition d'état d'un bug. Le membre d'équipe peut ainsi choisir de marquer un bug comme \og pris en charge\fg (s'il décide de prendre en charge son développement), \og corrigé \fg (s'il considère que le bug est corrigé),\og validé\fg (s'il a terminé de valider les tests unitaires en interne concernant le bug), \og non-reproductible\fg (si le bug est considéré comme annulé), \og rouvert \fg (si un bug en état \og non-reproductible \fg est jugé reproductible ou qu'un bug n'a pas pu être validé après avoir été corrigé) ou en état \og doublon \fg (si le bug a déjà été signalé). Cette dernière transition impliquera de devoir sélectionner le bug initial faisant double-emploi avec le bug courrant. Il est à noter que ce n'est pas parce qu'un membre d'équipe qui a pris en charge un bug et l'a corrigé ne doit pas obligatoire se soucier de réaliser les tests internes. Une fois qu'un bug a reçu l'état \og corrigé \fg, il peut être repris par un autre membre d'équipe.
+ \textcolor{red}{Note : placer ici la vue concernant les transitions de bug (griser celui de clore pour responsable) + monter qu'on peut bel et bien référence le bug initial pour létat doublon}
+ \paragraph{Modification d'une fiche}
+ Un membre d'équipe peut modifier la fiche signalétique ou descriptive d'un bug à tout moment.
+  \textcolor{red}{Note : placer ici la vue où l'on peut voir un bouton pour la modification d'une fiche}
+ 
+\subsubsection{Le responsable d'équipe de développement}
+Le responsable d'équipe qui est également un utilisateur \textbf{authentifié} est doté des mêmes fonctions que le membre d'équipe. A cela près qu'il est doté d'outils supplémentaires liés aux préparation de nouvelles versions (pouvant regrouper plusieurs bugs) ainsi qu'à l'assignation de bugs à des membres d'équipes. 
+
+\paragraph{Transitions d'états}
+Trois transitions d'états lui sont réservées \og confirmé \fg et \og assigné \fg et \og clôs \fg . En effet le responsable peut dans un premier temps confirmer un nouveau bug en précisant sa sévérité mais décider de l'assigner à un membre d'équipe à un autre moment. L'état \og clôs \fg correspond à l'état d'un bug lorsque le responsable confirme la correction de celui-ci et qu'il s'apprête à préparer une nouvelle version du logiciel prenant en compte les modifications effectuées\textcolor{red}{A VERIFIER/ PRECISER COHERENCE GRAPHIQUE IHM +DSD + DIAGRAMME UC + DIAGRAMME FLUX})
+  \textcolor{red}{Note : placer ici la vue où l'on peut voir le champs sévérité de la fiche signalétique non grisé + la possibilité de sélectionner un membre d'équipe pour lui assigner un bug (attention différent prise en charge, il faut rajouter un nouvel état ==> à discuter)}
+\paragraph{Préparation de nouvelles versions}
+Une fois qu'un ou plusieurs bugs dont l'état est \og clôs \fg le responsable peut décider de préparer une nouvelle version du logiciel concerné. Pour l'aider dans sa tâche, un  système de glisser-déposer lui permettra de reprendre les bugs repris dans la nouvelle version aisément.
+  \textcolor{red}{Note : placer ici la vue où l'on prépare une nouvelle version, avec le glisser-déposer}
+
+
+\subsection{Description des données}
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=15cm,height=17cm]{dsd.png}}
+	\fbox{\includegraphics[width=13cm,height=15cm]{dsd.png}}
 	\caption{Diagramme de structures des données}
 \end{figure}
-\section{Spécifications de réalisations}
+
 
 \section{Glossaire}
 
+ \textcolor{red}{TO DO}
 \end{document}

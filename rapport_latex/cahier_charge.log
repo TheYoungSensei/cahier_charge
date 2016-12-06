@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2016.11.27)  27 NOV 2016 18:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2016.11.27)  4 DEC 2016 03:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -460,7 +460,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--125
 
  []
 
-[2] <./figures/fiche_descriptive.png, id=207, 457.71pt x 289.08pt>
+[2] <./figures/fiche_descriptive.png, id=150, 457.71pt x 289.08pt>
 File: ./figures/fiche_descriptive.png Graphic file (type png)
 
 <use ./figures/fiche_descriptive.png>
@@ -468,7 +468,7 @@ Package pdftex.def Info: ./figures/fiche_descriptive.png used on input line 154
 .
 (pdftex.def)             Requested size: 199.1651pt x 170.71451pt.
 
-<./figures/fiche_signaletique.png, id=209, 518.6878pt x 325.96782pt>
+<./figures/fiche_signaletique.png, id=152, 518.6878pt x 325.96782pt>
 File: ./figures/fiche_signaletique.png Graphic file (type png)
 
 <use ./figures/fiche_signaletique.png>
@@ -516,84 +516,75 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `superscript' on input line 241.
 
-[6] <./figures/cu.png, id=238, 614.295pt x 794.97pt>
+<./figures/cu.png, id=178, 614.295pt x 794.97pt>
 File: ./figures/cu.png Graphic file (type png)
  <use ./figures/cu.png>
 Package pdftex.def Info: ./figures/cu.png used on input line 246.
-(pdftex.def)             Requested size: 426.79787pt x 483.70584pt.
+(pdftex.def)             Requested size: 369.8921pt x 398.34528pt.
 
-Overfull \hbox (88.59785pt too wide) in paragraph at lines 246--247
+Overfull \hbox (31.6921pt too wide) in paragraph at lines 246--247
  [][] 
  []
 
-<./figures/flux.jpeg, id=239, 794.97pt x 614.295pt>
+<./figures/flux.jpeg, id=179, 794.97pt x 614.295pt>
 File: ./figures/flux.jpeg Graphic file (type jpg)
  <use ./figures/flux.jpeg>
 Package pdftex.def Info: ./figures/flux.jpeg used on input line 251.
-(pdftex.def)             Requested size: 426.80284pt x 483.70363pt.
+(pdftex.def)             Requested size: 369.89984pt x 483.70363pt.
 
-Overfull \hbox (88.60283pt too wide) in paragraph at lines 251--252
+Overfull \hbox (31.69983pt too wide) in paragraph at lines 251--252
  [][] 
  []
 
-[7]
-Overfull \vbox (0.50859pt too high) has occurred while \output is active []
-
-
-[8pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
+[6pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.253 \end{figure}
-                   <./figures/cu.png>] [9pdfTeX warning (ext4): destination wit
-h the same identifier (name{figure.2}) has been already used, duplicate ignored
-
+l.254 \subsection
+                 {Description du travail des utilisateurs} <./figures/cu.png>]
+[7pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.270 \newpage
-               <./figures/flux.jpeg>] [10]
-<./figures/dsd.png, id=259, 614.295pt x 794.97pt>
+l.257 
+       <./figures/flux.jpeg>] [8] [9]
+<./figures/dsd.png, id=208, 614.295pt x 794.97pt>
 File: ./figures/dsd.png Graphic file (type png)
  <use ./figures/dsd.png>
-Package pdftex.def Info: ./figures/dsd.png used on input line 274.
-(pdftex.def)             Requested size: 426.79787pt x 483.70584pt.
+Package pdftex.def Info: ./figures/dsd.png used on input line 301.
+(pdftex.def)             Requested size: 369.8921pt x 426.80284pt.
 
-Overfull \hbox (88.59785pt too wide) in paragraph at lines 274--275
+Overfull \hbox (31.6921pt too wide) in paragraph at lines 301--302
  [][] 
  []
 
-[11]
-Overfull \vbox (0.50859pt too high) has occurred while \output is active []
-
-
-[12pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
- has been already used, duplicate ignored
+[10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 309.
+ [11pdfTeX warning (ext4): destination with the same identifier (name{figure.3}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.277 \section
-              {Spécifications de réalisations} <./figures/dsd.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 281.
- [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 281.
-
-(./cahier_charge.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 281.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 281.
+l.309 \end{document}
+                     <./figures/dsd.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 309.
+ (./cahier_charge.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 309.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 309.
 Package rerunfilecheck Info: File `cahier_charge.out' has not changed.
-(rerunfilecheck)             Checksum: 3816B12EF44941D52E45A42B1E3C97C3;2950.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 281.
+(rerunfilecheck)             Checksum: 323E29ABEFF5DA817131B055ACD00FED;1874.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 309.
  ) 
 Here is how much of TeX's memory you used:
- 8848 strings out of 494916
- 126800 string characters out of 6179762
- 222403 words of memory out of 5000000
- 11971 multiletter control sequences out of 15000+600000
+ 8834 strings out of 494916
+ 126485 string characters out of 6179762
+ 221403 words of memory out of 5000000
+ 11961 multiletter control sequences out of 15000+600000
  14016 words of font info for 53 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 29i,12n,32p,402b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,12n,32p,1079b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texli
@@ -605,10 +596,10 @@ ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 i12.pfb>
-Output written on cahier_charge.pdf (14 pages, 1329210 bytes).
+Output written on cahier_charge.pdf (12 pages, 1336007 bytes).
 PDF statistics:
- 327 PDF objects out of 1000 (max. 8388607)
- 288 compressed objects within 3 object streams
- 56 named destinations out of 1000 (max. 500000)
- 314 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 271 PDF objects out of 1000 (max. 8388607)
+ 234 compressed objects within 3 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 226 words of extra memory for PDF output out of 10000 (max. 10000000)
 
