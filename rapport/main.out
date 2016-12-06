@@ -1,0 +1,28 @@
+\BOOKMARK [1][-]{section.1}{Contexte}{}% 1
+\BOOKMARK [1][-]{section.2}{Analyse de l'existant}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Acteurs}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Documents manipul\351s}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Fiches descriptive et signal\351tique}{subsection.2.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.2}{E-mail}{subsection.2.2}% 6
+\BOOKMARK [2][-]{subsection.2.3}{R\350gles de gestion}{section.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.3.1}{D\351tection du bug}{subsection.2.3}% 8
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Gestion des commentaires}{subsection.2.3}% 9
+\BOOKMARK [3][-]{subsubsection.2.3.3}{Modification des documents}{subsection.2.3}% 10
+\BOOKMARK [3][-]{subsubsection.2.3.4}{Subdivision en diff\351rents \351tats}{subsection.2.3}% 11
+\BOOKMARK [3][-]{subsubsection.2.3.5}{Finalisation du traitement}{subsection.2.3}% 12
+\BOOKMARK [1][-]{section.3}{Objet du march\351}{}% 13
+\BOOKMARK [2][-]{subsubsection.3.0.1}{Objectifs}{section.3}% 14
+\BOOKMARK [3][-]{subsubsection.3.0.2}{Contraintes}{subsubsection.3.0.1}% 15
+\BOOKMARK [1][-]{section.4}{Sp\351cifications applicatives}{}% 16
+\BOOKMARK [2][-]{subsection.4.1}{L'application SoftRepairTM}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.2}{Description des fonctionnalit\351s}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.3}{Flux d'information}{section.4}% 19
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Diagramme de flux d'informations}{subsection.4.3}% 20
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Description du flux d'information}{subsection.4.3}% 21
+\BOOKMARK [2][-]{subsection.4.4}{Description du travail des utilisateurs}{section.4}% 22
+\BOOKMARK [3][-]{subsubsection.4.4.1}{L'interm\351diaire}{subsection.4.4}% 23
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Le commercial}{subsection.4.4}% 24
+\BOOKMARK [3][-]{subsubsection.4.4.3}{Le membre d'\351quipe de d\351veloppement}{subsection.4.4}% 25
+\BOOKMARK [3][-]{subsubsection.4.4.4}{Le responsable d'\351quipe de d\351veloppement}{subsection.4.4}% 26
+\BOOKMARK [2][-]{subsection.4.5}{Description des donn\351es}{section.4}% 27
+\BOOKMARK [1][-]{section.5}{Glossaire}{}% 28
