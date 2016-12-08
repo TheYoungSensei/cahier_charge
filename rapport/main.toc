@@ -15,27 +15,35 @@
 \contentsline {subsubsection}{\numberline {3.0.1}Objectifs}{5}{subsubsection.3.0.1}
 \contentsline {subsubsection}{\numberline {3.0.2}Contraintes}{5}{subsubsection.3.0.2}
 \contentsline {section}{\numberline {4}Sp\IeC {\'e}cifications applicatives}{6}{section.4}
-\contentsline {subsection}{\numberline {4.1}L'application \leavevmode {\color {blue}SoftRepair}\textsuperscript {TM}}{6}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Description des fonctionnalit\IeC {\'e}s}{6}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Flux d'information}{7}{subsection.4.3}
-\contentsline {subsubsection}{\numberline {4.3.1}Diagramme de flux d'informations}{7}{subsubsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.2}Description du flux d'information}{7}{subsubsection.4.3.2}
-\contentsline {subsection}{\numberline {4.4}Description du travail des utilisateurs}{8}{subsection.4.4}
-\contentsline {subsubsection}{\numberline {4.4.1}L'interm\IeC {\'e}diaire}{8}{subsubsection.4.4.1}
-\contentsline {subsubsection}{\numberline {4.4.2}Le commercial}{8}{subsubsection.4.4.2}
-\contentsline {paragraph}{Signalement de bug}{9}{section*.2}
-\contentsline {paragraph}{Visualisation et recherche de bugs}{9}{section*.3}
-\contentsline {paragraph}{Espace personnel}{9}{section*.4}
-\contentsline {subsubsection}{\numberline {4.4.3}Le membre d'\IeC {\'e}quipe de d\IeC {\'e}veloppement}{9}{subsubsection.4.4.3}
-\contentsline {paragraph}{Insertion de commentaires}{9}{section*.5}
-\contentsline {paragraph}{Transition d'\IeC {\'e}tat}{9}{section*.6}
-\contentsline {paragraph}{Modification d'une fiche}{10}{section*.7}
-\contentsline {subsubsection}{\numberline {4.4.4}Le responsable d'\IeC {\'e}quipe de d\IeC {\'e}veloppement}{10}{subsubsection.4.4.4}
-\contentsline {paragraph}{Transitions d'\IeC {\'e}tats}{10}{section*.8}
-\contentsline {paragraph}{Pr\IeC {\'e}paration de nouvelles versions}{10}{section*.9}
-\contentsline {subsection}{\numberline {4.5}Description des donn\IeC {\'e}es}{11}{subsection.4.5}
-\contentsline {paragraph}{Les utilisateurs}{11}{section*.10}
-\contentsline {paragraph}{Les bugs et rfes}{12}{section*.11}
-\contentsline {paragraph}{L'interm\IeC {\'e}diaire}{12}{section*.12}
-\contentsline {paragraph}{Les commentaires}{12}{section*.13}
-\contentsline {section}{\numberline {5}Glossaire}{12}{section.5}
+\contentsline {subsection}{\numberline {4.1}L'application \leavevmode {\color {blue}SoftRepair}}{6}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Description des fonctionnalit\IeC {\'e}s}{7}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Diagramme des cas d'utilisation}{7}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Description diagramme des cas d'utilisation}{7}{subsubsection.4.2.2}
+\contentsline {paragraph}{Description des actions du commercial}{7}{section*.2}
+\contentsline {paragraph}{Description des actions du membre d'\IeC {\'e}quipe}{8}{section*.3}
+\contentsline {paragraph}{Description des actions du responsable}{8}{section*.4}
+\contentsline {subsection}{\numberline {4.3}Flux d'information}{9}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Diagramme de flux d'informations}{9}{subsubsection.4.3.1}
+\contentsline {paragraph}{Description du flux d'informations}{9}{section*.5}
+\contentsline {subsection}{\numberline {4.4}Description du travail des utilisateurs}{10}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}L'interm\IeC {\'e}diaire}{10}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Le commercial}{10}{subsubsection.4.4.2}
+\contentsline {paragraph}{Connexion}{11}{section*.6}
+\contentsline {paragraph}{Signalement de bug}{11}{section*.7}
+\contentsline {paragraph}{Visualisation et recherche de bugs}{12}{section*.8}
+\contentsline {paragraph}{Fiche signal\IeC {\'e}tique}{13}{section*.9}
+\contentsline {paragraph}{Fiche descriptive}{13}{section*.10}
+\contentsline {paragraph}{Espace personnel}{13}{section*.11}
+\contentsline {subsubsection}{\numberline {4.4.3}Le membre d'\IeC {\'e}quipe de d\IeC {\'e}veloppement}{14}{subsubsection.4.4.3}
+\contentsline {paragraph}{Insertion de commentaires et transition d'\IeC {\'e}tats}{14}{section*.12}
+\contentsline {paragraph}{Historique des commentaires}{15}{section*.13}
+\contentsline {paragraph}{Modification d'une fiche}{16}{section*.14}
+\contentsline {subsubsection}{\numberline {4.4.4}Le responsable d'\IeC {\'e}quipe de d\IeC {\'e}veloppement}{16}{subsubsection.4.4.4}
+\contentsline {paragraph}{Transitions d'\IeC {\'e}tats}{16}{section*.15}
+\contentsline {paragraph}{Pr\IeC {\'e}paration de nouvelles versions}{16}{section*.16}
+\contentsline {subsection}{\numberline {4.5}Description des donn\IeC {\'e}es}{17}{subsection.4.5}
+\contentsline {paragraph}{Les utilisateurs}{17}{section*.17}
+\contentsline {paragraph}{Les bugs et rfes}{18}{section*.18}
+\contentsline {paragraph}{L'interm\IeC {\'e}diaire}{18}{section*.19}
+\contentsline {paragraph}{Les commentaires}{18}{section*.20}
+\contentsline {section}{\numberline {5}Glossaire}{18}{section.5}
