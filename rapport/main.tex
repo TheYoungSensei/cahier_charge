@@ -245,7 +245,7 @@ et des demandes d'améliorations, pour ses logiciels.
 \subsubsection{Diagramme des cas d'utilisation}
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=10cm,height=12cm]{cu.png}}
+	\fbox{\includegraphics[width=10cm,height=10cm]{cu.png}}
 	\caption{Diagramme des cas d'utilisation}
 \end{figure}
 \subsubsection{Description diagramme des cas d'utilisation}
@@ -259,7 +259,7 @@ Le responsable en plus des actions qu'un membre d'équipe pourrait effectuer peu
 \subsubsection{Diagramme de flux d'informations}
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=13cm,height=10cm]{flux.jpeg}}
+	\fbox{\includegraphics[width=12cm,height=10cm]{flux.jpeg}}
 	\caption{Diagramme de flux de la gestion d'un bug}
 \end{figure}
 \paragraph{Description du flux d'informations}
@@ -279,6 +279,7 @@ Lorsque tous les bugs ont été vérifiés, le responsable clos les bugs en rapp
 \newline
 \newline
 Il est important de noter qu'à tout moment un bug peut être considéré comme non-reproductible, le bug pourra tout de même être rouvert si ce dernier devait à nouveau être constaté (Si le bug a reçu l'état clos avant qu'il ne devait à nouveau être constaté alors ce dernier sera dupliqué. Le nouveau bug suivra la procédure de traitement habituelle mais un lien sera gardé vers le premier bug).
+\newpage
 \subsection{Description du travail des utilisateurs}
 \subsubsection{L'intermédiaire}
 L'intermédiaire n'est pas un utilisateur actif de l'application, sa fonction est de faire le relais entre les clients et les bugs qu'ils rencontrent et le commercial qui les signale à l'équipe de développement. Pour cela, l'application prévoit une utilisation de suivi de bug pour que l'intermédiaire puisse informer un client de l'avancement de la résolution d'un bug en particulier. L'intermédiaire  \textbf{n'est pas authentifié} au sein de l'application. N'importe quel utilisateur ayant accès à un bug concernant un intermédiaire peut en seul geste lui envoyer un e-mail généré automatiquement résumant l'état du bug actuel.
@@ -348,6 +349,7 @@ C'est à partir de cet onglet que l'utilisateur peut obtenir une description du 
 	\fbox{\includegraphics[width=12cm,height=5cm]{Espace_perso.png}}
 	\caption{Espace personnel}
 \end{figure}
+\newpage
 \subsubsection{Le membre d'équipe de développement}
 Le membre d'équipe tient un rôle centrale dans l'application, c'est lui qui gérera la majorité des transitions d'état des bugs afin de pouvoir garder un détail sur l'évolution de ceux-ci. Il dispose également des mêmes fonctionnalités que le commercial. La fonction de recherches de bugs possède une option supplémentaire par rapport au commercial qui lui permet de voir rapidement quels bugs lui ont été assignés par son responsable. 
 \paragraph{Insertion de commentaires et transition d'états}
@@ -381,6 +383,7 @@ La vue ci-dessous donne un exemple de l'historique des commentaires d'un bug. Un
 
  \paragraph{Modification d'une fiche}
  Un membre d'équipe peut modifier la fiche signalétique ou descriptive d'un bug à tout moment. 
+ \newpage
 \subsubsection{Le responsable d'équipe de développement}
 \label{responsable}
 Le responsable d'équipe qui est également un utilisateur \textbf{authentifié} est doté des mêmes fonctions que le membre d'équipe. A cela près qu'il est doté d'outils supplémentaires liés aux préparation de nouvelles versions (pouvant regrouper plusieurs bugs) ainsi qu'à l'assignation de bugs à des membres d'équipes. 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.28)  8 DEC 2016 03:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.28)  8 DEC 2016 03:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -810,7 +810,7 @@ File: ./figures/cu.png Graphic file (type png)
 
 <use ./figures/cu.png>
 Package pdftex.def Info: ./figures/cu.png used on input line 248.
-(pdftex.def)             Requested size: 284.52878pt x 341.44228pt.
+(pdftex.def)             Requested size: 284.52878pt x 284.52713pt.
 
 Overfull \hbox (0.65602pt too wide) in paragraph at lines 255--256
  []\OT1/cmr/bx/n/10 Description des ac-tions du membre d'^^Sequipe[] \OT1/cmr/m
@@ -824,21 +824,16 @@ has been already used, duplicate ignored
                                                   \fi \fi 
 l.256 \paragraph
                 {Description des actions du responsable} <./figures/cu.png>]
-<./figures/flux.jpeg, id=211, 794.97pt x 614.295pt>
+<./figures/flux.jpeg, id=212, 794.97pt x 614.295pt>
 File: ./figures/flux.jpeg Graphic file (type jpg)
  <use ./figures/flux.jpeg>
 Package pdftex.def Info: ./figures/flux.jpeg used on input line 262.
-(pdftex.def)             Requested size: 369.89984pt x 284.52878pt.
+(pdftex.def)             Requested size: 341.44228pt x 284.52878pt.
 
-Overfull \hbox (31.69983pt too wide) in paragraph at lines 262--263
+Overfull \hbox (3.24226pt too wide) in paragraph at lines 262--263
  [][] 
  []
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 266--282
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 266--282
 
@@ -859,158 +854,162 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--282
 
  []
 
-[9pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--282
+
+ []
+
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.282 \subsection
-                 {Description du travail des utilisateurs} <./figures/flux.jpeg
->] <./figures/Login.png, id=224, 722.7pt x 481.8pt>
+l.282 \newpage
+               <./figures/flux.jpeg>] [9]
+<./figures/Login.png, id=224, 722.7pt x 481.8pt>
 File: ./figures/Login.png Graphic file (type png)
  <use ./figures/Login.png>
-Package pdftex.def Info: ./figures/Login.png used on input line 294.
+Package pdftex.def Info: ./figures/Login.png used on input line 295.
 (pdftex.def)             Requested size: 341.43344pt x 142.26208pt.
 
-Overfull \hbox (3.23343pt too wide) in paragraph at lines 294--295
+Overfull \hbox (3.23343pt too wide) in paragraph at lines 295--296
  [][] 
  []
 
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 297--310
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--311
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--310
+Underfull \hbox (badness 10000) in paragraph at lines 298--311
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--310
+Underfull \hbox (badness 10000) in paragraph at lines 298--311
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--310
+Underfull \hbox (badness 10000) in paragraph at lines 298--311
 
  []
 
-[11pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
+[10pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.310 
+l.311 
        <./figures/Login.png>]
-<./figures/ajout_bug.png, id=237, 722.7pt x 481.8pt>
+<./figures/ajout_bug.png, id=233, 722.7pt x 481.8pt>
 File: ./figures/ajout_bug.png Graphic file (type png)
 
 <use ./figures/ajout_bug.png>
-Package pdftex.def Info: ./figures/ajout_bug.png used on input line 313.
+Package pdftex.def Info: ./figures/ajout_bug.png used on input line 314.
 (pdftex.def)             Requested size: 341.43344pt x 142.26208pt.
 
-Overfull \hbox (3.23343pt too wide) in paragraph at lines 313--314
+Overfull \hbox (3.23343pt too wide) in paragraph at lines 314--315
  [][] 
  []
 
-<./figures/Bug_unique.png, id=238, 722.7pt x 481.8pt>
+[11pdfTeX warning (ext4): destination with the same identifier (name{figure.4})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.321 
+       <./figures/ajout_bug.png>]
+<./figures/Bug_unique.png, id=241, 722.7pt x 481.8pt>
 File: ./figures/Bug_unique.png Graphic file (type png)
 
 <use ./figures/Bug_unique.png>
-Package pdftex.def Info: ./figures/Bug_unique.png used on input line 323.
+Package pdftex.def Info: ./figures/Bug_unique.png used on input line 324.
 (pdftex.def)             Requested size: 341.43344pt x 142.26208pt.
 
-Overfull \hbox (3.23343pt too wide) in paragraph at lines 323--324
+Overfull \hbox (3.23343pt too wide) in paragraph at lines 324--325
  [][] 
  []
 
-[12pdfTeX warning (ext4): destination with the same identifier (name{figure.4})
- has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.329 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-5}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.329 
-       <./figures/ajout_bug.png> <./figures/Bug_unique.png>]
-<./figures/fiche_signa.png, id=249, 722.7pt x 481.8pt>
+<./figures/fiche_signa.png, id=242, 722.7pt x 481.8pt>
 File: ./figures/fiche_signa.png Graphic file (type png)
 
 <use ./figures/fiche_signa.png>
-Package pdftex.def Info: ./figures/fiche_signa.png used on input line 332.
+Package pdftex.def Info: ./figures/fiche_signa.png used on input line 333.
 (pdftex.def)             Requested size: 341.43344pt x 142.26208pt.
 
-Overfull \hbox (3.23343pt too wide) in paragraph at lines 332--333
+Overfull \hbox (3.23343pt too wide) in paragraph at lines 333--334
  [][] 
  []
 
-<./figures/fiche_descri.png, id=250, 722.7pt x 481.8pt>
+<./figures/fiche_descri.png, id=243, 722.7pt x 481.8pt>
 File: ./figures/fiche_descri.png Graphic file (type png)
 
 <use ./figures/fiche_descri.png>
-Package pdftex.def Info: ./figures/fiche_descri.png used on input line 340.
+Package pdftex.def Info: ./figures/fiche_descri.png used on input line 341.
 (pdftex.def)             Requested size: 341.43344pt x 142.26208pt.
 
-Overfull \hbox (3.23343pt too wide) in paragraph at lines 340--341
+Overfull \hbox (3.23343pt too wide) in paragraph at lines 341--342
  [][] 
  []
 
-<./figures/Espace_perso.png, id=251, 722.7pt x 481.8pt>
+[12pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.344 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.344 
+       <./figures/Bug_unique.png> <./figures/fiche_signa.png>]
+<./figures/Espace_perso.png, id=255, 722.7pt x 481.8pt>
 File: ./figures/Espace_perso.png Graphic file (type png)
 
 <use ./figures/Espace_perso.png>
-Package pdftex.def Info: ./figures/Espace_perso.png used on input line 348.
+Package pdftex.def Info: ./figures/Espace_perso.png used on input line 349.
 (pdftex.def)             Requested size: 341.43344pt x 142.26208pt.
 
-Overfull \hbox (3.23343pt too wide) in paragraph at lines 348--349
+Overfull \hbox (3.23343pt too wide) in paragraph at lines 349--350
  [][] 
  []
 
-[13pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
+[13pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.350 \end{figure}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{figure.7}) has been already used, duplicate ignored
+l.352 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{figure.8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.350 \end{figure}
-                   <./figures/fiche_signa.png> <./figures/fiche_descri.png>]
-[14pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
- has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.362  	\item \textit
-                     {Doublon} : si le bug a déjà été signalé.Cette opt...
- <./figures/Espace_perso.png>]
-<./figures/ajout_com.png, id=270, 722.7pt x 481.8pt>
+l.352 \newpage
+               <./figures/fiche_descri.png> <./figures/Espace_perso.png>]
+<./figures/ajout_com.png, id=265, 722.7pt x 481.8pt>
 File: ./figures/ajout_com.png Graphic file (type png)
 
 <use ./figures/ajout_com.png>
-Package pdftex.def Info: ./figures/ajout_com.png used on input line 370.
+Package pdftex.def Info: ./figures/ajout_com.png used on input line 372.
 (pdftex.def)             Requested size: 341.43344pt x 142.26208pt.
 
-Overfull \hbox (3.23343pt too wide) in paragraph at lines 370--371
+Overfull \hbox (3.23343pt too wide) in paragraph at lines 372--373
  [][] 
  []
 
-<./figures/histo_com.png, id=271, 722.7pt x 481.8pt>
+[14] <./figures/histo_com.png, id=271, 722.7pt x 481.8pt>
 File: ./figures/histo_com.png Graphic file (type png)
 
 <use ./figures/histo_com.png>
-Package pdftex.def Info: ./figures/histo_com.png used on input line 378.
+Package pdftex.def Info: ./figures/histo_com.png used on input line 380.
 (pdftex.def)             Requested size: 341.43344pt x 142.26208pt.
 
-Overfull \hbox (3.23343pt too wide) in paragraph at lines 378--379
+Overfull \hbox (3.23343pt too wide) in paragraph at lines 380--381
  [][] 
  []
 
@@ -1019,37 +1018,36 @@ Overfull \hbox (3.23343pt too wide) in paragraph at lines 378--379
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.381 
-       <./figures/ajout_com.png>]
-<./figures/dsd.png, id=279, 614.295pt x 794.97pt>
-File: ./figures/dsd.png Graphic file (type png)
- <use ./figures/dsd.png>
-Package pdftex.def Info: ./figures/dsd.png used on input line 399.
-(pdftex.def)             Requested size: 369.8921pt x 369.89984pt.
-
-Overfull \hbox (31.6921pt too wide) in paragraph at lines 399--400
- [][] 
- []
-
-[16pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
-) has been already used, duplicate ignored
+l.386  \newpage
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{figure.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.402 \paragraph
-                {Les utilisateurs} (commerciaux, membres d'équipe ou respon...
- <./figures/histo_com.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 405--415
+l.386  \newpage
+                <./figures/ajout_com.png> <./figures/histo_com.png>]
+<./figures/dsd.png, id=282, 614.295pt x 794.97pt>
+File: ./figures/dsd.png Graphic file (type png)
+ <use ./figures/dsd.png>
+Package pdftex.def Info: ./figures/dsd.png used on input line 402.
+(pdftex.def)             Requested size: 369.8921pt x 369.89984pt.
+
+Overfull \hbox (31.6921pt too wide) in paragraph at lines 402--403
+ [][] 
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 408--418
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--415
+Underfull \hbox (badness 10000) in paragraph at lines 408--418
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--415
+Underfull \hbox (badness 10000) in paragraph at lines 408--418
 
  []
 
@@ -1058,30 +1056,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 405--415
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.415 
+l.418 
        <./figures/dsd.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 420--424
+Underfull \hbox (badness 10000) in paragraph at lines 423--427
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 428.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 431.
 [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 428.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 431.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 428.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 428.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 431.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 431.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: F83CAF451169502D35852BE8AA2A7EC8;2226.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 428.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 431.
  ) 
 Here is how much of TeX's memory you used:
  9119 strings out of 494924
  128721 string characters out of 6179708
- 221450 words of memory out of 5000000
+ 222450 words of memory out of 5000000
  12192 multiletter control sequences out of 15000+600000
  12460 words of font info for 47 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 29i,12n,32p,673b,458s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,12n,32p,673b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
@@ -1092,7 +1090,7 @@ type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmti12.pfb>
-Output written on main.pdf (19 pages, 3126848 bytes).
+Output written on main.pdf (19 pages, 3156740 bytes).
 PDF statistics:
  358 PDF objects out of 1000 (max. 8388607)
  299 compressed objects within 3 object streams
